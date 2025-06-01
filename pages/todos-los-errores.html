@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todos los errores web - Catálogo completo | EstoNoCarga</title>
+    <meta name="description" content="El catálogo más completo de errores web. Desde los populares 404 y 500 hasta los más raros y específicos. Todos los códigos de estado HTTP explicados.">
+    <meta name="keywords" content="errores web, códigos HTTP, catálogo errores, todos los errores web, debugging">
+    <meta name="author" content="EstoNoCarga">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://estonocarga.dev/pages/todos-los-errores">
+    <meta property="og:title" content="Todos los errores web - Catálogo completo">
+    <meta property="og:description" content="El catálogo más completo de errores web que existe. Porque hay vida más allá del 404.">
+    <meta property="og:image" content="https://estonocarga.dev/assets/images/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://estonocarga.dev/pages/todos-los-errores">
+    <meta property="twitter:title" content="Todos los errores web - Catálogo completo">
+    <meta property="twitter:description" content="El catálogo más completo de errores web que existe.">
+    <meta property="twitter:image" content="https://estonocarga.dev/assets/images/og-image.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/todos-errores.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">EstoNoCarga</a>
+            <ul class="nav-links">
+                <li><a href="../index.html#errores">Errores</a></li>
+                <li><a href="guias.html">Guías</a></li>
+                <li><a href="herramientas.html">Tools</a></li>
+                <li><a href="about.html">Nosotros</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <div class="mobile-menu" id="mobile-menu">
+            <ul>
+                <li><a href="../index.html#errores">Errores</a></li>
+                <li><a href="guias.html">Guías</a></li>
+                <li><a href="herramientas.html">Tools</a></li>
+                <li><a href="about.html">Nosotros</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../index.html">Inicio</a>
+                    <span>→</span>
+                    <span>Todos los errores</span>
+                </div>
+                <h1 class="page-title">Todos los errores web</h1>
+                <p class="page-description">El catálogo más completo del internet. Porque hay vida más allá del 404 y algunos errores son verdaderas joyas ocultas.</p>
+            </div>
+        </section>
+
+        <!-- Filtros -->
+        <section class="filters-section">
+            <div class="container">
+                <div class="filters">
+                    <button class="filter-btn active" data-category="all">Todos</button>
+                    <button class="filter-btn" data-category="1xx">1xx - Informativos</button>
+                    <button class="filter-btn" data-category="2xx">2xx - Éxito</button>
+                    <button class="filter-btn" data-category="3xx">3xx - Redirección</button>
+                    <button class="filter-btn" data-category="4xx">4xx - Error del cliente</button>
+                    <button class="filter-btn" data-category="5xx">5xx - Error del servidor</button>
+                </div>
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Buscar por código o nombre...">
+                </div>
+            </div>
+        </section>
+
+        <!-- Lista de errores -->
+        <section class="errors-catalog">
+            <div class="container">
+                <!-- 1xx - Informativos -->
+                <div class="category-section" data-category="1xx">
+                    <h2 class="category-title">
+                        <span class="category-icon">ℹ️</span>
+                        1xx - Respuestas informativas
+                    </h2>
+                    <p class="category-desc">Los códigos que te dicen "tranqui, todo va bien, pero aún no he terminado"</p>
+                    <div class="errors-grid">
+                        <div class="error-card" data-code="100">
+                            <span class="error-number">100</span>
+                            <div class="error-name">Continue</div>
+                            <div class="error-desc">El servidor dice "sigue, que voy bien"</div>
+                        </div>
+                        <div class="error-card" data-code="101">
+                            <span class="error-number">101</span>
+                            <div class="error-name">Switching Protocols</div>
+                            <div class="error-desc">Cambiando de protocolo como de canal de TV</div>
+                        </div>
+                        <div class="error-card" data-code="102">
+                            <span class="error-number">102</span>
+                            <div class="error-name">Processing</div>
+                            <div class="error-desc">Procesando... como tu cerebro los lunes</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2xx - Éxito -->
+                <div class="category-section" data-category="2xx">
+                    <h2 class="category-title">
+                        <span class="category-icon">✅</span>
+                        2xx - Todo perfecto
+                    </h2>
+                    <p class="category-desc">Los códigos que indican que todo salió como esperabas (milagro)</p>
+                    <div class="errors-grid">
+                        <div class="error-card" data-code="200">
+                            <span class="error-number">200</span>
+                            <div class="error-name">OK</div>
+                            <div class="error-desc">Todo perfecto, como debería ser siempre</div>
+                        </div>
+                        <div class="error-card" data-code="201">
+                            <span class="error-number">201</span>
+                            <div class="error-name">Created</div>
+                            <div class="error-desc">Creado con éxito, como tus problemas</div>
+                        </div>
+                        <div class="error-card" data-code="202">
+                            <span class="error-number">202</span>
+                            <div class="error-name">Accepted</div>
+                            <div class="error-desc">Aceptado, pero sin promesas</div>
+                        </div>
+                        <div class="error-card" data-code="204">
+                            <span class="error-number">204</span>
+                            <div class="error-name">No Content</div>
+                            <div class="error-desc">Éxito, pero vacío como tu nevera</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3xx - Redirección -->
+                <div class="category-section" data-category="3xx">
+                    <h2 class="category-title">
+                        <span class="category-icon">🔄</span>
+                        3xx - Ve por allá
+                    </h2>
+                    <p class="category-desc">Los códigos que te mandan a otro sitio, como cuando preguntas dónde está algo</p>
+                    <div class="errors-grid">
+                        <div class="error-card" data-code="301">
+                            <span class="error-number">301</span>
+                            <div class="error-name">Moved Permanently</div>
+                            <div class="error-desc">Se mudó para siempre, como tu ex</div>
+                        </div>
+                        <div class="error-card" data-code="302">
+                            <span class="error-number">302</span>
+                            <div class="error-name">Found</div>
+                            <div class="error-desc">Está en otro sitio temporalmente</div>
+                        </div>
+                        <div class="error-card" data-code="304">
+                            <span class="error-number">304</span>
+                            <div class="error-name">Not Modified</div>
+                            <div class="error-desc">No ha cambiado, como tus hábitos</div>
+                        </div>
+                        <div class="error-card" data-code="307">
+                            <span class="error-number">307</span>
+                            <div class="error-name">Temporary Redirect</div>
+                            <div class="error-desc">Redirección temporal, pero mantén el método</div>
+                        </div>
+                        <div class="error-card" data-code="308">
+                            <span class="error-number">308</span>
+                            <div class="error-name">Permanent Redirect</div>
+                            <div class="error-desc">Redirección permanente con método intacto</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4xx - Error del cliente -->
+                <div class="category-section" data-category="4xx">
+                    <h2 class="category-title">
+                        <span class="category-icon">🤦</span>
+                        4xx - La cagaste
+                    </h2>
+                    <p class="category-desc">Los códigos que básicamente te dicen "el problema eres tú"</p>
+                    <div class="errors-grid">
+                        <a href="errors/400.html" class="error-card" data-code="400">
+                            <span class="error-number">400</span>
+                            <div class="error-name">Bad Request</div>
+                            <div class="error-desc">Tu petición está más rota que tus expectativas</div>
+                        </a>
+                        <a href="errors/401.html" class="error-card" data-code="401">
+                            <span class="error-number">401</span>
+                            <div class="error-name">Unauthorized</div>
+                            <div class="error-desc">Tu contraseña es más débil que tus excusas</div>
+                        </a>
+                        <a href="errors/402.html" class="error-card" data-code="402">
+                            <span class="error-number">402</span>
+                            <div class="error-name">Payment Required</div>
+                            <div class="error-desc">Paga y podrás ver (casi nunca se usa)</div>
+                        </a>
+                        <a href="errors/403.html" class="error-card" data-code="403">
+                            <span class="error-number">403</span>
+                            <div class="error-name">Forbidden</div>
+                            <div class="error-desc">Como intentar entrar a un club exclusivo con chanclas</div>
+                        </a>
+                        <a href="errors/404.html" class="error-card" data-code="404">
+                            <span class="error-number">404</span>
+                            <div class="error-name">Not Found</div>
+                            <div class="error-desc">El clásico. Como buscar tus llaves cuando tienes prisa</div>
+                        </a>
+                        <div class="error-card" data-code="405">
+                            <span class="error-number">405</span>
+                            <div class="error-name">Method Not Allowed</div>
+                            <div class="error-desc">Método prohibido, como mentir en tu CV</div>
+                        </div>
+                        <div class="error-card" data-code="406">
+                            <span class="error-number">406</span>
+                            <div class="error-name">Not Acceptable</div>
+                            <div class="error-desc">No me gusta lo que pides</div>
+                        </div>
+                        <div class="error-card" data-code="408">
+                            <span class="error-number">408</span>
+                            <div class="error-name">Request Timeout</div>
+                            <div class="error-desc">Te quedaste sin tiempo, como en los exámenes</div>
+                        </div>
+                        <div class="error-card" data-code="409">
+                            <span class="error-number">409</span>
+                            <div class="error-name">Conflict</div>
+                            <div class="error-desc">Conflicto, como en una cena familiar</div>
+                        </div>
+                        <div class="error-card" data-code="410">
+                            <span class="error-number">410</span>
+                            <div class="error-name">Gone</div>
+                            <div class="error-desc">Se fue para siempre, como tu ex pero en serio</div>
+                        </div>
+                        <div class="error-card" data-code="418">
+                            <span class="error-number">418</span>
+                            <div class="error-name">I'm a teapot</div>
+                            <div class="error-desc">Soy una tetera (no es broma, existe)</div>
+                        </div>
+                        <div class="error-card" data-code="429">
+                            <span class="error-number">429</span>
+                            <div class="error-name">Too Many Requests</div>
+                            <div class="error-desc">Demasiadas peticiones, relájate</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5xx - Error del servidor -->
+                <div class="category-section" data-category="5xx">
+                    <h2 class="category-title">
+                        <span class="category-icon">💀</span>
+                        5xx - El servidor la cagó
+                    </h2>
+                    <p class="category-desc">Los códigos que indican que el problema no eres tú, por una vez</p>
+                    <div class="errors-grid">
+                        <a href="errors/500.html" class="error-card" data-code="500">
+                            <span class="error-number">500</span>
+                            <div class="error-name">Internal Server Error</div>
+                            <div class="error-desc">El servidor tuvo un día malo. Todos los tenemos</div>
+                        </a>
+                        <div class="error-card" data-code="501">
+                            <span class="error-number">501</span>
+                            <div class="error-name">Not Implemented</div>
+                            <div class="error-desc">No sé hacer eso, como yo con las matemáticas</div>
+                        </div>
+                        <a href="errors/502.html" class="error-card" data-code="502">
+                            <span class="error-number">502</span>
+                            <div class="error-name">Bad Gateway</div>
+                            <div class="error-desc">Cuando los servidores no se ponen de acuerdo</div>
+                        </a>
+                        <a href="errors/503.html" class="error-card" data-code="503">
+                            <span class="error-number">503</span>
+                            <div class="error-name">Service Unavailable</div>
+                            <div class="error-desc">El servidor está de vacaciones sin avisar</div>
+                        </a>
+                        <div class="error-card" data-code="504">
+                            <span class="error-number">504</span>
+                            <div class="error-name">Gateway Timeout</div>
+                            <div class="error-desc">El gateway se quedó dormido</div>
+                        </div>
+                        <div class="error-card" data-code="505">
+                            <span class="error-number">505</span>
+                            <div class="error-name">HTTP Version Not Supported</div>
+                            <div class="error-desc">Tu versión HTTP está más obsoleta que un Nokia 3310</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#privacy">Privacidad</a>
+                    <a href="#terms">Términos</a>
+                    <a href="#contact">Contacto</a>
+                    <a href="#sitemap">Sitemap</a>
+                </div>
+                <p>&copy; 2025 EstoNoCarga. Hecho con frustración y mucho café. ☕</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;">Porque los errores web también necesitan amor (o al menos explicación).</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/todos-errores.js"></script>
+</body>
+</html>

@@ -1,0 +1,255 @@
+/* === ERROR HEADER === */
+.error-header {
+    padding: 8rem 0 4rem;
+    text-align: center;
+    background: radial-gradient(ellipse at center, rgba(239, 68, 68, 0.05) 0%, transparent 70%);
+    border-bottom: 1px solid var(--border);
+}
+
+.error-code-display {
+    font-size: clamp(4rem, 12vw, 8rem);
+    font-weight: 900;
+    color: var(--accent);
+    line-height: 0.8;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 50px rgba(239, 68, 68, 0.3);
+    animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.error-name {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.error-description {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.status-client {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--accent);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* === CONTENT SECTIONS === */
+.content-section {
+    padding: 4rem 0;
+}
+
+.content-section:nth-child(even) {
+    background: var(--bg-secondary);
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.main-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.main-content p {
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+}
+
+.main-content strong {
+    color: var(--text-primary);
+}
+
+.sidebar {
+    position: sticky;
+    top: 8rem;
+}
+
+.info-card {
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.info-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.info-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-card li {
+    padding: 0.5rem 0;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border);
+}
+
+.info-card li:last-child {
+    border-bottom: none;
+}
+
+.code-block {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    font-family: 'Monaco', 'Menlo', monospace;
+    font-size: 0.9rem;
+    overflow-x: auto;
+}
+
+.code-block code {
+    color: var(--text-primary);
+}
+
+.solution-steps {
+    background: var(--bg-secondary);
+    border-left: 4px solid var(--success);
+    border-radius: 0 8px 8px 0;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.solution-steps h4 {
+    color: var(--success);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.solution-steps ol {
+    padding-left: 1.5rem;
+}
+
+.solution-steps li {
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+}
+
+.warning-box {
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.warning-box h4 {
+    color: var(--warning);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* === RELATED ERRORS === */
+.related-errors {
+    padding: 4rem 0;
+    background: var(--bg-secondary);
+}
+
+.error-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.error-card {
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.error-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.error-card .error-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.error-card .error-title {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.error-card .error-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* === RESPONSIVE ERROR PAGES === */
+@media (max-width: 768px) {
+    .error-header {
+        padding: 6rem 0 3rem;
+    }
+    
+    .error-code-display {
+        font-size: clamp(3rem, 15vw, 6rem);
+    }
+    
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .sidebar {
+        position: static;
+    }
+    
+    .content-section {
+        padding: 3rem 0;
+    }
+    
+    .main-content {
+        font-size: 1rem;
+    }
+    
+    .error-grid {
+        grid-template-columns: 1fr;
+    }
+}
