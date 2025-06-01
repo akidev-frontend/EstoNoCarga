@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EstoNoCarga - El catálogo definitivo de errores web que arruinan tu día</title>
+    <meta name="description" content="Descubre todos los errores web que existen, desde el clásico 404 hasta los más raros. Aprende qué significan y por qué aparecen. Porque cuando algo no carga, necesitas saber por qué.">
+    <meta name="keywords" content="errores web, códigos de estado HTTP, 404, 500, error de servidor, debugging web, desarrollo web">
+    <meta name="author" content="EstoNoCarga">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://estonocarga.dev/">
+    <meta property="og:title" content="EstoNoCarga - El catálogo definitivo de errores web">
+    <meta property="og:description" content="Cuando algo no carga, necesitas saber por qué. El catálogo más completo de errores web explicados sin rodeos.">
+    <meta property="og:image" content="https://estonocarga.dev/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://estonocarga.dev/">
+    <meta property="twitter:title" content="EstoNoCarga - El catálogo definitivo de errores web">
+    <meta property="twitter:description" content="Cuando algo no carga, necesitas saber por qué.">
+    <meta property="twitter:image" content="https://estonocarga.dev/og-image.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='80'>❌</text></svg>">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "EstoNoCarga",
+      "url": "https://estonocarga.dev",
+      "description": "El catálogo definitivo de errores web que arruinan tu día",
+      "author": {
+        "@type": "Organization",
+        "name": "EstoNoCarga"
+      }
+    }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --bg-primary: #0a0a0b;
+            --bg-secondary: #1a1a1b;
+            --text-primary: #e4e4e7;
+            --text-secondary: #a1a1aa;
+            --accent: #ef4444;
+            --accent-dim: rgba(239, 68, 68, 0.1);
+            --border: #27272a;
+            --success: #22c55e;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 11, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: radial-gradient(ellipse at center, rgba(239, 68, 68, 0.05) 0%, transparent 70%);
+        }
+        
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .error-code {
+            font-size: clamp(4rem, 15vw, 12rem);
+            font-weight: 900;
+            color: var(--accent);
+            line-height: 0.8;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 50px rgba(239, 68, 68, 0.3);
+            animation: glitch 3s infinite;
+        }
+        
+        @keyframes glitch {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-2px); }
+            40% { transform: translateX(2px); }
+            60% { transform: translateX(-1px); }
+            80% { transform: translateX(1px); }
+        }
+        
+        .hero h1 {
+            font-size: clamp(2rem, 6vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent);
+        }
+        
+        .cta-button:hover {
+            background: transparent;
+            color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(239, 68, 68, 0.2);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 8rem 0;
+            background: var(--bg-secondary);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        
+        .feature-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .feature-card:hover::before {
+            left: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .error-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .feature-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        /* Popular Errors Section */
+        .popular-errors {
+            padding: 8rem 0;
+        }
+        
+        .error-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+        
+        .error-item {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .error-item:hover {
+            border-color: var(--accent);
+            background: var(--accent-dim);
+        }
+        
+        .error-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .error-name {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .error-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            color: var(--text-secondary);
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero {
+                padding: 6rem 0;
+            }
+            
+            .features, .popular-errors {
+                padding: 4rem 0;
+            }
+        }
+        
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo">EstoNoCarga</a>
+            <ul class="nav-links">
+                <li><a href="#errores">Errores</a></li>
+                <li><a href="#guias">Guías</a></li>
+                <li><a href="#herramientas">Tools</a></li>
+                <li><a href="#about">Nosotros</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="error-code">404</div>
+                    <h1>EstoNoCarga</h1>
+                    <p>El catálogo definitivo de errores web que arruinan tu día. Porque cuando algo no carga, necesitas saber exactamente por qué tu vida es una mentira.</p>
+                    <a href="#errores" class="cta-button">
+                        Ver los errores mas populares →
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="features" id="features">
+            <div class="container">
+                <div class="fade-in">
+                    <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">¿Por qué existe esto?</h2>
+                    <p style="text-align: center; color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Porque los errores web son como las ex: aparecen cuando menos los esperas y siempre en el peor momento.</p>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card fade-in">
+                        <span class="error-icon">🔍</span>
+                        <h3>Base de datos completa</h3>
+                        <p>Desde el clásico 404 hasta los códigos más raros que ni sabías que existían. Todos catalogados con el sarcasmo que se merecen.</p>
+                    </div>
+                    
+                    <div class="feature-card fade-in">
+                        <span class="error-icon">💡</span>
+                        <h3>Explicaciones sin chorradas</h3>
+                        <p>Te explicamos qué significa cada error sin rollos técnicos innecesarios. Directo al grano, como debe ser.</p>
+                    </div>
+                    
+                    <div class="feature-card fade-in">
+                        <span class="error-icon">🛠️</span>
+                        <h3>Cómo solucionarlo</h3>
+                        <p>Porque no basta con saber qué está roto. Te decimos cómo arreglarlo para que puedas seguir con tu vida.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="popular-errors" id="errores">
+            <div class="container">
+                <div class="fade-in">
+                    <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">Los más populares</h2>
+                    <p style="text-align: center; color: var(--text-secondary); font-size: 1.1rem;">Los errores que más joden la existencia digital</p>
+                </div>
+                
+                <div class="error-list">
+                    <a href="entradas/error404.html" style="text-decoration: none; color: inherit;">
+                    <div class="error-item fade-in">
+                        <span class="error-number">404</span>
+                        <div class="error-name">Not Found</div>
+                        <div class="error-desc">El clásico. Como buscar tus llaves cuando tienes prisa.</div>
+                    </div>
+                    </a>
+                    
+                    <a href="entradas/error404.html" style="text-decoration: none; color: inherit;">
+                    <div class="error-item fade-in">
+                        <span class="error-number">500</span>
+                        <div class="error-name">Internal Server Error</div>
+                        <div class="error-desc">El servidor tuvo un día malo. Todos los tenemos.</div>
+                    </div>
+                    </a>
+
+                    <a href="entradas/error404.html" style="text-decoration: none; color: inherit;">
+                    <div class="error-item fade-in">
+                        <span class="error-number">403</span>
+                        <div class="error-name">Forbidden</div>
+                        <div class="error-desc">Como intentar entrar a un club exclusivo con chanclas.</div>
+                    </div>
+                    </a>
+
+                    <a href="entradas/error404.html" style="text-decoration: none; color: inherit;">
+                    <div class="error-item fade-in">
+                        <span class="error-number">502</span>
+                        <div class="error-name">Bad Gateway</div>
+                        <div class="error-desc">Cuando los servidores no se ponen de acuerdo. Drama digital.</div>
+                    </div>
+                    </a>
+
+                    <a href="entradas/error404.html" style="text-decoration: none; color: inherit;">
+                    <div class="error-item fade-in">
+                        <span class="error-number">503</span>
+                        <div class="error-name">Service Unavailable</div>
+                        <div class="error-desc">El servidor está de vacaciones sin avisar.</div>
+                    </div>
+                    </a>
+
+                    <a href="entradas/error404.html" style="text-decoration: none; color: inherit;">
+                    <div class="error-item fade-in">
+                        <span class="error-number">401</span>
+                        <div class="error-name">Unauthorized</div>
+                        <div class="error-desc">Tu contraseña es más débil que tus excusas.</div>
+                    </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#privacy">Privacidad</a>
+                    <a href="#terms">Términos</a>
+                    <a href="#contact">Contacto</a>
+                    <a href="#sitemap">Sitemap</a>
+                </div>
+                <p>&copy; 2025 EstoNoCarga. Hecho con frustración y mucho café. ☕</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;">Porque los errores web también necesitan amor (o al menos explicación).</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animaciones de scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Easter egg: click en el 404 hero
+        document.querySelector('.error-code').addEventListener('click', function() {
+            this.style.animation = 'none';
+            setTimeout(() => {
+                this.style.animation = 'glitch 0.5s infinite';
+            }, 10);
+            setTimeout(() => {
+                this.style.animation = 'glitch 3s infinite';
+            }, 2000);
+        });
+
+        // Efecto hover en error items
+        document.querySelectorAll('.error-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const errorNumber = this.querySelector('.error-number').textContent;
+                // Aquí podrías redirigir a la página específica del error
+                console.log(`Navegando a error ${errorNumber}`);
+            });
+        });
+    </script>
+</body>
+</html>
