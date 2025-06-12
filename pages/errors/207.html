@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código 207 - Multi-Status | EstoNoCarga</title>
+    <meta name="description" content="Todo sobre el código 207 Multi-Status. El informe trimestral de HTTP que te cuenta cómo fue cada operación. WebDAV y múltiples resultados en uno.">
+    <meta name="keywords" content="código 207, multi-status, webdav, múltiples operaciones, bulk operations, desarrollo web">
+    <meta name="author" content="EstoNoCarga">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://estonocarga.dev/pages/errors/207">
+    <meta property="og:title" content="Código 207 - Multi-Status | EstoNoCarga">
+    <meta property="og:description" content="El informe trimestral de HTTP que te cuenta cómo fue cada operación. WebDAV y múltiples resultados en uno.">
+    <meta property="og:image" content="https://estonocarga.dev/assets/images/207-og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://estonocarga.dev/pages/errors/207">
+    <meta property="twitter:title" content="Código 207 - Multi-Status | EstoNoCarga">
+    <meta property="twitter:description" content="El informe trimestral de HTTP que te cuenta cómo fue cada operación.">
+    <meta property="twitter:image" content="https://estonocarga.dev/assets/images/207-og-image.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Código 207 - Multi-Status",
+      "description": "Todo lo que necesitas saber sobre el código 207 Multi-Status",
+      "author": {
+        "@type": "Organization",
+        "name": "EstoNoCarga"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "EstoNoCarga"
+      }
+    }
+    </script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="stylesheet" href="../../assets/css/error-page.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html" class="logo">EstoNoCarga</a>
+            <ul class="nav-links">
+                <li><a href="../../index.html#errores">Errores</a></li>
+                <li><a href="../../index.html#guías">Guías</a></li>
+                <li><a href="../../index.html#herramientas">Tools</a></li>
+                <li><a href="../../index.html#about">Nosotros</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Error Header -->
+        <section class="error-header">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../../index.html">Inicio</a>
+                    <span>→</span>
+                    <a href="../../index.html#errores">Códigos</a>
+                    <span>→</span>
+                    <span>207</span>
+                </div>
+                <div class="error-code-display">207</div>
+                <h1 class="error-name">Multi-Status</h1>
+                <p class="error-description">El informe trimestral de HTTP que te cuenta cómo fue cada operación. WebDAV y múltiples resultados en uno.</p>
+                <div class="status-badge status-success">
+                    <span>📊</span>
+                    Success
+                </div>
+            </div>
+        </section>
+
+        <!-- What is it -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-title">
+                            <span class="section-icon">📋</span>
+                            ¿Qué narices es esto?
+                        </h2>
+                        
+                        <p>El <strong>código 207 Multi-Status</strong> es el <strong>"hice 10 cosas y te cuento cómo fue cada una"</strong> de HTTP. Es cuando le mandas al servidor <strong>una lista de operaciones</strong> (borrar esto, mover aquello, crear esto otro) y él te responde con <strong>un informe detallado</strong> de qué pasó con cada una. Como cuando le pides a tu asistente que haga 5 tareas y te trae un Excel con el resultado de cada una.</p>
+                        
+                        <p>Este código es <strong>prácticamente exclusivo de WebDAV</strong> (Web-based Distributed Authoring and Versioning), que es como HTTP pero con esteroides para manejar archivos remotos. No es que algo saliera mal, es que pediste múltiples cosas y <strong>cada una tuvo su propio resultado</strong>. Algunas funcionaron (200), otras no existían (404), otras no tenías permisos (403).</p>
+                        
+                        <p>El 207 se ve típicamente en:</p>
+                        
+                        <ul style="margin-left: 2rem; margin-bottom: 2rem;">
+                            <li style="margin-bottom: 0.5rem;">Operaciones WebDAV masivas (mover múltiples archivos)</li>
+                            <li style="margin-bottom: 0.5rem;">SharePoint y sistemas de documentos enterprise</li>
+                            <li style="margin-bottom: 0.5rem;">APIs de gestión de archivos en lote</li>
+                            <li style="margin-bottom: 0.5rem;">Sincronización de carpetas (Dropbox, Google Drive internals)</li>
+                            <li style="margin-bottom: 0.5rem;">Operaciones PROPFIND en directorios complejos</li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <h4><span>🎯</span> Dato curioso</h4>
+                            <p>El 207 es como el manager de HTTP: no hace el trabajo directamente, pero te dice qué pasó con cada tarea que delegó. Su respuesta es un XML gigante con el status de cada operación individual. Es reporting puro.</p>
+                        </div>
+
+                        <p>Lo interesante del 207 es que es <strong>simultáneamente exitoso Y fallido</strong>. El código general es 2xx (éxito), pero dentro puede tener operaciones que fallaron. Es como un proyecto que se entregó a tiempo pero con algunas funcionalidades que no pudieron completarse.</p>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="info-card">
+                            <h3>📊 Info técnica</h3>
+                            <ul>
+                                <li><strong>Código:</strong> 207</li>
+                                <li><strong>Tipo:</strong> Success</li>
+                                <li><strong>Categoría:</strong> 2xx</li>
+                                <li><strong>Descripción:</strong> Multi-Status</li>
+                                <li><strong>Cacheable:</strong> No</li>
+                                <li><strong>Estándar:</strong> RFC 4918 (WebDAV)</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>🎯 Frecuencia</h3>
+                            <ul>
+                                <li><strong>Muy raro</strong></li>
+                                <li>Solo WebDAV</li>
+                                <li>SharePoint</li>
+                                <li>Sistemas enterprise</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to implement -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-title">
+                            <span class="section-icon">🔧</span>
+                            Cómo implementar esto
+                        </h2>
+
+                        <div class="solution-steps">
+                            <h4>🖥️ Para servidores WebDAV</h4>
+                            <ol>
+                                <li><strong>Recibe operación múltiple:</strong> PROPFIND, PROPPATCH, o bulk operations.</li>
+                                <li><strong>Procesa cada elemento:</strong> Cada archivo/recurso individualmente.</li>
+                                <li><strong>Recopila resultados:</strong> Status code para cada operación.</li>
+                                <li><strong>Responde 207:</strong> Con XML detallando cada resultado.</li>
+                                <li><strong>Incluye namespaces:</strong> XML bien formado con DAV: namespace.</li>
+                            </ol>
+                        </div>
+
+                        <div class="solution-steps">
+                            <h4>📱 Para clientes WebDAV</h4>
+                            <ol>
+                                <li><strong>Envía operación múltiple:</strong> Batch de operaciones en XML.</li>
+                                <li><strong>Maneja respuesta 207:</strong> No es error, es reporte detallado.</li>
+                                <li><strong>Parsea XML respuesta:</strong> Cada elemento tiene su status.</li>
+                                <li><strong>Procesa resultados individualmente:</strong> Algunos éxito, otros fallos.</li>
+                                <li><strong>Actualiza UI por elemento:</strong> Mostrar qué funcionó y qué no.</li>
+                            </ol>
+                        </div>
+
+                        <div class="code-block">
+                            <code>
+<!-- Cliente envía PROPFIND para múltiples archivos -->
+PROPFIND /documentos/ HTTP/1.1
+Host: webdav.empresa.com
+Depth: 1
+Content-Type: text/xml
+
+&lt;?xml version="1.0"?&gt;
+&lt;propfind xmlns="DAV:"&gt;
+  &lt;prop&gt;
+    &lt;getcontentlength/&gt;
+    &lt;getlastmodified/&gt;
+  &lt;/prop&gt;
+&lt;/propfind&gt;
+
+<!-- Servidor responde con status múltiple -->
+HTTP/1.1 207 Multi-Status
+Content-Type: text/xml; charset=utf-8
+
+&lt;?xml version="1.0"?&gt;
+&lt;multistatus xmlns="DAV:"&gt;
+  &lt;response&gt;
+    &lt;href&gt;/documentos/archivo1.pdf&lt;/href&gt;
+    &lt;propstat&gt;
+      &lt;status&gt;HTTP/1.1 200 OK&lt;/status&gt;
+      &lt;prop&gt;&lt;getcontentlength&gt;1024&lt;/getcontentlength&gt;&lt;/prop&gt;
+    &lt;/propstat&gt;
+  &lt;/response&gt;
+  &lt;response&gt;
+    &lt;href&gt;/documentos/secreto.doc&lt;/href&gt;
+    &lt;propstat&gt;
+      &lt;status&gt;HTTP/1.1 403 Forbidden&lt;/status&gt;
+    &lt;/propstat&gt;
+  &lt;/response&gt;
+&lt;/multistatus&gt;
+                            </code>
+                        </div>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="info-card">
+                            <h3>💡 Tips pro</h3>
+                            <ul>
+                                <li>Solo necesario en WebDAV</li>
+                                <li>XML response obligatorio</li>
+                                <li>Cada elemento tiene su status</li>
+                                <li>Perfecto para operaciones masivas</li>
+                                <li>Raro en APIs REST normales</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>⚡ Casos típicos</h3>
+                            <ul>
+                                <li>PROPFIND en directorios</li>
+                                <li>PROPPATCH múltiple</li>
+                                <li>Operaciones batch en archivos</li>
+                                <li>SharePoint operations</li>
+                                <li>Sincronización masiva</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Codes -->
+        <section class="related-errors">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">Códigos relacionados</h2>
+                <p style="text-align: center; color: var(--text-secondary); font-size: 1.1rem;">Otros códigos que también molan</p>
+                
+                <div class="error-grid">
+                    <a href="200.html" class="error-card">
+                        <span class="error-number">200</span>
+                        <div class="error-title">OK</div>
+                        <div class="error-desc">Una sola operación exitosa</div>
+                    </a>
+                    
+                    <a href="#" class="error-card">
+                        <span class="error-number">422</span>
+                        <div class="error-title">Unprocessable Entity</div>
+                        <div class="error-desc">Cuando alguna operación del batch falla</div>
+                    </a>
+                    
+                    <a href="#" class="error-card">
+                        <span class="error-number">403</span>
+                        <div class="error-title">Forbidden</div>
+                        <div class="error-desc">Sin permisos para algún recurso</div>
+                    </a>
+                    
+                    <a href="#" class="error-card">
+                        <span class="error-number">404</span>
+                        <div class="error-title">Not Found</div>
+                        <div class="error-desc">Algún archivo del lote no existe</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#privacy">Privacidad</a>
+                    <a href="#terms">Términos</a>
+                    <a href="#contact">Contacto</a>
+                    <a href="#sitemap">Sitemap</a>
+                </div>
+                <p>&copy; 2025 EstoNoCarga. Hecho con frustración y mucho café. ☕</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;">Porque los errores web también necesitan amor (o al menos explicación).</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/error-page.js"></script>
+</body>
+</html>

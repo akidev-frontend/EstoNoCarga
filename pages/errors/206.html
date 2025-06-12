@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código 206 - Partial Content | EstoNoCarga</title>
+    <meta name="description" content="Todo sobre el código 206 Partial Content. El Netflix de HTTP que te sirve solo el trozo que quieres. Streaming y descargas parciales hechas arte.">
+    <meta name="keywords" content="código 206, partial content, range requests, streaming, descargas parciales, desarrollo web">
+    <meta name="author" content="EstoNoCarga">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://estonocarga.dev/pages/errors/206">
+    <meta property="og:title" content="Código 206 - Partial Content | EstoNoCarga">
+    <meta property="og:description" content="El Netflix de HTTP que te sirve solo el trozo que quieres. Streaming y descargas parciales hechas arte.">
+    <meta property="og:image" content="https://estonocarga.dev/assets/images/206-og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://estonocarga.dev/pages/errors/206">
+    <meta property="twitter:title" content="Código 206 - Partial Content | EstoNoCarga">
+    <meta property="twitter:description" content="El Netflix de HTTP que te sirve solo el trozo que quieres.">
+    <meta property="twitter:image" content="https://estonocarga.dev/assets/images/206-og-image.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Código 206 - Partial Content",
+      "description": "Todo lo que necesitas saber sobre el código 206 Partial Content",
+      "author": {
+        "@type": "Organization",
+        "name": "EstoNoCarga"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "EstoNoCarga"
+      }
+    }
+    </script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="stylesheet" href="../../assets/css/error-page.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html" class="logo">EstoNoCarga</a>
+            <ul class="nav-links">
+                <li><a href="../../index.html#errores">Errores</a></li>
+                <li><a href="../../index.html#guías">Guías</a></li>
+                <li><a href="../../index.html#herramientas">Tools</a></li>
+                <li><a href="../../index.html#about">Nosotros</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Error Header -->
+        <section class="error-header">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../../index.html">Inicio</a>
+                    <span>→</span>
+                    <a href="../../index.html#errores">Códigos</a>
+                    <span>→</span>
+                    <span>206</span>
+                </div>
+                <div class="error-code-display">206</div>
+                <h1 class="error-name">Partial Content</h1>
+                <p class="error-description">El Netflix de HTTP que te sirve solo el trozo que quieres. Streaming y descargas parciales hechas arte.</p>
+                <div class="status-badge status-success">
+                    <span>🎬</span>
+                    Success
+                </div>
+            </div>
+        </section>
+
+        <!-- What is it -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-title">
+                            <span class="section-icon">🍕</span>
+                            ¿Qué narices es esto?
+                        </h2>
+                        
+                        <p>El <strong>código 206 Partial Content</strong> es el <strong>"solo quiero este trozo"</strong> de HTTP. Es cuando le dices al servidor <strong>"no me mandes el archivo completo, solo del byte 1000 al 5000"</strong> y él responde "vale, aquí tienes exactamente eso". Como pedir solo una porción de pizza en lugar de la pizza entera.</p>
+                        
+                        <p>Este código aparece cuando haces un <strong>Range Request</strong> - una petición donde especificas exactamente <strong>qué parte del contenido quieres</strong>. No es que algo saliera mal, es que pediste específicamente una porción y el servidor te la está sirviendo. Es la magia detrás del streaming de video, las descargas que se pueden pausar, y los PDF que se cargan por partes.</p>
+                        
+                        <p>El 206 se ve típicamente en:</p>
+                        
+                        <ul style="margin-left: 2rem; margin-bottom: 2rem;">
+                            <li style="margin-bottom: 0.5rem;">Streaming de video/audio (YouTube, Netflix, Spotify)</li>
+                            <li style="margin-bottom: 0.5rem;">Descargas grandes con pause/resume (gestores de descarga)</li>
+                            <li style="margin-bottom: 0.5rem;">Previsualización de archivos PDF enormes</li>
+                            <li style="margin-bottom: 0.5rem;">APIs que paginan contenido por rangos de bytes</li>
+                            <li style="margin-bottom: 0.5rem;">Cargas progresivas de imágenes de alta resolución</li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <h4><span>🎯</span> Dato curioso</h4>
+                            <p>El 206 es el MVP del streaming moderno. Cuando ves un video en YouTube y saltas al minuto 5, no descarga los primeros 5 minutos: hace un Range Request pidiendo solo desde ese punto. Es eficiencia pura.</p>
+                        </div>
+
+                        <p>Lo genial del 206 es que es <strong>súper inteligente</strong>. El cliente dice "quiero bytes 1000-2000" y el servidor responde exactamente con esos bytes, indicando qué porción del total está enviando. Es como un servicio de delivery que te trae exactamente el trozo de tarta que pediste, sin más ni menos.</p>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="info-card">
+                            <h3>📊 Info técnica</h3>
+                            <ul>
+                                <li><strong>Código:</strong> 206</li>
+                                <li><strong>Tipo:</strong> Success</li>
+                                <li><strong>Categoría:</strong> 2xx</li>
+                                <li><strong>Descripción:</strong> Partial Content</li>
+                                <li><strong>Cacheable:</strong> Sí (condicional)</li>
+                                <li><strong>Estándar:</strong> RFC 9110</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>🎯 Frecuencia</h3>
+                            <ul>
+                                <li><strong>Muy común</strong></li>
+                                <li>Streaming media</li>
+                                <li>Descargas grandes</li>
+                                <li>CDNs modernos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to implement -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-title">
+                            <span class="section-icon">🔧</span>
+                            Cómo implementar esto
+                        </h2>
+
+                        <div class="solution-steps">
+                            <h4>🖥️ Para servidores</h4>
+                            <ol>
+                                <li><strong>Detecta Range header:</strong> Cliente debe enviar "Range: bytes=1000-2000".</li>
+                                <li><strong>Valida el rango:</strong> Asegúrate que el rango es válido para el archivo.</li>
+                                <li><strong>Responde 206:</strong> No 200, específicamente 206 Partial Content.</li>
+                                <li><strong>Incluye Content-Range:</strong> "Content-Range: bytes 1000-2000/5000".</li>
+                                <li><strong>Envía solo esos bytes:</strong> Literalmente esa porción del archivo.</li>
+                            </ol>
+                        </div>
+
+                        <div class="solution-steps">
+                            <h4>📱 Para clientes</h4>
+                            <ol>
+                                <li><strong>Envía Range header:</strong> Especifica qué bytes quieres.</li>
+                                <li><strong>Maneja respuesta 206:</strong> No es 200, pero sigue siendo éxito.</li>
+                                <li><strong>Lee Content-Range:</strong> Te dice qué porción recibiste.</li>
+                                <li><strong>Ensambla si necesario:</strong> Para múltiples ranges.</li>
+                                <li><strong>Usa para streaming:</strong> Perfecto para media progresivo.</li>
+                            </ol>
+                        </div>
+
+                        <div class="code-block">
+                            <code>
+<!-- Cliente pide rango específico -->
+GET /video.mp4 HTTP/1.1
+Host: micdn.com
+Range: bytes=1000000-2000000
+
+<!-- Servidor responde con esa porción -->
+HTTP/1.1 206 Partial Content
+Content-Type: video/mp4
+Content-Length: 1000001
+Content-Range: bytes 1000000-2000000/50000000
+Accept-Ranges: bytes
+
+[1MB de datos del video desde byte 1000000 al 2000000]
+
+<!-- Ejemplo JavaScript -->
+fetch('/archivo-grande.pdf', {
+  headers: {
+    'Range': 'bytes=0-1023'  // Primeros 1KB
+  }
+})
+.then(response => {
+  console.log(response.status); // 206
+  console.log(response.headers.get('Content-Range'));
+  // "bytes 0-1023/2048000"
+});
+                            </code>
+                        </div>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="info-card">
+                            <h3>💡 Tips pro</h3>
+                            <ul>
+                                <li>Esencial para streaming</li>
+                                <li>Soporte obligatorio en CDNs</li>
+                                <li>Mejora UX enormemente</li>
+                                <li>Ahorra ancho de banda</li>
+                                <li>Enable Accept-Ranges: bytes</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>⚡ Casos estrella</h3>
+                            <ul>
+                                <li>Video streaming</li>
+                                <li>Audio streaming</li>
+                                <li>Descargas resumibles</li>
+                                <li>PDFs grandes</li>
+                                <li>Imágenes progresivas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Codes -->
+        <section class="related-errors">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">Códigos relacionados</h2>
+                <p style="text-align: center; color: var(--text-secondary); font-size: 1.1rem;">Otros códigos que también molan</p>
+                
+                <div class="error-grid">
+                    <a href="200.html" class="error-card">
+                        <span class="error-number">200</span>
+                        <div class="error-title">OK</div>
+                        <div class="error-desc">El archivo completo de una vez</div>
+                    </a>
+                    
+                    <a href="#" class="error-card">
+                        <span class="error-number">416</span>
+                        <div class="error-title">Range Not Satisfiable</div>
+                        <div class="error-desc">Pediste un rango que no existe</div>
+                    </a>
+                    
+                    <a href="#" class="error-card">
+                        <span class="error-number">304</span>
+                        <div class="error-title">Not Modified</div>
+                        <div class="error-desc">Tu cache ya tiene la versión correcta</div>
+                    </a>
+                    
+                    <a href="#" class="error-card">
+                        <span class="error-number">412</span>
+                        <div class="error-title">Precondition Failed</div>
+                        <div class="error-desc">Cuando fallan las condiciones del range</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#privacy">Privacidad</a>
+                    <a href="#terms">Términos</a>
+                    <a href="#contact">Contacto</a>
+                    <a href="#sitemap">Sitemap</a>
+                </div>
+                <p>&copy; 2025 EstoNoCarga. Hecho con frustración y mucho café. ☕</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;">Porque los errores web también necesitan amor (o al menos explicación).</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/error-page.js"></script>
+</body>
+</html>
