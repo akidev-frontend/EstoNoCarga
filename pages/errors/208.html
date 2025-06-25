@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código 208 - Already Reported | EstoNoCarga</title>
+    <meta name="description" content="Todo sobre el código 208 Already Reported. El 'ya te lo dije' de WebDAV. Evita duplicados en operaciones múltiples y optimiza las respuestas.">
+    <meta name="keywords" content="código 208, already reported, webdav, duplicados, binding, desarrollo web">
+    <meta name="author" content="EstoNoCarga">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://estonocarga.dev/pages/errors/208">
+    <meta property="og:title" content="Código 208 - Already Reported | EstoNoCarga">
+    <meta property="og:description" content="El 'ya te lo dije' de WebDAV. Evita duplicados en operaciones múltiples y optimiza las respuestas.">
+    <meta property="og:image" content="https://estonocarga.dev/assets/images/208-og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://estonocarga.dev/pages/errors/208">
+    <meta property="twitter:title" content="Código 208 - Already Reported | EstoNoCarga">
+    <meta property="twitter:description" content="El 'ya te lo dije' de WebDAV. Evita duplicados en operaciones múltiples.">
+    <meta property="twitter:image" content="https://estonocarga.dev/assets/images/208-og-image.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Código 208 - Already Reported",
+      "description": "Todo lo que necesitas saber sobre el código 208 Already Reported",
+      "author": {
+        "@type": "Organization",
+        "name": "EstoNoCarga"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "EstoNoCarga"
+      }
+    }
+    </script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="stylesheet" href="../../assets/css/error-page.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html" class="logo">EstoNoCarga</a>
+            <ul class="nav-links">
+                <li><a href="../../index.html#errores">Errores</a></li>
+                <li><a href="../../index.html#guías">Guías</a></li>
+                <li><a href="../../index.html#herramientas">Tools</a></li>
+                <li><a href="../../index.html#about">Nosotros</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Error Header -->
+        <section class="error-header">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../../index.html">Inicio</a>
+                    <span>→</span>
+                    <a href="../../index.html#errores">Códigos</a>
+                    <span>→</span>
+                    <span>208</span>
+                </div>
+                <div class="error-code-display">208</div>
+                <h1 class="error-name">Already Reported</h1>
+                <p class="error-description">El "ya te lo dije" de WebDAV. Evita duplicados en operaciones múltiples y optimiza las respuestas.</p>
+                <div class="status-badge status-success">
+                    <span>🔄</span>
+                    Success
+                </div>
+            </div>
+        </section>
+
+        <!-- What is it -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-title">
+                            <span class="section-icon">📋</span>
+                            ¿Qué narices es esto?
+                        </h2>
+                        
+                        <p>El <strong>código 208 Already Reported</strong> es el <strong>"oye, que ese archivo ya te lo mencioné antes"</strong> de WebDAV. Es cuando el servidor está listando recursos y se da cuenta de que <strong>va a repetir información</strong> que ya envió en la misma respuesta. Como cuando le preguntas a tu amigo por los libros de su estantería y te dice <strong>"Guerra y Paz ya te lo dije, está duplicado"</strong>.</p>
+                        
+                        <p>Este código es <strong>aún más específico que el 207</strong>, porque solo aparece cuando WebDAV tiene <strong>"bindings"</strong> (como enlaces duros en sistemas de archivos). Imagínate que un mismo archivo puede aparecer en múltiples rutas por enlaces simbólicos o duros. Si pides info de una carpeta completa, <strong>el servidor no va a repetir datos del mismo archivo</strong> solo porque aparece en varios sitios.</p>
+                        
+                        <p>El 208 se ve típicamente en:</p>
+                        
+                        <ul style="margin-left: 2rem; margin-bottom: 2rem;">
+                            <li style="margin-bottom: 0.5rem;">WebDAV con extensiones de "Binding" (RFC 5842)</li>
+                            <li style="margin-bottom: 0.5rem;">Consultas PROPFIND con Depth: infinity</li>
+                            <li style="margin-bottom: 0.5rem;">Sistemas que soportan hard links por HTTP</li>
+                            <li style="margin-bottom: 0.5rem;">Prevención de bucles infinitos en estructuras recursivas</li>
+                            <li style="margin-bottom: 0.5rem;">Optimización de respuestas con recursos duplicados</li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <h4><span>🎯</span> Dato curioso</h4>
+                            <p>El 208 es como el inspector de eficiencia de HTTP: detecta cuando vas a enviar info duplicada y dice "tranquilo, ese ya lo reporté". Solo aparece dentro de respuestas 207 Multi-Status y es tan raro que muchos devs nunca lo verán.</p>
+                        </div>
+
+                        <p>Lo genial del 208 es que <strong>hace las respuestas más eficientes</strong>. En lugar de enviar la misma información múltiples veces porque un recurso aparece en varias rutas, el servidor dice <strong>"ya reportado"</strong> y ahorra ancho de banda. Es optimización pura y dura.</p>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="info-card">
+                            <h3>📊 Info técnica</h3>
+                            <ul>
+                                <li><strong>Código:</strong> 208</li>
+                                <li><strong>Tipo:</strong> Success</li>
+                                <li><strong>Categoría:</strong> 2xx</li>
+                                <li><strong>Descripción:</strong> Already Reported</li>
+                                <li><strong>Cacheable:</strong> No</li>
+                                <li><strong>Estándar:</strong> RFC 5842 (WebDAV Binding)</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>🎯 Frecuencia</h3>
+                            <ul>
+                                <li><strong>Rarísimo</strong></li>
+                                <li>Solo WebDAV avanzado</li>
+                                <li>Extensiones de Binding</li>
+                                <li>Sistemas muy específicos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to implement -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-title">
+                            <span class="section-icon">🔧</span>
+                            Cómo implementar esto
+                        </h2>
+
+                        <div class="solution-steps">
+                            <h4>🖥️ Para servidores WebDAV avanzados</h4>
+                            <ol>
+                                <li><strong>Detecta recursos duplicados:</strong> Mismo resource-id en múltiples rutas.</li>
+                                <li><strong>Primera aparición 200:</strong> Reporta completo la primera vez.</li>
+                                <li><strong>Siguientes apariciones 208:</strong> Solo indica "already reported".</li>
+                                <li><strong>Incluye resource-id:</strong> Para que cliente pueda reconstruir estructura.</li>
+                                <li><strong>Optimiza respuesta:</strong> Menos datos, misma información.</li>
+                            </ol>
+                        </div>
+
+                        <div class="solution-steps">
+                            <h4>📱 Para clientes WebDAV</h4>
+                            <ol>
+                                <li><strong>Entiende el 208:</strong> No es error, es optimización.</li>
+                                <li><strong>Usa resource-id:</strong> Para identificar recursos únicos.</li>
+                                <li><strong>Reconstruye bindings:</strong> Mapea múltiples rutas al mismo recurso.</li>
+                                <li><strong>Evita procesar duplicados:</strong> Un resource-id = un recurso.</li>
+                                <li><strong>Maneja compatibilidad:</strong> Algunos clientes no conocen 208.</li>
+                            </ol>
+                        </div>
+
+                        <div class="code-block">
+                            <code>
+<!-- Cliente solicita info de colección con bindings -->
+PROPFIND /shared/ HTTP/1.1
+Host: webdav.empresa.com
+Depth: infinity
+Content-Type: text/xml
+
+&lt;?xml version="1.0"?&gt;
+&lt;propfind xmlns="DAV:"&gt;
+  &lt;prop&gt;
+    &lt;displayname/&gt;
+    &lt;resource-id/&gt;
+    &lt;getcontentlength/&gt;
+  &lt;/prop&gt;
+&lt;/propfind&gt;
+
+<!-- Servidor responde evitando duplicados -->
+HTTP/1.1 207 Multi-Status
+Content-Type: application/xml; charset=utf-8
+
+&lt;?xml version="1.0"?&gt;
+&lt;multistatus xmlns="DAV:"&gt;
+  &lt;response&gt;
+    &lt;href&gt;/shared/original/archivo.pdf&lt;/href&gt;
+    &lt;propstat&gt;
+      &lt;status&gt;HTTP/1.1 200 OK&lt;/status&gt;
+      &lt;prop&gt;
+        &lt;displayname&gt;Documento importante&lt;/displayname&gt;
+        &lt;resource-id&gt;
+          &lt;href&gt;urn:uuid:12345-abcd-6789&lt;/href&gt;
+        &lt;/resource-id&gt;
+        &lt;getcontentlength&gt;2048&lt;/getcontentlength&gt;
+      &lt;/prop&gt;
+    &lt;/propstat&gt;
+  &lt;/response&gt;
+  &lt;response&gt;
+    &lt;href&gt;/shared/link/mismo-archivo.pdf&lt;/href&gt;
+    &lt;propstat&gt;
+      &lt;status&gt;HTTP/1.1 208 Already Reported&lt;/status&gt;
+      &lt;prop&gt;
+        &lt;resource-id&gt;
+          &lt;href&gt;urn:uuid:12345-abcd-6789&lt;/href&gt;
+        &lt;/resource-id&gt;
+      &lt;/prop&gt;
+    &lt;/propstat&gt;
+  &lt;/response&gt;
+&lt;/multistatus&gt;
+                            </code>
+                        </div>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="info-card">
+                            <h3>💡 Tips pro</h3>
+                            <ul>
+                                <li>Solo en WebDAV con Bindings</li>
+                                <li>Siempre dentro de respuesta 207</li>
+                                <li>Requiere resource-id para funcionar</li>
+                                <li>Evita bucles infinitos</li>
+                                <li>Optimización de ancho de banda</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>⚡ Casos típicos</h3>
+                            <ul>
+                                <li>Hard links en WebDAV</li>
+                                <li>Múltiples rutas al mismo archivo</li>
+                                <li>PROPFIND con Depth: infinity</li>
+                                <li>Prevenir bucles recursivos</li>
+                                <li>Optimizar respuestas grandes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Codes -->
+        <section class="related-errors">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">Códigos relacionados</h2>
+                <p style="text-align: center; color: var(--text-secondary); font-size: 1.1rem;">Otros códigos que también molan</p>
+                
+                <div class="error-grid">
+                    <a href="207.html" class="error-card">
+                        <span class="error-number">207</span>
+                        <div class="error-title">Multi-Status</div>
+                        <div class="error-desc">El contenedor donde vive el 208</div>
+                    </a>
+                    
+                    <a href="200.html" class="error-card">
+                        <span class="error-number">200</span>
+                        <div class="error-title">OK</div>
+                        <div class="error-desc">Para la primera aparición del recurso</div>
+                    </a>
+                    
+                    <a href="#" class="error-card">
+                        <span class="error-number">508</span>
+                        <div class="error-title">Loop Detected</div>
+                        <div class="error-desc">Cuando hay bucles infinitos reales</div>
+                    </a>
+                    
+                    <a href="#" class="error-card">
+                        <span class="error-number">300</span>
+                        <div class="error-title">Multiple Choices</div>
+                        <div class="error-desc">Múltiples opciones pero sin WebDAV</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#privacy">Privacidad</a>
+                    <a href="#terms">Términos</a>
+                    <a href="#contact">Contacto</a>
+                    <a href="#sitemap">Sitemap</a>
+                </div>
+                <p>&copy; 2025 EstoNoCarga. Hecho con frustración y mucho café. ☕</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;">Porque los errores web también necesitan amor (o al menos explicación).</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/error-page.js"></script>
+</body>
+</html>

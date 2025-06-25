@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código 226 - IM Used | EstoNoCarga</title>
+    <meta name="description" content="Todo sobre el código 226 IM Used. El genio del delta encoding que solo te manda los cambios. HTTP optimizado pero que nadie usa. RFC 3229 en toda su gloria.">
+    <meta name="keywords" content="código 226, IM used, delta encoding, vcdiff, A-IM header, desarrollo web, RFC 3229">
+    <meta name="author" content="EstoNoCarga">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://estonocarga.dev/pages/errors/226">
+    <meta property="og:title" content="Código 226 - IM Used | EstoNoCarga">
+    <meta property="og:description" content="El genio del delta encoding que solo te manda los cambios. HTTP optimizado pero que nadie usa.">
+    <meta property="og:image" content="https://estonocarga.dev/assets/images/226-og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://estonocarga.dev/pages/errors/226">
+    <meta property="twitter:title" content="Código 226 - IM Used | EstoNoCarga">
+    <meta property="twitter:description" content="El genio del delta encoding que solo te manda los cambios. HTTP optimizado.">
+    <meta property="twitter:image" content="https://estonocarga.dev/assets/images/226-og-image.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Código 226 - IM Used",
+      "description": "Todo lo que necesitas saber sobre el código 226 IM Used",
+      "author": {
+        "@type": "Organization",
+        "name": "EstoNoCarga"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "EstoNoCarga"
+      }
+    }
+    </script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="stylesheet" href="../../assets/css/error-page.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html" class="logo">EstoNoCarga</a>
+            <ul class="nav-links">
+                <li><a href="../../index.html#errores">Errores</a></li>
+                <li><a href="../../index.html#guías">Guías</a></li>
+                <li><a href="../../index.html#herramientas">Tools</a></li>
+                <li><a href="../../index.html#about">Nosotros</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Error Header -->
+        <section class="error-header">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../../index.html">Inicio</a>
+                    <span>→</span>
+                    <a href="../../index.html#errores">Códigos</a>
+                    <span>→</span>
+                    <span>226</span>
+                </div>
+                <div class="error-code-display">226</div>
+                <h1 class="error-name">IM Used</h1>
+                <p class="error-description">El genio del delta encoding que solo te manda los cambios. HTTP optimizado pero que nadie usa. RFC 3229 en toda su gloria.</p>
+                <div class="status-badge status-success">
+                    <span>🔧</span>
+                    Success
+                </div>
+            </div>
+        </section>
+
+        <!-- What is it -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-title">
+                            <span class="section-icon">📋</span>
+                            ¿Qué narices es esto?
+                        </h2>
+                        
+                        <p>El <strong>código 226 IM Used</strong> es el <strong>"no te mando todo, solo las diferencias"</strong> de HTTP. Es cuando el servidor usa <strong>delta encoding</strong> para enviarte solo los cambios desde la última versión que tienes en caché. Como cuando tu colega programador te dice <strong>"aquí tienes el diff"</strong> en lugar de enviarte todo el proyecto otra vez.</p>
+                        
+                        <p><strong>IM significa "Instance Manipulations"</strong> - las transformaciones aplicadas al recurso original. Es una funcionalidad oficialmente estándar desde el <strong>RFC 3229 (2002)</strong>, pero que prácticamente <strong>nadie implementa</strong>. El cliente envía un header <strong>A-IM</strong> indicando qué formatos de delta soporta (vcdiff, diffe, gzip), y si el servidor lo entiende, responde con solo los cambios.</p>
+                        
+                        <p>El 226 debería aparecer en:</p>
+                        
+                        <ul style="margin-left: 2rem; margin-bottom: 2rem;">
+                            <li style="margin-bottom: 0.5rem;">Servidores que implementan RFC 3229 (casi ninguno)</li>
+                            <li style="margin-bottom: 0.5rem;">Sistemas de cache inteligentes con delta encoding</li>
+                            <li style="margin-bottom: 0.5rem;">APIs que solo devuelven cambios incrementales</li>
+                            <li style="margin-bottom: 0.5rem;">CDNs con optimización de ancho de banda avanzada</li>
+                            <li style="margin-bottom: 0.5rem;">Casos donde el contenido cambió pero tienes la versión anterior</li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <h4><span>🎯</span> Dato curioso</h4>
+                            <p>El 226 es como el Tesla de los códigos HTTP: tecnológicamente brillante, oficialmente estándar, súper eficiente... pero lleva 20+ años esperando que alguien lo adopte masivamente. Es el futuro que nunca llegó.</p>
+                        </div>
+
+                        <p>La idea es <strong>genial</strong>: en lugar de reenviar una página completa que solo cambió un párrafo, envías el diff usando algoritmos como <strong>vcdiff</strong> o <strong>diffe</strong>. El cliente aplica los cambios y reconstruye la versión actual. <strong>Perfecto para documentos grandes con cambios pequeños</strong>, pero requiere que tanto cliente como servidor soporten delta encoding.</p>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="info-card">
+                            <h3>📊 Info técnica</h3>
+                            <ul>
+                                <li><strong>Código:</strong> 226</li>
+                                <li><strong>Tipo:</strong> Success</li>
+                                <li><strong>Categoría:</strong> 2xx</li>
+                                <li><strong>Descripción:</strong> IM Used</li>
+                                <li><strong>Cacheable:</strong> Sí (con condiciones)</li>
+                                <li><strong>Estándar:</strong> RFC 3229 (2002)</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>🎯 Frecuencia</h3>
+                            <ul>
+                                <li><strong>Casi inexistente</strong></li>
+                                <li>Estándar oficial ignorado</li>
+                                <li>Implementaciones experimentales</li>
+                                <li>Gran potencial sin usar</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to implement -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-title">
+                            <span class="section-icon">🔧</span>
+                            Cómo implementar esto
+                        </h2>
+
+                        <div class="solution-steps">
+                            <h4>🖥️ Para servidores (si quieres ser pionero)</h4>
+                            <ol>
+                                <li><strong>Detecta soporte del cliente:</strong> Busca header A-IM en la request.</li>
+                                <li><strong>Verifica versión base:</strong> Usa If-None-Match para identificar qué versión tiene.</li>
+                                <li><strong>Calcula delta:</strong> Genera diff entre versión base y actual.</li>
+                                <li><strong>Responde 226:</strong> Con headers IM y Delta-Base indicando algoritmo.</li>
+                                <li><strong>Incluye solo cambios:</strong> Body contiene el delta, no el recurso completo.</li>
+                            </ol>
+                        </div>
+
+                        <div class="solution-steps">
+                            <h4>📱 Para clientes (si quieres optimizar)</h4>
+                            <ol>
+                                <li><strong>Envía header A-IM:</strong> Lista algoritmos que soportas (vcdiff, diffe).</li>
+                                <li><strong>Incluye If-None-Match:</strong> ETag de la versión que tienes en caché.</li>
+                                <li><strong>Maneja respuesta 226:</strong> Aplica delta a tu versión base.</li>
+                                <li><strong>Reconstruye recurso:</strong> Combina base + delta = versión actual.</li>
+                                <li><strong>Actualiza caché:</strong> Guarda nueva versión con nuevo ETag.</li>
+                            </ol>
+                        </div>
+
+                        <div class="code-block">
+                            <code>
+<!-- Cliente solicita con soporte delta -->
+GET /documento.html HTTP/1.1
+Host: example.com
+If-None-Match: "123abc"
+A-IM: vcdiff, diffe, gzip
+
+<!-- Servidor responde con delta -->
+HTTP/1.1 226 IM Used
+ETag: "456def"
+IM: vcdiff
+Delta-Base: "123abc"
+Content-Type: application/vcdiff
+Content-Length: 482
+
+[contenido binario del delta vcdiff]
+
+<!-- Lo que habría pasado sin delta encoding -->
+HTTP/1.1 200 OK
+ETag: "456def"
+Content-Type: text/html
+Content-Length: 15420
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;...todo el documento completo...&lt;/html&gt;
+
+<!-- Con 226: 482 bytes vs sin delta: 15420 bytes -->
+<!-- ¡Ahorro del 97%! -->
+                            </code>
+                        </div>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="info-card">
+                            <h3>💡 Tips pro</h3>
+                            <ul>
+                                <li>Estándar oficial pero sin adopción</li>
+                                <li>Perfecto para documentos grandes</li>
+                                <li>Requiere caché del cliente</li>
+                                <li>vcdiff es el algoritmo más eficiente</li>
+                                <li>Combina bien con compresión gzip</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>⚡ Casos ideales</h3>
+                            <ul>
+                                <li>PDFs con cambios menores</li>
+                                <li>Documentos XML/JSON grandes</li>
+                                <li>Páginas web con updates pequeños</li>
+                                <li>APIs con datos incrementales</li>
+                                <li>Sincronización eficiente</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Codes -->
+        <section class="related-errors">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">Códigos relacionados</h2>
+                <p style="text-align: center; color: var(--text-secondary); font-size: 1.1rem;">Otros códigos que también molan</p>
+                
+                <div class="error-grid">
+                    <a href="200.html" class="error-card">
+                        <span class="error-number">200</span>
+                        <div class="error-title">OK</div>
+                        <div class="error-desc">Cuando envías el recurso completo</div>
+                    </a>
+                    
+                    <a href="#" class="error-card">
+                        <span class="error-number">304</span>
+                        <div class="error-title">Not Modified</div>
+                        <div class="error-desc">Cuando no hay cambios (sin delta)</div>
+                    </a>
+                    
+                    <a href="#" class="error-card">
+                        <span class="error-number">206</span>
+                        <div class="error-title">Partial Content</div>
+                        <div class="error-desc">Contenido parcial por rangos</div>
+                    </a>
+                    
+                    <a href="208.html" class="error-card">
+                        <span class="error-number">208</span>
+                        <div class="error-title">Already Reported</div>
+                        <div class="error-desc">Otro código raro de optimización</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#privacy">Privacidad</a>
+                    <a href="#terms">Términos</a>
+                    <a href="#contact">Contacto</a>
+                    <a href="#sitemap">Sitemap</a>
+                </div>
+                <p>&copy; 2025 EstoNoCarga. Hecho con frustración y mucho café. ☕</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;">Porque los errores web también necesitan amor (o al menos explicación).</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/error-page.js"></script>
+</body>
+</html>

@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código 401 - Unauthorized | EstoNoCarga</title>
+    <meta name="description" content="Todo sobre el código 401 Unauthorized. Cuando el servidor dice 'quién eres tú y por qué debería dejarte pasar'. Autenticación, tokens y credenciales.">
+    <meta name="keywords" content="código 401, unauthorized, error autenticación, login, tokens, credenciales, OAuth">
+    <meta name="author" content="EstoNoCarga">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://estonocarga.dev/pages/errors/401">
+    <meta property="og:title" content="Código 401 - Unauthorized | EstoNoCarga">
+    <meta property="og:description" content="Cuando el servidor dice 'quién eres tú y por qué debería dejarte pasar'. Autenticación, tokens y credenciales.">
+    <meta property="og:image" content="https://estonocarga.dev/assets/images/401-og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://estonocarga.dev/pages/errors/401">
+    <meta property="twitter:title" content="Código 401 - Unauthorized | EstoNoCarga">
+    <meta property="twitter:description" content="Cuando el servidor dice 'quién eres tú y por qué debería dejarte pasar'. Autenticación y credenciales.">
+    <meta property="twitter:image" content="https://estonocarga.dev/assets/images/401-og-image.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Código 401 - Unauthorized",
+      "description": "Todo lo que necesitas saber sobre el código 401 Unauthorized",
+      "author": {
+        "@type": "Organization",
+        "name": "EstoNoCarga"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "EstoNoCarga"
+      }
+    }
+    </script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="stylesheet" href="../../assets/css/error-page.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html" class="logo">EstoNoCarga</a>
+            <ul class="nav-links">
+                <li><a href="../../index.html#errores">Errores</a></li>
+                <li><a href="../../index.html#guías">Guías</a></li>
+                <li><a href="../../index.html#herramientas">Tools</a></li>
+                <li><a href="../../index.html#about">Nosotros</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Error Header -->
+        <section class="error-header">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../../index.html">Inicio</a>
+                    <span>→</span>
+                    <a href="../../index.html#errores">Códigos</a>
+                    <span>→</span>
+                    <span>401</span>
+                </div>
+                <div class="error-code-display">401</div>
+                <h1 class="error-name">Unauthorized</h1>
+                <p class="error-description">Cuando el servidor dice "¿quién eres tú y por qué debería dejarte pasar?". Autenticación, tokens y credenciales.</p>
+                <div class="status-badge status-client-error">
+                    <span>🚫</span>
+                    Client Error
+                </div>
+            </div>
+        </section>
+
+        <!-- What is it -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-title">
+                            <span class="section-icon">🔐</span>
+                            ¿Qué narices es esto?
+                        </h2>
+                        
+                        <p>El <strong>código 401 Unauthorized</strong> es el <strong>"papers, please"</strong> de HTTP. Es la respuesta del servidor cuando intentas acceder a algo pero no has demostrado quién eres, o tus credenciales están mal. <strong>Es como intentar entrar a un club exclusivo sin estar en la lista</strong>, o peor aún, con un DNI falsificado que ni siquiera está bien hecho.</p>
+                        
+                        <p>A pesar del nombre "Unauthorized", <strong>realmente debería llamarse "Unauthenticated"</strong>. No es que no tengas permisos (eso sería 403), sino que no has probado tu identidad correctamente. <strong>Es el equivalente digital de que el portero del antro te diga "no sé quién eres, así que no pasas"</strong>.</p>
+                        
+                        <p>El 401 aparece típicamente cuando:</p>
+                        
+                        <ul style="margin-left: 2rem; margin-bottom: 2rem;">
+                            <li style="margin-bottom: 0.5rem;">No incluyes un token de autenticación en la petición</li>
+                            <li style="margin-bottom: 0.5rem;">El token está mal formado o es inválido</li>
+                            <li style="margin-bottom: 0.5rem;">El token ha expirado (ya no es válido)</li>
+                            <li style="margin-bottom: 0.5rem;">Las credenciales de usuario/contraseña son incorrectas</li>
+                            <li style="margin-bottom: 0.5rem;">La sesión ha caducado o fue invalidada</li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <h4><span>🎯</span> Dato curioso</h4>
+                            <p>El 401 DEBE incluir un header WWW-Authenticate que le diga al cliente cómo autenticarse. Si no lo incluye, técnicamente está mal implementado. Es como rechazar a alguien sin decirle qué documentos necesita.</p>
+                        </div>
+
+                        <p>Lo tricky del 401 es que <strong>puede aparecer incluso cuando piensas que estás autenticado</strong>. Tu token puede haberse expirado justo antes de la petición, o el servidor puede haber reiniciado y perdido tu sesión. <strong>Es como llegar a una cita y que te digan "perdón, pero ya no te conozco"</strong>. Por eso es crucial implementar refresh de tokens y manejo graceful de re-autenticación.</p>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="info-card">
+                            <h3>📊 Info técnica</h3>
+                            <ul>
+                                <li><strong>Código:</strong> 401</li>
+                                <li><strong>Tipo:</strong> Client Error</li>
+                                <li><strong>Categoría:</strong> 4xx</li>
+                                <li><strong>Descripción:</strong> Unauthorized</li>
+                                <li><strong>Cacheable:</strong> No</li>
+                                <li><strong>Estándar:</strong> HTTP/1.0 RFC 1945</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>🎯 Frecuencia</h3>
+                            <ul>
+                                <li><strong>Muy común en APIs</strong></li>
+                                <li>Sistemas con autenticación</li>
+                                <li>Apps móviles y SPAs</li>
+                                <li>Servicios con tokens JWT</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to implement -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-title">
+                            <span class="section-icon">🔧</span>
+                            Cómo manejar esto
+                        </h2>
+
+                        <div class="solution-steps">
+                            <h4>🖥️ Para servidores (generar 401s útiles)</h4>
+                            <ol>
+                                <li><strong>Incluye WWW-Authenticate header:</strong> Especifica el método de auth requerido.</li>
+                                <li><strong>Responde rápido:</strong> No hagas que el cliente espere para saber que falló.</li>
+                                <li><strong>Mensaje claro:</strong> "Token expirado" vs "Credenciales inválidas".</li>
+                                <li><strong>No expongas info sensible:</strong> No digas si el usuario existe o no.</li>
+                                <li><strong>Logea intentos:</strong> Para detectar ataques de fuerza bruta.</li>
+                            </ol>
+                        </div>
+
+                        <div class="solution-steps">
+                            <h4>📱 Para desarrolladores frontend</h4>
+                            <ol>
+                                <li><strong>Redirige al login:</strong> Automáticamente cuando recibas 401.</li>
+                                <li><strong>Implementa refresh tokens:</strong> Intenta renovar antes de pedir login.</li>
+                                <li><strong>Intercepta todas las requests:</strong> Maneja 401s globalmente.</li>
+                                <li><strong>Limpia estado local:</strong> Borra tokens inválidos del storage.</li>
+                                <li><strong>UX amigable:</strong> "Sesión expirada, por favor inicia sesión".</li>
+                            </ol>
+                        </div>
+
+                        <div class="code-block">
+                            <code>
+<!-- Ejemplos típicos de peticiones que generan 401 -->
+
+<!-- ❌ Sin token de autenticación -->
+GET /api/protected-resource HTTP/1.1
+Host: api.example.com
+
+<!-- Respuesta del servidor -->
+HTTP/1.1 401 Unauthorized
+WWW-Authenticate: Bearer realm="api"
+Content-Type: application/json
+
+{
+  "error": "Unauthorized",
+  "message": "Authentication required",
+  "code": "MISSING_TOKEN"
+}
+
+<!-- ❌ Token inválido o expirado -->
+GET /api/protected-resource HTTP/1.1
+Authorization: Bearer invalid_or_expired_token
+
+<!-- ❌ Credenciales incorrectas -->
+POST /api/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "username": "usuario",
+  "password": "contraseña_incorrecta"
+}
+
+<!-- ✅ PHP: Implementar autenticación JWT -->
+&lt;?php
+function validateJWTToken($authHeader) {
+    if (!$authHeader || !str_starts_with($authHeader, 'Bearer ')) {
+        http_response_code(401);
+        header('WWW-Authenticate: Bearer realm="api"');
+        return [
+            'error' => 'Unauthorized',
+            'message' => 'Bearer token required',
+            'code' => 'MISSING_TOKEN'
+        ];
+    }
+    
+    $token = substr($authHeader, 7); // Quitar "Bearer "
+    
+    try {
+        $decoded = JWT::decode($token, $secretKey, ['HS256']);
+        
+        // Verificar expiración
+        if ($decoded->exp < time()) {
+            http_response_code(401);
+            header('WWW-Authenticate: Bearer realm="api"');
+            return [
+                'error' => 'Unauthorized',
+                'message' => 'Token has expired',
+                'code' => 'TOKEN_EXPIRED'
+            ];
+        }
+        
+        return $decoded; // Token válido
+        
+    } catch (Exception $e) {
+        http_response_code(401);
+        header('WWW-Authenticate: Bearer realm="api"');
+        return [
+            'error' => 'Unauthorized', 
+            'message' => 'Invalid token',
+            'code' => 'INVALID_TOKEN'
+        ];
+    }
+}
+
+// Middleware de autenticación
+function requireAuth() {
+    $authHeader = $_SERVER['HTTP_AUTHORIZATION'] ?? '';
+    $result = validateJWTToken($authHeader);
+    
+    if (isset($result['error'])) {
+        header('Content-Type: application/json');
+        echo json_encode($result);
+        exit();
+    }
+    
+    return $result; // Usuario autenticado
+}
+
+// Usar en endpoints protegidos
+$user = requireAuth();
+echo json_encode(['message' => 'Acceso autorizado', 'user' => $user->sub]);
+?&gt;
+
+<!-- ✅ Node.js: Middleware de autenticación -->
+const jwt = require('jsonwebtoken');
+const express = require('express');
+const app = express();
+
+// Middleware de autenticación
+function authenticateToken(req, res, next) {
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1]; // Bearer TOKEN
+    
+    if (!token) {
+        return res.status(401)
+            .set('WWW-Authenticate', 'Bearer realm="api"')
+            .json({
+                error: 'Unauthorized',
+                message: 'Access token required',
+                code: 'MISSING_TOKEN'
+            });
+    }
+    
+    jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+        if (err) {
+            const errorCode = err.name === 'TokenExpiredError' ? 'TOKEN_EXPIRED' : 'INVALID_TOKEN';
+            const message = err.name === 'TokenExpiredError' ? 'Token has expired' : 'Invalid token';
+            
+            return res.status(401)
+                .set('WWW-Authenticate', 'Bearer realm="api"')
+                .json({
+                    error: 'Unauthorized',
+                    message: message,
+                    code: errorCode
+                });
+        }
+        
+        req.user = user;
+        next();
+    });
+}
+
+// Endpoint protegido
+app.get('/api/protected', authenticateToken, (req, res) => {
+    res.json({ 
+        message: 'Access granted', 
+        user: req.user.sub 
+    });
+});
+
+// Login endpoint
+app.post('/api/login', async (req, res) => {
+    const { username, password } = req.body;
+    
+    // Verificar credenciales (hasheadas en producción)
+    if (!isValidCredentials(username, password)) {
+        return res.status(401).json({
+            error: 'Unauthorized',
+            message: 'Invalid credentials',
+            code: 'INVALID_CREDENTIALS'
+        });
+    }
+    
+    // Generar tokens
+    const accessToken = jwt.sign(
+        { sub: username, iat: Date.now() }, 
+        process.env.JWT_SECRET,
+        { expiresIn: '15m' }
+    );
+    
+    const refreshToken = jwt.sign(
+        { sub: username }, 
+        process.env.REFRESH_SECRET,
+        { expiresIn: '7d' }
+    );
+    
+    res.json({ accessToken, refreshToken });
+});
+
+<!-- ✅ JavaScript: Cliente que maneja 401s -->
+class APIClient {
+    constructor(baseURL) {
+        this.baseURL = baseURL;
+        this.accessToken = localStorage.getItem('accessToken');
+        this.refreshToken = localStorage.getItem('refreshToken');
+    }
+    
+    async request(endpoint, options = {}) {
+        // Intentar petición con token actual
+        let response = await this.makeRequest(endpoint, options);
+        
+        // Si es 401 y tenemos refresh token, intentar renovar
+        if (response.status === 401 && this.refreshToken) {
+            const renewed = await this.renewToken();
+            if (renewed) {
+                // Reintentar con nuevo token
+                response = await this.makeRequest(endpoint, options);
+            }
+        }
+        
+        // Si sigue siendo 401, redirigir a login
+        if (response.status === 401) {
+            this.clearTokens();
+            this.redirectToLogin();
+            throw new Error('Authentication required');
+        }
+        
+        return response;
+    }
+    
+    async makeRequest(endpoint, options) {
+        const headers = {
+            'Content-Type': 'application/json',
+            ...options.headers
+        };
+        
+        if (this.accessToken) {
+            headers['Authorization'] = `Bearer ${this.accessToken}`;
+        }
+        
+        return fetch(`${this.baseURL}${endpoint}`, {
+            ...options,
+            headers
+        });
+    }
+    
+    async renewToken() {
+        try {
+            const response = await fetch(`${this.baseURL}/auth/refresh`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ refreshToken: this.refreshToken })
+            });
+            
+            if (response.ok) {
+                const { accessToken } = await response.json();
+                this.accessToken = accessToken;
+                localStorage.setItem('accessToken', accessToken);
+                return true;
+            }
+        } catch (error) {
+            console.error('Token renewal failed:', error);
+        }
+        
+        return false;
+    }
+    
+    clearTokens() {
+        this.accessToken = null;
+        this.refreshToken = null;
+        localStorage.removeItem('accessToken');
+        localStorage.removeItem('refreshToken');
+    }
+    
+    redirectToLogin() {
+        // Guardar URL actual para redirigir después del login
+        localStorage.setItem('returnUrl', window.location.pathname);
+        window.location.href = '/login';
+    }
+}
+
+// Uso
+const api = new APIClient('https://api.example.com');
+
+async function fetchProtectedData() {
+    try {
+        const response = await api.request('/api/protected-data');
+        const data = await response.json();
+        console.log('Data received:', data);
+    } catch (error) {
+        console.error('Failed to fetch data:', error.message);
+    }
+}
+                            </code>
+                        </div>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="info-card">
+                            <h3>💡 Tips pro</h3>
+                            <ul>
+                                <li>Siempre incluye WWW-Authenticate header</li>
+                                <li>Implementa refresh tokens</li>
+                                <li>Maneja 401s globalmente en el cliente</li>
+                                <li>UX clara: "sesión expirada"</li>
+                                <li>Logea intentos para seguridad</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>⚡ Causas comunes</h3>
+                            <ul>
+                                <li>Token ausente o inválido</li>
+                                <li>Token expirado</li>
+                                <li>Credenciales incorrectas</li>
+                                <li>Sesión caducada</li>
+                                <li>Headers mal formados</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Codes -->
+        <section class="related-errors">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">Códigos relacionados</h2>
+                <p style="text-align: center; color: var(--text-secondary); font-size: 1.1rem;">Otros códigos que también molan</p>
+                
+                <div class="error-grid">
+                    <a href="#" class="error-card">
+                        <span class="error-number">403</span>
+                        <div class="error-title">Forbidden</div>
+                        <div class="error-desc">Autenticado pero sin permisos</div>
+                    </a>
+                    
+                    <a href="#" class="error-card">
+                        <span class="error-number">400</span>
+                        <div class="error-title">Bad Request</div>
+                        <div class="error-desc">Petición malformada</div>
+                    </a>
+                    
+                    <a href="#" class="error-card">
+                        <span class="error-number">429</span>
+                        <div class="error-title">Too Many Requests</div>
+                        <div class="error-desc">Rate limit excedido</div>
+                    </a>
+                    
+                    <a href="#" class="error-card">
+                        <span class="error-number">404</span>
+                        <div class="error-title">Not Found</div>
+                        <div class="error-desc">El endpoint no existe</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#privacy">Privacidad</a>
+                    <a href="#terms">Términos</a>
+                    <a href="#contact">Contacto</a>
+                    <a href="#sitemap">Sitemap</a>
+                </div>
+                <p>&copy; 2025 EstoNoCarga. Hecho con frustración y mucho café. ☕</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;">Porque los errores web también necesitan amor (o al menos explicación).</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/error-page.js"></script>
+</body>
+</html>

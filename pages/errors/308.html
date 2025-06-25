@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código 308 - Permanent Redirect | EstoNoCarga</title>
+    <meta name="description" content="Todo sobre el código 308 Permanent Redirect. El 301 pero respetando métodos HTTP. Redirecciones permanentes sin cambiar POST a GET.">
+    <meta name="keywords" content="código 308, permanent redirect, redirección permanente, HTTP método, 301 vs 308, SEO">
+    <meta name="author" content="EstoNoCarga">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://estonocarga.dev/pages/errors/308">
+    <meta property="og:title" content="Código 308 - Permanent Redirect | EstoNoCarga">
+    <meta property="og:description" content="El 301 pero respetando métodos HTTP. Redirecciones permanentes sin cambiar POST a GET.">
+    <meta property="og:image" content="https://estonocarga.dev/assets/images/308-og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://estonocarga.dev/pages/errors/308">
+    <meta property="twitter:title" content="Código 308 - Permanent Redirect | EstoNoCarga">
+    <meta property="twitter:description" content="El 301 pero respetando métodos HTTP. Redirecciones permanentes modernas.">
+    <meta property="twitter:image" content="https://estonocarga.dev/assets/images/308-og-image.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Código 308 - Permanent Redirect",
+      "description": "Todo lo que necesitas saber sobre el código 308 Permanent Redirect",
+      "author": {
+        "@type": "Organization",
+        "name": "EstoNoCarga"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "EstoNoCarga"
+      }
+    }
+    </script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="stylesheet" href="../../assets/css/error-page.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html" class="logo">EstoNoCarga</a>
+            <ul class="nav-links">
+                <li><a href="../../index.html#errores">Errores</a></li>
+                <li><a href="../../index.html#guías">Guías</a></li>
+                <li><a href="../../index.html#herramientas">Tools</a></li>
+                <li><a href="../../index.html#about">Nosotros</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Error Header -->
+        <section class="error-header">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../../index.html">Inicio</a>
+                    <span>→</span>
+                    <a href="../../index.html#errores">Códigos</a>
+                    <span>→</span>
+                    <span>308</span>
+                </div>
+                <div class="error-code-display">308</div>
+                <h1 class="error-name">Permanent Redirect</h1>
+                <p class="error-description">El 301 pero respetando métodos HTTP. Redirecciones permanentes sin cambiar POST a GET.</p>
+                <div class="status-badge status-redirect">
+                    <span>🔗</span>
+                    Redirection
+                </div>
+            </div>
+        </section>
+
+        <!-- What is it -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-title">
+                            <span class="section-icon">📋</span>
+                            ¿Qué narices es esto?
+                        </h2>
+                        
+                        <p>El <strong>código 308 Permanent Redirect</strong> es el <strong>"se mudó para siempre, pero síguelo haciendo igual"</strong> de HTTP. Es la versión <strong>moderna y precisa del 301</strong>, diseñada para mantener el método HTTP original en redirecciones permanentes. Como el servicio postal que no solo te dice "se mudó a esta dirección", sino también "y sigue enviando cartas del mismo tipo que mandabas antes".</p>
+                        
+                        <p>La diferencia clave es que <strong>el 308 preserva el método HTTP original para siempre</strong>. Si tu API se muda permanentemente de <code>/api/v1/users</code> a <code>/api/v2/users</code>, un POST seguirá siendo POST, un PUT seguirá siendo PUT. El 301 clásico era ambiguo y muchos navegadores convertían automáticamente POST a GET. <strong>El 308 dice "usa la nueva dirección para siempre, pero haz exactamente lo mismo que hacías"</strong>.</p>
+                        
+                        <p>El 308 aparece típicamente en:</p>
+                        
+                        <ul style="margin-left: 2rem; margin-bottom: 2rem;">
+                            <li style="margin-bottom: 0.5rem;">APIs que cambian de versión permanentemente</li>
+                            <li style="margin-bottom: 0.5rem;">Migración de endpoints RESTful</li>
+                            <li style="margin-bottom: 0.5rem;">Cambios de dominio manteniendo funcionalidad</li>
+                            <li style="margin-bottom: 0.5rem;">Reestructuración de rutas en aplicaciones</li>
+                            <li style="margin-bottom: 0.5rem;">Consolidación de servicios web</li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <h4><span>🎯</span> Dato curioso</h4>
+                            <p>El 308 es relativamente nuevo (RFC 7538, 2015) comparado con otros códigos. Se creó específicamente para solucionar las inconsistencias del 301 con métodos no-GET. Es HTTP aprendiendo de sus errores históricos.</p>
+                        </div>
+
+                        <p>La belleza del 308 es su <strong>claridad semántica</strong>. No hay ambigüedad: el recurso se movió permanentemente Y el método HTTP se mantiene. Los navegadores y herramientas pueden actualizar sus marcadores/cache con confianza. <strong>Es la diferencia entre "mudanza con instrucciones vagas" y "mudanza con manual de usuario incluido"</strong>. Perfecto para APIs modernas donde cada método HTTP tiene significado específico.</p>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="info-card">
+                            <h3>📊 Info técnica</h3>
+                            <ul>
+                                <li><strong>Código:</strong> 308</li>
+                                <li><strong>Tipo:</strong> Redirection</li>
+                                <li><strong>Categoría:</strong> 3xx</li>
+                                <li><strong>Descripción:</strong> Permanent Redirect</li>
+                                <li><strong>Cacheable:</strong> Sí (por defecto)</li>
+                                <li><strong>Estándar:</strong> RFC 7538 (2015)</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>🎯 Frecuencia</h3>
+                            <ul>
+                                <li><strong>Creciendo en APIs modernas</strong></li>
+                                <li>Migraciones de servicios</li>
+                                <li>Mejor que 301 para REST</li>
+                                <li>SEO-friendly como 301</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to implement -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-title">
+                            <span class="section-icon">🔧</span>
+                            Cómo implementar esto
+                        </h2>
+
+                        <div class="solution-steps">
+                            <h4>🖥️ Para servidores (migración permanente)</h4>
+                            <ol>
+                                <li><strong>Identifica cambio permanente:</strong> Endpoint, dominio o estructura que no volverá.</li>
+                                <li><strong>Responde 308 + Location:</strong> Apunta a la nueva ubicación definitiva.</li>
+                                <li><strong>Preserva método HTTP:</strong> POST sigue siendo POST, PUT sigue siendo PUT.</li>
+                                <li><strong>Configura caching agresivo:</strong> Es permanente, puede cachearse mucho tiempo.</li>
+                                <li><strong>Cliente actualiza referencias:</strong> Para futuras peticiones directas.</li>
+                            </ol>
+                        </div>
+
+                        <div class="solution-steps">
+                            <h4>📱 Para desarrolladores frontend</h4>
+                            <ol>
+                                <li><strong>Actualiza URLs base:</strong> Cuando recibas 308, cambia configuración.</li>
+                                <li><strong>Maneja automáticamente:</strong> Los navegadores siguen la redirección.</li>
+                                <li><strong>Guarda nueva ubicación:</strong> Para evitar redirecciones futuras.</li>
+                                <li><strong>Testea todos los métodos:</strong> POST, PUT, DELETE, PATCH.</li>
+                                <li><strong>Considera SEO:</strong> Para páginas web, funciona como 301.</li>
+                            </ol>
+                        </div>
+
+                        <div class="code-block">
+                            <code>
+<!-- Flujo típico de 308 -->
+<!-- Cliente hace petición a API antigua -->
+POST /api/v1/users HTTP/1.1
+Host: api.example.com
+Content-Type: application/json
+
+{
+  "name": "María",
+  "email": "maria@example.com"
+}
+
+<!-- Servidor responde con 308 -->
+HTTP/1.1 308 Permanent Redirect
+Location: https://api.example.com/api/v2/users
+Cache-Control: max-age=31536000
+Content-Length: 0
+
+<!-- Navegador automáticamente repite POST a nueva URL -->
+POST /api/v2/users HTTP/1.1
+Host: api.example.com
+Content-Type: application/json
+
+{
+  "name": "María",
+  "email": "maria@example.com"
+}
+
+<!-- Servidor procesa en nueva ubicación -->
+HTTP/1.1 201 Created
+Location: /api/v2/users/456
+Content-Type: application/json
+
+{
+  "id": 456,
+  "name": "María",
+  "email": "maria@example.com"
+}
+
+<!-- PHP ejemplo -->
+&lt;?php
+// API v1 deprecada, migrar a v2 permanentemente
+if (preg_match('/^\/api\/v1\/(.+)$/', $_SERVER['REQUEST_URI'], $matches)) {
+    $newPath = '/api/v2/' . $matches[1];
+    
+    header('HTTP/1.1 308 Permanent Redirect');
+    header('Location: https://' . $_SERVER['HTTP_HOST'] . $newPath);
+    header('Cache-Control: max-age=31536000'); // 1 año
+    exit();
+}
+
+// Procesar API v2 normalmente
+processApiV2Request();
+?&gt;
+
+<!-- Node.js ejemplo -->
+// Middleware para migrar rutas permanentemente
+app.use('/api/v1', (req, res, next) => {
+    // Todas las rutas v1 se mueven permanentemente a v2
+    const newUrl = req.originalUrl.replace('/api/v1', '/api/v2');
+    
+    res.status(308)
+       .location(`${req.protocol}://${req.get('host')}${newUrl}`)
+       .set('Cache-Control', 'max-age=31536000')
+       .end();
+});
+
+// Express ejemplo más específico
+app.all('/old-endpoint/*', (req, res) => {
+    const newPath = req.path.replace('/old-endpoint', '/new-endpoint');
+    
+    res.status(308)
+       .location(`https://api.example.com${newPath}`)
+       .end();
+});
+
+<!-- Nginx ejemplo -->
+server {
+    listen 80;
+    server_name api.example.com;
+    
+    # Migrar toda la API v1 a v2 permanentemente
+    location ~ ^/api/v1/(.*)$ {
+        return 308 https://api.example.com/api/v2/$1;
+    }
+    
+    # Migrar dominio completo
+    location / {
+        return 308 https://new-api.example.com$request_uri;
+    }
+}
+
+<!-- JavaScript: Cliente inteligente que aprende -->
+class ApiClient {
+    constructor(baseUrl) {
+        this.baseUrl = baseUrl;
+        this.redirectCache = new Map();
+    }
+    
+    async request(endpoint, options = {}) {
+        // Verificar si ya conocemos una redirección
+        const finalUrl = this.redirectCache.get(endpoint) || 
+                        `${this.baseUrl}${endpoint}`;
+        
+        try {
+            const response = await fetch(finalUrl, options);
+            
+            // Si es 308, actualizar cache permanentemente
+            if (response.status === 308) {
+                const newLocation = response.headers.get('Location');
+                this.redirectCache.set(endpoint, newLocation);
+                
+                console.log(`Endpoint migrado permanentemente: ${endpoint} → ${newLocation}`);
+                
+                // Hacer petición a nueva ubicación
+                return fetch(newLocation, options);
+            }
+            
+            return response;
+        } catch (error) {
+            console.error('Error en petición API:', error);
+            throw error;
+        }
+    }
+}
+
+// Uso del cliente
+const api = new ApiClient('https://api.example.com');
+await api.request('/api/v1/users', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name: 'Test' })
+});
+                            </code>
+                        </div>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="info-card">
+                            <h3>💡 Tips pro</h3>
+                            <ul>
+                                <li>Mantiene método HTTP original</li>
+                                <li>Cacheable por mucho tiempo</li>
+                                <li>Perfecto para migraciones API</li>
+                                <li>SEO equivalente al 301</li>
+                                <li>Actualiza clientes automáticamente</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>⚡ Casos típicos</h3>
+                            <ul>
+                                <li>Migración de versiones API</li>
+                                <li>Cambio de dominios</li>
+                                <li>Reestructuración de endpoints</li>
+                                <li>Consolidación de servicios</li>
+                                <li>Modernización de arquitectura</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Codes -->
+        <section class="related-errors">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">Códigos relacionados</h2>
+                <p style="text-align: center; color: var(--text-secondary); font-size: 1.1rem;">Otros códigos que también molan</p>
+                
+                <div class="error-grid">
+                    <a href="#" class="error-card">
+                        <span class="error-number">301</span>
+                        <div class="error-title">Moved Permanently</div>
+                        <div class="error-desc">El antecesor clásico del 308</div>
+                    </a>
+                    
+                    <a href="#" class="error-card">
+                        <span class="error-number">307</span>
+                        <div class="error-title">Temporary Redirect</div>
+                        <div class="error-desc">La versión temporal del 308</div>
+                    </a>
+                    
+                    <a href="302.html" class="error-card">
+                        <span class="error-number">302</span>
+                        <div class="error-title">Found</div>
+                        <div class="error-desc">Redirección temporal ambigua</div>
+                    </a>
+                    
+                    <a href="#" class="error-card">
+                        <span class="error-number">303</span>
+                        <div class="error-title">See Other</div>
+                        <div class="error-desc">Fuerza cambio a GET</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#privacy">Privacidad</a>
+                    <a href="#terms">Términos</a>
+                    <a href="#contact">Contacto</a>
+                    <a href="#sitemap">Sitemap</a>
+                </div>
+                <p>&copy; 2025 EstoNoCarga. Hecho con frustración y mucho café. ☕</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;">Porque los errores web también necesitan amor (o al menos explicación).</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/error-page.js"></script>
+</body>
+</html>

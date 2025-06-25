@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código 307 - Temporary Redirect | EstoNoCarga</title>
+    <meta name="description" content="Todo sobre el código 307 Temporary Redirect. El 302 pero sin ambigüedades. Redirecciones temporales que respetan el método HTTP original.">
+    <meta name="keywords" content="código 307, temporary redirect, redirección temporal, HTTP método, 302 vs 307">
+    <meta name="author" content="EstoNoCarga">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://estonocarga.dev/pages/errors/307">
+    <meta property="og:title" content="Código 307 - Temporary Redirect | EstoNoCarga">
+    <meta property="og:description" content="El 302 pero sin ambigüedades. Redirecciones temporales que respetan el método HTTP original.">
+    <meta property="og:image" content="https://estonocarga.dev/assets/images/307-og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://estonocarga.dev/pages/errors/307">
+    <meta property="twitter:title" content="Código 307 - Temporary Redirect | EstoNoCarga">
+    <meta property="twitter:description" content="El 302 pero sin ambigüedades. Redirecciones que respetan métodos.">
+    <meta property="twitter:image" content="https://estonocarga.dev/assets/images/307-og-image.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Código 307 - Temporary Redirect",
+      "description": "Todo lo que necesitas saber sobre el código 307 Temporary Redirect",
+      "author": {
+        "@type": "Organization",
+        "name": "EstoNoCarga"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "EstoNoCarga"
+      }
+    }
+    </script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="stylesheet" href="../../assets/css/error-page.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html" class="logo">EstoNoCarga</a>
+            <ul class="nav-links">
+                <li><a href="../../index.html#errores">Errores</a></li>
+                <li><a href="../../index.html#guías">Guías</a></li>
+                <li><a href="../../index.html#herramientas">Tools</a></li>
+                <li><a href="../../index.html#about">Nosotros</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Error Header -->
+        <section class="error-header">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../../index.html">Inicio</a>
+                    <span>→</span>
+                    <a href="../../index.html#errores">Códigos</a>
+                    <span>→</span>
+                    <span>307</span>
+                </div>
+                <div class="error-code-display">307</div>
+                <h1 class="error-name">Temporary Redirect</h1>
+                <p class="error-description">El 302 pero sin ambigüedades. Redirecciones temporales que respetan el método HTTP original.</p>
+                <div class="status-badge status-redirect">
+                    <span>🔄</span>
+                    Redirection
+                </div>
+            </div>
+        </section>
+
+        <!-- What is it -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-title">
+                            <span class="section-icon">📋</span>
+                            ¿Qué narices es esto?
+                        </h2>
+                        
+                        <p>El <strong>código 307 Temporary Redirect</strong> es el <strong>"ve a esa dirección, pero hazlo exactamente como me preguntaste"</strong> de HTTP. Es la versión <strong>clarificada y mejorada del 302</strong>, diseñada para eliminar las ambigüedades sobre qué método HTTP usar en la redirección. Como el GPS que te dice "gira a la derecha" pero especificando si vas caminando, en bici o en coche.</p>
+                        
+                        <p>La diferencia clave es que <strong>el 307 preserva el método HTTP original</strong>. Si haces POST al endpoint original, el navegador hará POST al destino de la redirección. Si haces PUT, seguirá siendo PUT. El 302 era ambiguo: algunos navegadores cambiaban POST a GET, otros no. <strong>El 307 dice "haz exactamente lo mismo que ibas a hacer, pero allá"</strong>.</p>
+                        
+                        <p>El 307 aparece típicamente en:</p>
+                        
+                        <ul style="margin-left: 2rem; margin-bottom: 2rem;">
+                            <li style="margin-bottom: 0.5rem;">APIs que mueven endpoints temporalmente</li>
+                            <li style="margin-bottom: 0.5rem;">Balanceadores de carga redirigiendo tráfico</li>
+                            <li style="margin-bottom: 0.5rem;">Servicios en mantenimiento con respaldo temporal</li>
+                            <li style="margin-bottom: 0.5rem;">CDNs redirigiendo a servidores más cercanos</li>
+                            <li style="margin-bottom: 0.5rem;">Migraciones temporales de infraestructura</li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <h4><span>🎯</span> Dato curioso</h4>
+                            <p>El 307 existe porque el 302 causaba inconsistencias. Los navegadores interpretaban diferente si cambiar POST a GET. El 307 clarifica: "mantén el método original, siempre". Es HTTP siendo específico después de años de confusión.</p>
+                        </div>
+
+                        <p>La belleza del 307 es su <strong>predictibilidad</strong>. No hay ambigüedad sobre qué pasará: el navegador hará exactamente la misma petición que iba a hacer, pero a la nueva dirección. <strong>Es la diferencia entre "ve por ahí" y "ve por ahí, del mismo modo que venías"</strong>. Perfecto para APIs RESTful donde el método HTTP tiene significado semántico.</p>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="info-card">
+                            <h3>📊 Info técnica</h3>
+                            <ul>
+                                <li><strong>Código:</strong> 307</li>
+                                <li><strong>Tipo:</strong> Redirection</li>
+                                <li><strong>Categoría:</strong> 3xx</li>
+                                <li><strong>Descripción:</strong> Temporary Redirect</li>
+                                <li><strong>Cacheable:</strong> Sí (con headers)</li>
+                                <li><strong>Estándar:</strong> HTTP/1.1 RFC 7231</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>🎯 Frecuencia</h3>
+                            <ul>
+                                <li><strong>Común en APIs modernas</strong></li>
+                                <li>Balanceadores de carga</li>
+                                <li>CDNs inteligentes</li>
+                                <li>Mejor que 302 para APIs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to implement -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-title">
+                            <span class="section-icon">🔧</span>
+                            Cómo implementar esto
+                        </h2>
+
+                        <div class="solution-steps">
+                            <h4>🖥️ Para servidores (redirección temporal)</h4>
+                            <ol>
+                                <li><strong>Identifica necesidad temporal:</strong> Endpoint movido por poco tiempo.</li>
+                                <li><strong>Responde 307 + Location:</strong> Apunta a la nueva ubicación temporal.</li>
+                                <li><strong>Preserva método HTTP:</strong> El navegador mantiene POST, PUT, DELETE.</li>
+                                <li><strong>Incluye Cache-Control:</strong> Para controlar cuánto cachear.</li>
+                                <li><strong>Usuario repite petición:</strong> Mismo método, nueva URL.</li>
+                            </ol>
+                        </div>
+
+                        <div class="solution-steps">
+                            <h4>📱 Para desarrolladores frontend</h4>
+                            <ol>
+                                <li><strong>Maneja 307 automáticamente:</strong> Los navegadores lo hacen solos.</li>
+                                <li><strong>Prepara para redirecciones:</strong> En llamadas a APIs.</li>
+                                <li><strong>Considera el cuerpo de la petición:</strong> Se reenviará tal como está.</li>
+                                <li><strong>Testea con métodos no-GET:</strong> POST, PUT, DELETE.</li>
+                                <li><strong>Monitorea en Network tab:</strong> Para ver el flujo completo.</li>
+                            </ol>
+                        </div>
+
+                        <div class="code-block">
+                            <code>
+<!-- Flujo típico de 307 -->
+<!-- Cliente hace petición original -->
+POST /api/v1/users HTTP/1.1
+Host: api.example.com
+Content-Type: application/json
+
+{
+  "name": "Juan",
+  "email": "juan@example.com"
+}
+
+<!-- Servidor responde con 307 -->
+HTTP/1.1 307 Temporary Redirect
+Location: https://api-backup.example.com/api/v1/users
+Cache-Control: max-age=300
+Content-Length: 0
+
+<!-- Navegador automáticamente repite POST a nueva URL -->
+POST /api/v1/users HTTP/1.1
+Host: api-backup.example.com
+Content-Type: application/json
+
+{
+  "name": "Juan",
+  "email": "juan@example.com"
+}
+
+<!-- Servidor de respaldo procesa y responde -->
+HTTP/1.1 201 Created
+Location: /api/v1/users/123
+Content-Type: application/json
+
+{
+  "id": 123,
+  "name": "Juan",
+  "email": "juan@example.com"
+}
+
+<!-- PHP ejemplo -->
+&lt;?php
+// Endpoint temporalmente movido por mantenimiento
+if (isMaintenanceMode()) {
+    // Redirigir a servidor de respaldo
+    header('HTTP/1.1 307 Temporary Redirect');
+    header('Location: https://backup-api.example.com' . $_SERVER['REQUEST_URI']);
+    header('Cache-Control: max-age=300'); // 5 minutos
+    exit();
+}
+
+// Procesar normalmente si no hay mantenimiento
+processRequest();
+?&gt;
+
+<!-- Node.js ejemplo -->
+app.use('/api/v1', (req, res, next) => {
+    if (isServerOverloaded()) {
+        // Redirigir a instancia menos cargada
+        const backupServer = selectLeastLoadedServer();
+        
+        res.status(307)
+           .location(`${backupServer}${req.originalUrl}`)
+           .set('Cache-Control', 'max-age=60') // 1 minuto
+           .end();
+        return;
+    }
+    
+    next();
+});
+
+<!-- Nginx ejemplo (balanceador) -->
+server {
+    listen 80;
+    server_name api.example.com;
+    
+    location /api/v1/heavy-endpoint {
+        # Si servidor principal está sobrecargado
+        if ($server_load > 80) {
+            return 307 https://backup.example.com$request_uri;
+        }
+        
+        proxy_pass http://main-backend;
+    }
+}
+
+<!-- JavaScript: Manejar redirecciones automáticas -->
+async function apiCall(url, options = {}) {
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ data: 'example' }),
+            ...options
+        });
+        
+        // Fetch maneja 307 automáticamente
+        // pero podemos logear para debugging
+        if (response.redirected) {
+            console.log('Redirección detectada:', response.url);
+        }
+        
+        return response.json();
+    } catch (error) {
+        console.error('Error en API call:', error);
+        throw error;
+    }
+}
+                            </code>
+                        </div>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="info-card">
+                            <h3>💡 Tips pro</h3>
+                            <ul>
+                                <li>Mantiene método HTTP original</li>
+                                <li>Perfecto para APIs RESTful</li>
+                                <li>Usa Cache-Control inteligentemente</li>
+                                <li>Mejor que 302 para no-GET</li>
+                                <li>Transparente para el usuario</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>⚡ Casos típicos</h3>
+                            <ul>
+                                <li>Balanceadores de carga</li>
+                                <li>Mantenimiento temporal</li>
+                                <li>CDNs geográficos</li>
+                                <li>APIs con múltiples instancias</li>
+                                <li>Migraciones temporales</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Codes -->
+        <section class="related-errors">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">Códigos relacionados</h2>
+                <p style="text-align: center; color: var(--text-secondary); font-size: 1.1rem;">Otros códigos que también molan</p>
+                
+                <div class="error-grid">
+                    <a href="302.html" class="error-card">
+                        <span class="error-number">302</span>
+                        <div class="error-title">Found</div>
+                        <div class="error-desc">El antecesor ambiguo del 307</div>
+                    </a>
+                    
+                    <a href="#" class="error-card">
+                        <span class="error-number">308</span>
+                        <div class="error-title">Permanent Redirect</div>
+                        <div class="error-desc">La versión permanente del 307</div>
+                    </a>
+                    
+                    <a href="#" class="error-card">
+                        <span class="error-number">301</span>
+                        <div class="error-title">Moved Permanently</div>
+                        <div class="error-desc">Redirección permanente clásica</div>
+                    </a>
+                    
+                    <a href="#" class="error-card">
+                        <span class="error-number">303</span>
+                        <div class="error-title">See Other</div>
+                        <div class="error-desc">Fuerza cambio a GET</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#privacy">Privacidad</a>
+                    <a href="#terms">Términos</a>
+                    <a href="#contact">Contacto</a>
+                    <a href="#sitemap">Sitemap</a>
+                </div>
+                <p>&copy; 2025 EstoNoCarga. Hecho con frustración y mucho café. ☕</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;">Porque los errores web también necesitan amor (o al menos explicación).</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/error-page.js"></script>
+</body>
+</html>

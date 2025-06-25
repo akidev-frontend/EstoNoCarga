@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código 400 - Bad Request | EstoNoCarga</title>
+    <meta name="description" content="Todo sobre el código 400 Bad Request. Cuando el servidor dice 'no entiendo qué me estás pidiendo'. Validación, sintaxis y errores del cliente.">
+    <meta name="keywords" content="código 400, bad request, error cliente, validación, sintaxis HTTP, debugging">
+    <meta name="author" content="EstoNoCarga">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://estonocarga.dev/pages/errors/400">
+    <meta property="og:title" content="Código 400 - Bad Request | EstoNoCarga">
+    <meta property="og:description" content="Cuando el servidor dice 'no entiendo qué me estás pidiendo'. Validación, sintaxis y errores del cliente.">
+    <meta property="og:image" content="https://estonocarga.dev/assets/images/400-og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://estonocarga.dev/pages/errors/400">
+    <meta property="twitter:title" content="Código 400 - Bad Request | EstoNoCarga">
+    <meta property="twitter:description" content="Cuando el servidor dice 'no entiendo qué me estás pidiendo'. Errores del cliente.">
+    <meta property="twitter:image" content="https://estonocarga.dev/assets/images/400-og-image.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Código 400 - Bad Request",
+      "description": "Todo lo que necesitas saber sobre el código 400 Bad Request",
+      "author": {
+        "@type": "Organization",
+        "name": "EstoNoCarga"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "EstoNoCarga"
+      }
+    }
+    </script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="stylesheet" href="../../assets/css/error-page.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html" class="logo">EstoNoCarga</a>
+            <ul class="nav-links">
+                <li><a href="../../index.html#errores">Errores</a></li>
+                <li><a href="../../index.html#guías">Guías</a></li>
+                <li><a href="../../index.html#herramientas">Tools</a></li>
+                <li><a href="../../index.html#about">Nosotros</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Error Header -->
+        <section class="error-header">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../../index.html">Inicio</a>
+                    <span>→</span>
+                    <a href="../../index.html#errores">Códigos</a>
+                    <span>→</span>
+                    <span>400</span>
+                </div>
+                <div class="error-code-display">400</div>
+                <h1 class="error-name">Bad Request</h1>
+                <p class="error-description">Cuando el servidor dice "no entiendo qué me estás pidiendo". Validación, sintaxis y errores del cliente.</p>
+                <div class="status-badge status-client-error">
+                    <span>🤦‍♂️</span>
+                    Client Error
+                </div>
+            </div>
+        </section>
+
+        <!-- What is it -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-title">
+                            <span class="section-icon">📋</span>
+                            ¿Qué narices es esto?
+                        </h2>
+                        
+                        <p>El <strong>código 400 Bad Request</strong> es el <strong>"no entiendo qué carajo me estás pidiendo"</strong> de HTTP. Es la respuesta del servidor cuando tu petición está tan mal formada que ni siquiera puede procesarla. Como cuando le pides a Alexa que "ponga esa canción de ese cantante que hace esa cosa", pero para servidores web. <strong>El problema está del lado del cliente</strong>, no del servidor.</p>
+                        
+                        <p>Este código es <strong>la navaja suiza de los errores del cliente</strong>. Aparece cuando la sintaxis de la petición es incorrecta, faltan headers obligatorios, el JSON está mal formado, los parámetros son inválidos, o básicamente cualquier cosa que haga que el servidor diga "esto no tiene sentido". <strong>Es el equivalente digital de entregar una receta médica escrita con crayones</strong>.</p>
+                        
+                        <p>El 400 aparece típicamente cuando:</p>
+                        
+                        <ul style="margin-left: 2rem; margin-bottom: 2rem;">
+                            <li style="margin-bottom: 0.5rem;">JSON mal formado (comas faltantes, llaves desbalanceadas)</li>
+                            <li style="margin-bottom: 0.5rem;">Headers HTTP inválidos o malformados</li>
+                            <li style="margin-bottom: 0.5rem;">Parámetros con tipos de datos incorrectos</li>
+                            <li style="margin-bottom: 0.5rem;">URLs mal codificadas o con caracteres raros</li>
+                            <li style="margin-bottom: 0.5rem;">Campos obligatorios faltantes en formularios</li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <h4><span>🎯</span> Dato curioso</h4>
+                            <p>El 400 es un comodín. Muchos servidores lo usan cuando no saben qué error específico devolver. Es como el "no sé, algo está mal" de HTTP. Para casos específicos existen 401, 422, 429, etc.</p>
+                        </div>
+
+                        <p>La frustración del 400 es que <strong>es muy genérico</strong>. Te dice que algo está mal, pero no necesariamente qué. Los buenos APIs incluyen un mensaje de error descriptivo en el body de la respuesta. <strong>Es la diferencia entre "error de sintaxis en línea 1" y "falta una coma después de 'nombre' en tu JSON"</strong>. Por eso siempre revisa el contenido de la respuesta, no solo el código.</p>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="info-card">
+                            <h3>📊 Info técnica</h3>
+                            <ul>
+                                <li><strong>Código:</strong> 400</li>
+                                <li><strong>Tipo:</strong> Client Error</li>
+                                <li><strong>Categoría:</strong> 4xx</li>
+                                <li><strong>Descripción:</strong> Bad Request</li>
+                                <li><strong>Cacheable:</strong> Sí (con headers)</li>
+                                <li><strong>Estándar:</strong> HTTP/1.0 RFC 1945</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>🎯 Frecuencia</h3>
+                            <ul>
+                                <li><strong>Muy común en desarrollo</strong></li>
+                                <li>APIs con validación estricta</li>
+                                <li>Formularios mal enviados</li>
+                                <li>Integrations fallidas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to implement -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-title">
+                            <span class="section-icon">🔧</span>
+                            Cómo manejar esto
+                        </h2>
+
+                        <div class="solution-steps">
+                            <h4>🖥️ Para servidores (generar 400s útiles)</h4>
+                            <ol>
+                                <li><strong>Valida entrada temprano:</strong> Revisa sintaxis antes de procesar.</li>
+                                <li><strong>Responde 400 + mensaje claro:</strong> Explica exactamente qué está mal.</li>
+                                <li><strong>Incluye detalles específicos:</strong> Campo problemático, valor esperado.</li>
+                                <li><strong>Usa códigos más específicos:</strong> 422 para validación, 415 para content-type.</li>
+                                <li><strong>Logea para debugging:</strong> Pero no exposés datos sensibles.</li>
+                            </ol>
+                        </div>
+
+                        <div class="solution-steps">
+                            <h4>📱 Para desarrolladores frontend</h4>
+                            <ol>
+                                <li><strong>Valida antes de enviar:</strong> Revisa JSON, parámetros, headers.</li>
+                                <li><strong>Maneja 400s gracefully:</strong> Muestra mensaje de error claro.</li>
+                                <li><strong>Lee el body de respuesta:</strong> Ahí están los detalles del error.</li>
+                                <li><strong>Implementa retry inteligente:</strong> Solo si el error es transitorio.</li>
+                                <li><strong>Logea para debugging:</strong> Pero sanitiza datos sensibles.</li>
+                            </ol>
+                        </div>
+
+                        <div class="code-block">
+                            <code>
+<!-- Ejemplos típicos de peticiones que generan 400 -->
+
+<!-- ❌ JSON mal formado -->
+POST /api/users HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Juan",
+  "email": "juan@example.com"  // Falta coma
+  "age": 25
+}
+
+<!-- Respuesta del servidor -->
+HTTP/1.1 400 Bad Request
+Content-Type: application/json
+
+{
+  "error": "Bad Request",
+  "message": "Invalid JSON syntax",
+  "details": "Unexpected token 'a' at position 58"
+}
+
+<!-- ❌ Header Content-Type incorrecto -->
+POST /api/users HTTP/1.1
+Content-Type: text/plain
+
+{"name": "Juan", "email": "juan@example.com"}
+
+<!-- ❌ Parámetros de tipo incorrecto -->
+GET /api/users?age=not-a-number&limit=infinite HTTP/1.1
+
+<!-- ✅ PHP: Generar 400s útiles -->
+&lt;?php
+function validateUserInput($data) {
+    $errors = [];
+    
+    // Validar JSON
+    if (!is_array($data)) {
+        http_response_code(400);
+        return ['error' => 'Invalid JSON format'];
+    }
+    
+    // Validar campos obligatorios
+    if (empty($data['name'])) {
+        $errors[] = 'Field "name" is required';
+    }
+    
+    if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
+        $errors[] = 'Field "email" must be a valid email address';
+    }
+    
+    if (isset($data['age']) && (!is_numeric($data['age']) || $data['age'] < 0)) {
+        $errors[] = 'Field "age" must be a positive number';
+    }
+    
+    if (!empty($errors)) {
+        http_response_code(400);
+        header('Content-Type: application/json');
+        echo json_encode([
+            'error' => 'Bad Request',
+            'message' => 'Validation failed',
+            'details' => $errors
+        ]);
+        exit();
+    }
+    
+    return true;
+}
+
+// Procesar entrada
+$input = json_decode(file_get_contents('php://input'), true);
+if (json_last_error() !== JSON_ERROR_NONE) {
+    http_response_code(400);
+    echo json_encode(['error' => 'Invalid JSON: ' . json_last_error_msg()]);
+    exit();
+}
+
+validateUserInput($input);
+?&gt;
+
+<!-- ✅ Node.js: Validación y manejo de errores -->
+const express = require('express');
+const app = express();
+
+app.use(express.json());
+
+// Middleware para manejar JSON inválido
+app.use((error, req, res, next) => {
+    if (error instanceof SyntaxError && error.status === 400 && 'body' in error) {
+        return res.status(400).json({
+            error: 'Bad Request',
+            message: 'Invalid JSON syntax',
+            details: error.message
+        });
+    }
+    next();
+});
+
+app.post('/api/users', (req, res) => {
+    const { name, email, age } = req.body;
+    const errors = [];
+    
+    // Validaciones específicas
+    if (!name || typeof name !== 'string') {
+        errors.push('Field "name" is required and must be a string');
+    }
+    
+    if (!email || !isValidEmail(email)) {
+        errors.push('Field "email" must be a valid email address');
+    }
+    
+    if (age !== undefined && (!Number.isInteger(age) || age < 0)) {
+        errors.push('Field "age" must be a positive integer');
+    }
+    
+    if (errors.length > 0) {
+        return res.status(400).json({
+            error: 'Bad Request',
+            message: 'Validation failed',
+            details: errors
+        });
+    }
+    
+    // Procesar usuario válido
+    res.status(201).json({ id: 123, name, email, age });
+});
+
+<!-- ✅ JavaScript: Cliente que maneja 400s -->
+async function createUser(userData) {
+    try {
+        // Validación del lado cliente
+        if (!userData.name || !userData.email) {
+            throw new Error('Name and email are required');
+        }
+        
+        const response = await fetch('/api/users', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(userData)
+        });
+        
+        if (response.status === 400) {
+            const errorData = await response.json();
+            console.error('Validation errors:', errorData.details);
+            
+            // Mostrar errores específicos al usuario
+            displayValidationErrors(errorData.details);
+            return null;
+        }
+        
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+        
+        return await response.json();
+    } catch (error) {
+        console.error('Error creating user:', error);
+        throw error;
+    }
+}
+
+function displayValidationErrors(errors) {
+    const errorContainer = document.getElementById('errors');
+    errorContainer.innerHTML = errors.map(error => 
+        `<div class="error-message">${error}</div>`
+    ).join('');
+}
+
+// Uso
+createUser({ name: 'Juan', email: 'invalid-email' })
+    .catch(error => console.error('Failed to create user:', error));
+                            </code>
+                        </div>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="info-card">
+                            <h3>💡 Tips pro</h3>
+                            <ul>
+                                <li>Siempre incluye mensaje descriptivo</li>
+                                <li>Valida en cliente Y servidor</li>
+                                <li>Usa códigos más específicos cuando puedas</li>
+                                <li>Lee el body de la respuesta</li>
+                                <li>Logea errores para debugging</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>⚡ Causas comunes</h3>
+                            <ul>
+                                <li>JSON malformado</li>
+                                <li>Headers incorrectos</li>
+                                <li>Parámetros inválidos</li>
+                                <li>URLs mal codificadas</li>
+                                <li>Campos obligatorios faltantes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Codes -->
+        <section class="related-errors">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">Códigos relacionados</h2>
+                <p style="text-align: center; color: var(--text-secondary); font-size: 1.1rem;">Otros códigos que también molan</p>
+                
+                <div class="error-grid">
+                    <a href="#" class="error-card">
+                        <span class="error-number">422</span>
+                        <div class="error-title">Unprocessable Entity</div>
+                        <div class="error-desc">Cuando la sintaxis es OK pero la validación falla</div>
+                    </a>
+                    
+                    <a href="#" class="error-card">
+                        <span class="error-number">415</span>
+                        <div class="error-title">Unsupported Media Type</div>
+                        <div class="error-desc">Content-Type no soportado</div>
+                    </a>
+                    
+                    <a href="#" class="error-card">
+                        <span class="error-number">401</span>
+                        <div class="error-title">Unauthorized</div>
+                        <div class="error-desc">Problema de autenticación</div>
+                    </a>
+                    
+                    <a href="#" class="error-card">
+                        <span class="error-number">404</span>
+                        <div class="error-title">Not Found</div>
+                        <div class="error-desc">El endpoint no existe</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#privacy">Privacidad</a>
+                    <a href="#terms">Términos</a>
+                    <a href="#contact">Contacto</a>
+                    <a href="#sitemap">Sitemap</a>
+                </div>
+                <p>&copy; 2025 EstoNoCarga. Hecho con frustración y mucho café. ☕</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;">Porque los errores web también necesitan amor (o al menos explicación).</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/error-page.js"></script>
+</body>
+</html>

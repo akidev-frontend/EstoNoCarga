@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código 304 - Not Modified | EstoNoCarga</title>
+    <meta name="description" content="Todo sobre el código 304 Not Modified. El arte del caching HTTP. Optimización, ETags y el secreto de las páginas que cargan al instante.">
+    <meta name="keywords" content="código 304, not modified, caching, ETags, optimización web, HTTP cache">
+    <meta name="author" content="EstoNoCarga">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://estonocarga.dev/pages/errors/304">
+    <meta property="og:title" content="Código 304 - Not Modified | EstoNoCarga">
+    <meta property="og:description" content="El arte del caching HTTP. Optimización, ETags y el secreto de las páginas que cargan al instante.">
+    <meta property="og:image" content="https://estonocarga.dev/assets/images/304-og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://estonocarga.dev/pages/errors/304">
+    <meta property="twitter:title" content="Código 304 - Not Modified | EstoNoCarga">
+    <meta property="twitter:description" content="El arte del caching HTTP. Optimización y carga instantánea.">
+    <meta property="twitter:image" content="https://estonocarga.dev/assets/images/304-og-image.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Código 304 - Not Modified",
+      "description": "Todo lo que necesitas saber sobre el código 304 Not Modified",
+      "author": {
+        "@type": "Organization",
+        "name": "EstoNoCarga"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "EstoNoCarga"
+      }
+    }
+    </script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="stylesheet" href="../../assets/css/error-page.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html" class="logo">EstoNoCarga</a>
+            <ul class="nav-links">
+                <li><a href="../../index.html#errores">Errores</a></li>
+                <li><a href="../../index.html#guías">Guías</a></li>
+                <li><a href="../../index.html#herramientas">Tools</a></li>
+                <li><a href="../../index.html#about">Nosotros</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Error Header -->
+        <section class="error-header">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../../index.html">Inicio</a>
+                    <span>→</span>
+                    <a href="../../index.html#errores">Códigos</a>
+                    <span>→</span>
+                    <span>304</span>
+                </div>
+                <div class="error-code-display">304</div>
+                <h1 class="error-name">Not Modified</h1>
+                <p class="error-description">El arte del caching HTTP. Optimización, ETags y el secreto de las páginas que cargan al instante.</p>
+                <div class="status-badge status-redirect">
+                    <span>⚡</span>
+                    Redirection
+                </div>
+            </div>
+        </section>
+
+        <!-- What is it -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-title">
+                            <span class="section-icon">📋</span>
+                            ¿Qué narices es esto?
+                        </h2>
+                        
+                        <p>El <strong>código 304 Not Modified</strong> es el <strong>"no ha cambiado nada, usa lo que ya tienes"</strong> de HTTP. Es la estrella del <strong>caching inteligente</strong>, diseñado para hacer que las páginas carguen al instante sin descargar contenido innecesario. Como el bibliotecario que te dice "ese libro sigue igual, no necesitas una copia nueva".</p>
+                        
+                        <p>Este código es <strong>pura optimización</strong>. Cuando el navegador tiene una versión cacheada de un recurso, pregunta al servidor "¿ha cambiado esto?" con headers como <strong>If-Modified-Since</strong> o <strong>If-None-Match</strong>. Si no ha cambiado, el servidor responde con 304 + cero bytes de contenido. <strong>El navegador usa su versión local</strong>, ahorrando ancho de banda y tiempo de carga.</p>
+                        
+                        <p>El 304 aparece típicamente con:</p>
+                        
+                        <ul style="margin-left: 2rem; margin-bottom: 2rem;">
+                            <li style="margin-bottom: 0.5rem;">Imágenes, CSS, JS que no han cambiado</li>
+                            <li style="margin-bottom: 0.5rem;">Páginas con ETags o Last-Modified</li>
+                            <li style="margin-bottom: 0.5rem;">APIs que devuelven los mismos datos</li>
+                            <li style="margin-bottom: 0.5rem;">CDNs optimizando transferencias</li>
+                            <li style="margin-bottom: 0.5rem;">Cualquier recurso con validación de cache</li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <h4><span>🎯</span> Dato curioso</h4>
+                            <p>El 304 es el único código 3xx que NO es una redirección. Técnicamente es "usar el recurso que ya tienes". Es HTTP diciéndote "ahorra tiempo y datos, genio".</p>
+                        </div>
+
+                        <p>La magia del 304 es que <strong>no envía cuerpo de respuesta</strong>, solo headers. El servidor hace la validación (fechas, ETags) y si nada cambió, responde prácticamente vacío. <strong>Es la diferencia entre descargar 2MB otra vez y confirmar en milisegundos que no necesitas hacerlo</strong>.</p>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="info-card">
+                            <h3>📊 Info técnica</h3>
+                            <ul>
+                                <li><strong>Código:</strong> 304</li>
+                                <li><strong>Tipo:</strong> Redirection</li>
+                                <li><strong>Categoría:</strong> 3xx</li>
+                                <li><strong>Descripción:</strong> Not Modified</li>
+                                <li><strong>Cacheable:</strong> Sí (implícito)</li>
+                                <li><strong>Estándar:</strong> HTTP/1.0 RFC 1945</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>🎯 Frecuencia</h3>
+                            <ul>
+                                <li><strong>Muy común en sitios optimizados</strong></li>
+                                <li>CDNs y caching avanzado</li>
+                                <li>Imágenes y assets estáticos</li>
+                                <li>Performance crítica</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to implement -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-title">
+                            <span class="section-icon">🔧</span>
+                            Cómo implementar esto
+                        </h2>
+
+                        <div class="solution-steps">
+                            <h4>🖥️ Para servidores (validación de cache)</h4>
+                            <ol>
+                                <li><strong>Envía Last-Modified/ETag:</strong> En la respuesta inicial del recurso.</li>
+                                <li><strong>Recibe If-Modified-Since/If-None-Match:</strong> El navegador pregunta si cambió.</li>
+                                <li><strong>Valida el recurso:</strong> Compara fechas/hashes del contenido actual.</li>
+                                <li><strong>Responde 304 si igual:</strong> Sin cuerpo, solo headers de validación.</li>
+                                <li><strong>Navegador usa cache local:</strong> Carga instantánea del recurso.</li>
+                            </ol>
+                        </div>
+
+                        <div class="solution-steps">
+                            <h4>📱 Para desarrolladores frontend</h4>
+                            <ol>
+                                <li><strong>Configura cache headers:</strong> En servidor web o aplicación.</li>
+                                <li><strong>Usa ETags para contenido dinámico:</strong> Hash del contenido actual.</li>
+                                <li><strong>Last-Modified para archivos:</strong> Fecha de modificación del archivo.</li>
+                                <li><strong>Testea con DevTools:</strong> Network tab muestra 304s.</li>
+                                <li><strong>Monitorea performance:</strong> Menos transferencias = mejor UX.</li>
+                            </ol>
+                        </div>
+
+                        <div class="code-block">
+                            <code>
+<!-- Primera petición: Servidor envía headers de validación -->
+GET /assets/styles.css HTTP/1.1
+Host: example.com
+
+HTTP/1.1 200 OK
+Content-Type: text/css
+Content-Length: 45000
+Last-Modified: Wed, 15 Jan 2025 10:30:00 GMT
+ETag: "abc123-def456"
+
+/* contenido CSS completo aquí */
+
+<!-- Segunda petición: Navegador incluye headers de validación -->
+GET /assets/styles.css HTTP/1.1
+Host: example.com
+If-Modified-Since: Wed, 15 Jan 2025 10:30:00 GMT
+If-None-Match: "abc123-def456"
+
+<!-- Servidor responde 304 si no cambió -->
+HTTP/1.1 304 Not Modified
+Last-Modified: Wed, 15 Jan 2025 10:30:00 GMT
+ETag: "abc123-def456"
+Cache-Control: max-age=3600
+
+<!-- Sin cuerpo de respuesta - navegador usa cache local -->
+
+<!-- PHP ejemplo -->
+&lt;?php
+$file = 'styles.css';
+$lastModified = filemtime($file);
+$etag = md5_file($file);
+
+// Headers de validación
+header('Last-Modified: ' . gmdate('D, d M Y H:i:s', $lastModified) . ' GMT');
+header('ETag: "' . $etag . '"');
+
+// Verificar si cliente tiene versión actual
+$ifModifiedSince = $_SERVER['HTTP_IF_MODIFIED_SINCE'] ?? '';
+$ifNoneMatch = $_SERVER['HTTP_IF_NONE_MATCH'] ?? '';
+
+if (($ifModifiedSince && strtotime($ifModifiedSince) == $lastModified) ||
+    ($ifNoneMatch && $ifNoneMatch == '"' . $etag . '"')) {
+    
+    // No ha cambiado - responder 304
+    header('HTTP/1.1 304 Not Modified');
+    exit();
+}
+
+// Ha cambiado - enviar contenido completo
+header('Content-Type: text/css');
+readfile($file);
+?&gt;
+
+<!-- Node.js ejemplo -->
+app.get('/api/data', (req, res) =&gt; {
+    const data = getCurrentData();
+    const etag = generateETag(data);
+    
+    // Configurar headers de validación
+    res.set('ETag', etag);
+    
+    // Verificar si cliente tiene versión actual
+    if (req.get('If-None-Match') === etag) {
+        return res.status(304).end();
+    }
+    
+    // Enviar datos actualizados
+    res.json(data);
+});
+                            </code>
+                        </div>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="info-card">
+                            <h3>💡 Tips pro</h3>
+                            <ul>
+                                <li>ETags para contenido dinámico</li>
+                                <li>Last-Modified para archivos</li>
+                                <li>Combinar ambos para máxima eficiencia</li>
+                                <li>304 no tiene cuerpo de respuesta</li>
+                                <li>Ahorra ancho de banda masivamente</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>⚡ Casos típicos</h3>
+                            <ul>
+                                <li>CSS, JS, imágenes sin cambios</li>
+                                <li>APIs con datos iguales</li>
+                                <li>CDNs validando contenido</li>
+                                <li>Páginas con caching inteligente</li>
+                                <li>Optimización de performance</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Codes -->
+        <section class="related-errors">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">Códigos relacionados</h2>
+                <p style="text-align: center; color: var(--text-secondary); font-size: 1.1rem;">Otros códigos que también molan</p>
+                
+                <div class="error-grid">
+                    <a href="200.html" class="error-card">
+                        <span class="error-number">200</span>
+                        <div class="error-title">OK</div>
+                        <div class="error-desc">Cuando el contenido sí ha cambiado</div>
+                    </a>
+                    
+                    <a href="#" class="error-card">
+                        <span class="error-number">412</span>
+                        <div class="error-title">Precondition Failed</div>
+                        <div class="error-desc">Cuando la validación falla</div>
+                    </a>
+                    
+                    <a href="302.html" class="error-card">
+                        <span class="error-number">302</span>
+                        <div class="error-title">Found</div>
+                        <div class="error-desc">Redirección real (no cache)</div>
+                    </a>
+                    
+                    <a href="#" class="error-card">
+                        <span class="error-number">307</span>
+                        <div class="error-title">Temporary Redirect</div>
+                        <div class="error-desc">Otra redirección sin cache</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#privacy">Privacidad</a>
+                    <a href="#terms">Términos</a>
+                    <a href="#contact">Contacto</a>
+                    <a href="#sitemap">Sitemap</a>
+                </div>
+                <p>&copy; 2025 EstoNoCarga. Hecho con frustración y mucho café. ☕</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;">Porque los errores web también necesitan amor (o al menos explicación).</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/error-page.js"></script>
+</body>
+</html>

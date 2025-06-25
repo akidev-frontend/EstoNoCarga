@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código 302 - Found (Moved Temporarily) | EstoNoCarga</title>
+    <meta name="description" content="Todo sobre el código 302 Found. El 'me mudé pero vuelvo' de HTTP. Redirecciones temporales, SEO, PageRank y cuándo NO usar 301. La redirección malentendida.">
+    <meta name="keywords" content="código 302, found, moved temporarily, redirección temporal, SEO, desarrollo web">
+    <meta name="author" content="EstoNoCarga">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://estonocarga.dev/pages/errors/302">
+    <meta property="og:title" content="Código 302 - Found (Moved Temporarily) | EstoNoCarga">
+    <meta property="og:description" content="El 'me mudé pero vuelvo' de HTTP. Redirecciones temporales, SEO y cuándo NO usar 301.">
+    <meta property="og:image" content="https://estonocarga.dev/assets/images/302-og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://estonocarga.dev/pages/errors/302">
+    <meta property="twitter:title" content="Código 302 - Found (Moved Temporarily) | EstoNoCarga">
+    <meta property="twitter:description" content="El 'me mudé pero vuelvo' de HTTP. Redirecciones temporales y SEO.">
+    <meta property="twitter:image" content="https://estonocarga.dev/assets/images/302-og-image.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Código 302 - Found (Moved Temporarily)",
+      "description": "Todo lo que necesitas saber sobre el código 302 Found",
+      "author": {
+        "@type": "Organization",
+        "name": "EstoNoCarga"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "EstoNoCarga"
+      }
+    }
+    </script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="stylesheet" href="../../assets/css/error-page.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html" class="logo">EstoNoCarga</a>
+            <ul class="nav-links">
+                <li><a href="../../index.html#errores">Errores</a></li>
+                <li><a href="../../index.html#guías">Guías</a></li>
+                <li><a href="../../index.html#herramientas">Tools</a></li>
+                <li><a href="../../index.html#about">Nosotros</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Error Header -->
+        <section class="error-header">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../../index.html">Inicio</a>
+                    <span>→</span>
+                    <a href="../../index.html#errores">Códigos</a>
+                    <span>→</span>
+                    <span>302</span>
+                </div>
+                <div class="error-code-display">302</div>
+                <h1 class="error-name">Found (Moved Temporarily)</h1>
+                <p class="error-description">El "me mudé pero vuelvo" de HTTP. Redirecciones temporales, SEO, PageRank y cuándo NO usar 301. La redirección malentendida.</p>
+                <div class="status-badge status-redirect">
+                    <span>🏃</span>
+                    Redirection
+                </div>
+            </div>
+        </section>
+
+        <!-- What is it -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-title">
+                            <span class="section-icon">📋</span>
+                            ¿Qué narices es esto?
+                        </h2>
+                        
+                        <p>El <strong>código 302 Found</strong> (antes "Moved Temporarily") es el <strong>"me mudé temporalmente, pero volveré"</strong> de HTTP. Es cuando una página se ha movido a otra ubicación pero <strong>solo por un tiempo limitado</strong>. Como cuando alquilas un apartamento por el verano: das la dirección temporal pero tu domicilio oficial sigue siendo el original.</p>
+                        
+                        <p>Este código es <strong>controvertido en SEO</strong> porque tradicionalmente no transfería PageRank como el 301. Sin embargo, <strong>Google ha evolucionado</strong> y ahora John Mueller confirmó que los 302 sí pueden pasar link equity, especialmente si persisten en el tiempo. <strong>Pero sigue siendo mejor usar 301 para cambios permanentes</strong> - no hagas experimentos con tu autoridad web.</p>
+                        
+                        <p>El 302 aparece típicamente en:</p>
+                        
+                        <ul style="margin-left: 2rem; margin-bottom: 2rem;">
+                            <li style="margin-bottom: 0.5rem;">Páginas de mantenimiento temporal</li>
+                            <li style="margin-bottom: 0.5rem;">A/B testing de nuevas versiones</li>
+                            <li style="margin-bottom: 0.5rem;">Redirecciones por geolocalización</li>
+                            <li style="margin-bottom: 0.5rem;">Balanceado de carga entre servidores</li>
+                            <li style="margin-bottom: 0.5rem;">Promociones o eventos de tiempo limitado</li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <h4><span>🎯</span> Dato curioso</h4>
+                            <p>Originalmente se llamaba "Moved Temporarily" pero se cambió a "Found" en HTTP/1.1 porque muchos navegadores lo implementaron mal, cambiando POST a GET. Por eso existen los códigos 303 y 307 para desambiguar.</p>
+                        </div>
+
+                        <p>El 302 <strong>mantiene la URL original en los índices</strong> de los buscadores porque asume que volverás a usarla. Es perfecto para situaciones genuinamente temporales, pero <strong>si abusas de él para cambios permanentes, puedes confundir a Google</strong> y perder rankings. Úsalo solo cuando realmente planees volver a la URL original.</p>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="info-card">
+                            <h3>📊 Info técnica</h3>
+                            <ul>
+                                <li><strong>Código:</strong> 302</li>
+                                <li><strong>Tipo:</strong> Redirection</li>
+                                <li><strong>Categoría:</strong> 3xx</li>
+                                <li><strong>Descripción:</strong> Found (Moved Temporarily)</li>
+                                <li><strong>Cacheable:</strong> No (por defecto)</li>
+                                <li><strong>Estándar:</strong> HTTP/1.1 RFC 7231</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>🎯 Frecuencia</h3>
+                            <ul>
+                                <li><strong>Común</strong></li>
+                                <li>Muchas veces mal usado</li>
+                                <li>Polémico para SEO</li>
+                                <li>Mejor usar 301 si es permanente</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to implement -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-title">
+                            <span class="section-icon">🔧</span>
+                            Cómo implementar esto
+                        </h2>
+
+                        <div class="solution-steps">
+                            <h4>🖥️ Para servidores</h4>
+                            <ol>
+                                <li><strong>Úsalo solo para cambios temporales:</strong> Realmente temporales, no "tal vez permanentes".</li>
+                                <li><strong>Incluye header Location:</strong> Con la nueva URL temporal.</li>
+                                <li><strong>No incluyas cache headers:</strong> Por defecto no es cacheable.</li>
+                                <li><strong>Planifica el retorno:</strong> Ten fecha para volver a la URL original.</li>
+                                <li><strong>Monitorea el tiempo:</strong> Si persiste >6 meses, considera 301.</li>
+                            </ol>
+                        </div>
+
+                        <div class="solution-steps">
+                            <h4>📱 Para desarrolladores</h4>
+                            <ol>
+                                <li><strong>Evalúa si es realmente temporal:</strong> ¿Vas a volver a la URL original?</li>
+                                <li><strong>Si es permanente, usa 301:</strong> No hagas experimentos con SEO.</li>
+                                <li><strong>Documenta la razón:</strong> Por qué es temporal y cuándo volverá.</li>
+                                <li><strong>Testea en desarrollo:</strong> Asegúrate que funciona como esperas.</li>
+                                <li><strong>Monitorea impacto SEO:</strong> Search Console y rankings.</li>
+                            </ol>
+                        </div>
+
+                        <div class="code-block">
+                            <code>
+<!-- Configuración Apache (.htaccess) -->
+RewriteEngine On
+# Mantenimiento temporal
+RewriteRule ^$ /maintenance.html [R=302,L]
+
+# A/B testing temporal  
+RewriteCond %{QUERY_STRING} ^test=1$
+RewriteRule ^product/(.*)$ /test-product/$1 [R=302,L]
+
+<!-- Response del servidor -->
+HTTP/1.1 302 Found
+Location: https://example.com/temporary-page/
+Date: Fri, 20 Jun 2025 10:30:00 GMT
+Content-Length: 0
+
+<!-- Configuración Nginx -->
+server {
+    location /old-path/ {
+        return 302 /temporary-new-path/;
+    }
+    
+    # Redirección temporal por mantenimiento
+    location /shop/ {
+        return 302 /maintenance-page/;
+    }
+}
+
+<!-- JavaScript (client-side, menos recomendado) -->
+// Solo si no puedes hacer server-side
+if (needsTemporaryRedirect) {
+    window.location.replace('/temporary-page/');
+}
+
+<!-- PHP ejemplo -->
+<?php
+// Redirección temporal
+header('HTTP/1.1 302 Found');
+header('Location: https://example.com/temporary-page/');
+exit();
+?>
+                            </code>
+                        </div>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="info-card">
+                            <h3>💡 Tips pro</h3>
+                            <ul>
+                                <li>Solo para cambios temporales reales</li>
+                                <li>No cachea por defecto</li>
+                                <li>Google puede pasarle PageRank</li>
+                                <li>Si dura >6 meses, usa 301</li>
+                                <li>Documenta cuándo volverás</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>⚡ Casos típicos</h3>
+                            <ul>
+                                <li>Páginas de mantenimiento</li>
+                                <li>A/B testing</li>
+                                <li>Geolocalización temporal</li>
+                                <li>Promociones limitadas</li>
+                                <li>Balanceado de carga</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Codes -->
+        <section class="related-errors">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">Códigos relacionados</h2>
+                <p style="text-align: center; color: var(--text-secondary); font-size: 1.1rem;">Otros códigos que también molan</p>
+                
+                <div class="error-grid">
+                    <a href="301.html" class="error-card">
+                        <span class="error-number">301</span>
+                        <div class="error-title">Moved Permanently</div>
+                        <div class="error-desc">Para cambios permanentes (mejor opción)</div>
+                    </a>
+                    
+                    <a href="#" class="error-card">
+                        <span class="error-number">307</span>
+                        <div class="error-title">Temporary Redirect</div>
+                        <div class="error-desc">302 que mantiene método HTTP</div>
+                    </a>
+                    
+                    <a href="#" class="error-card">
+                        <span class="error-number">303</span>
+                        <div class="error-title">See Other</div>
+                        <div class="error-desc">Fuerza cambio a GET</div>
+                    </a>
+                    
+                    <a href="200.html" class="error-card">
+                        <span class="error-number">200</span>
+                        <div class="error-title">OK</div>
+                        <div class="error-desc">Cuando la página no se ha movido</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#privacy">Privacidad</a>
+                    <a href="#terms">Términos</a>
+                    <a href="#contact">Contacto</a>
+                    <a href="#sitemap">Sitemap</a>
+                </div>
+                <p>&copy; 2025 EstoNoCarga. Hecho con frustración y mucho café. ☕</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;">Porque los errores web también necesitan amor (o al menos explicación).</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/error-page.js"></script>
+</body>
+</html>

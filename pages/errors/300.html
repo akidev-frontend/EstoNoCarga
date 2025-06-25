@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código 300 - Multiple Choices | EstoNoCarga</title>
+    <meta name="description" content="Todo sobre el código 300 Multiple Choices. El menú de opciones de HTTP que dice 'tú decides'. Content negotiation, variantes y el arte de elegir. Raramente usado pero muy útil.">
+    <meta name="keywords" content="código 300, multiple choices, content negotiation, variantes, desarrollo web, redirección">
+    <meta name="author" content="EstoNoCarga">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://estonocarga.dev/pages/errors/300">
+    <meta property="og:title" content="Código 300 - Multiple Choices | EstoNoCarga">
+    <meta property="og:description" content="El menú de opciones de HTTP que dice 'tú decides'. Content negotiation, variantes y el arte de elegir.">
+    <meta property="og:image" content="https://estonocarga.dev/assets/images/300-og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://estonocarga.dev/pages/errors/300">
+    <meta property="twitter:title" content="Código 300 - Multiple Choices | EstoNoCarga">
+    <meta property="twitter:description" content="El menú de opciones de HTTP que dice 'tú decides'. Content negotiation y variantes.">
+    <meta property="twitter:image" content="https://estonocarga.dev/assets/images/300-og-image.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Código 300 - Multiple Choices",
+      "description": "Todo lo que necesitas saber sobre el código 300 Multiple Choices",
+      "author": {
+        "@type": "Organization",
+        "name": "EstoNoCarga"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "EstoNoCarga"
+      }
+    }
+    </script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="stylesheet" href="../../assets/css/error-page.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html" class="logo">EstoNoCarga</a>
+            <ul class="nav-links">
+                <li><a href="../../index.html#errores">Errores</a></li>
+                <li><a href="../../index.html#guías">Guías</a></li>
+                <li><a href="../../index.html#herramientas">Tools</a></li>
+                <li><a href="../../index.html#about">Nosotros</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Error Header -->
+        <section class="error-header">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../../index.html">Inicio</a>
+                    <span>→</span>
+                    <a href="../../index.html#errores">Códigos</a>
+                    <span>→</span>
+                    <span>300</span>
+                </div>
+                <div class="error-code-display">300</div>
+                <h1 class="error-name">Multiple Choices</h1>
+                <p class="error-description">El menú de opciones de HTTP que dice "tú decides". Content negotiation, variantes y el arte de elegir. Raramente usado pero muy útil.</p>
+                <div class="status-badge status-redirect">
+                    <span>🤔</span>
+                    Redirection
+                </div>
+            </div>
+        </section>
+
+        <!-- What is it -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-title">
+                            <span class="section-icon">📋</span>
+                            ¿Qué narices es esto?
+                        </h2>
+                        
+                        <p>El <strong>código 300 Multiple Choices</strong> es el <strong>"aquí tienes varias opciones, elige tú"</strong> de HTTP. Es cuando el servidor tiene <strong>múltiples variantes</strong> del mismo recurso y no puede decidir automáticamente cuál enviarte. Como cuando llegas a un restaurante y el camarero te dice <strong>"tenemos tres versiones del mismo plato, ¿cuál prefieres?"</strong>.</p>
+                        
+                        <p>Este código se usa principalmente en <strong>content negotiation</strong> (negociación de contenido), donde un mismo recurso puede estar disponible en diferentes idiomas, formatos, calidades o versiones. El servidor construye una lista de opciones disponibles y <strong>delega la decisión al cliente</strong>. A diferencia de otros 3xx, el 300 no redirecciona automáticamente - te para y dice <strong>"necesito que elijas"</strong>.</p>
+                        
+                        <p>El 300 aparece típicamente en:</p>
+                        
+                        <ul style="margin-left: 2rem; margin-bottom: 2rem;">
+                            <li style="margin-bottom: 0.5rem;">Sitios con múltiples idiomas sin detección automática</li>
+                            <li style="margin-bottom: 0.5rem;">APIs que devuelven datos en diferentes formatos (JSON, XML, CSV)</li>
+                            <li style="margin-bottom: 0.5rem;">Recursos con versiones múltiples (calidades de imagen, resoluciones)</li>
+                            <li style="margin-bottom: 0.5rem;">Transparent Content Negotiation de Apache (muy raro)</li>
+                            <li style="margin-bottom: 0.5rem;">Sistemas de documentación con formatos alternativos</li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <h4><span>🎯</span> Dato curioso</h4>
+                            <p>El 300 es como el político de los códigos HTTP: evita tomar decisiones difíciles y las pasa al usuario. La mayoría de navegadores lo manejan mal o lo ignoran, por eso es tan raro verlo en la vida real.</p>
+                        </div>
+
+                        <p>La respuesta 300 debe incluir una <strong>lista de alternativas</strong> en el body (típicamente HTML con enlaces) y puede incluir un header <strong>Location</strong> con la opción preferida del servidor. El problema es que <strong>no hay forma estándar de elegir automáticamente</strong>, por eso la mayoría de servidores prefieren hacer la negociación internamente y devolver 200 directamente.</p>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="info-card">
+                            <h3>📊 Info técnica</h3>
+                            <ul>
+                                <li><strong>Código:</strong> 300</li>
+                                <li><strong>Tipo:</strong> Redirection</li>
+                                <li><strong>Categoría:</strong> 3xx</li>
+                                <li><strong>Descripción:</strong> Multiple Choices</li>
+                                <li><strong>Cacheable:</strong> Sí (por defecto)</li>
+                                <li><strong>Estándar:</strong> HTTP/1.1 RFC 7231</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>🎯 Frecuencia</h3>
+                            <ul>
+                                <li><strong>Muy raro</strong></li>
+                                <li>Browsers lo manejan mal</li>
+                                <li>Server-driven mejor opción</li>
+                                <li>Más teórico que práctico</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to implement -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-title">
+                            <span class="section-icon">🔧</span>
+                            Cómo implementar esto
+                        </h2>
+
+                        <div class="solution-steps">
+                            <h4>🖥️ Para servidores</h4>
+                            <ol>
+                                <li><strong>Detecta múltiples variantes:</strong> Mismo recurso en diferentes formatos/idiomas.</li>
+                                <li><strong>Evalúa headers del cliente:</strong> Accept, Accept-Language, Accept-Encoding.</li>
+                                <li><strong>Si no puede decidir automáticamente:</strong> Responde 300 con lista de opciones.</li>
+                                <li><strong>Incluye Location header:</strong> Con la variante preferida del servidor.</li>
+                                <li><strong>Construye body descriptivo:</strong> HTML con enlaces a cada variante.</li>
+                            </ol>
+                        </div>
+
+                        <div class="solution-steps">
+                            <h4>📱 Para clientes</h4>
+                            <ol>
+                                <li><strong>Detecta respuesta 300:</strong> Parsea lista de opciones disponibles.</li>
+                                <li><strong>Examina Location header:</strong> Puede indicar opción preferida del servidor.</li>
+                                <li><strong>Presenta opciones al usuario:</strong> O implementa lógica de selección automática.</li>
+                                <li><strong>Realiza nueva request:</strong> A la variante elegida.</li>
+                                <li><strong>Maneja fallback gracefully:</strong> Muchos browsers ignoran 300.</li>
+                            </ol>
+                        </div>
+
+                        <div class="code-block">
+                            <code>
+<!-- Cliente solicita recurso ambiguo -->
+GET /documento HTTP/1.1
+Host: example.com
+Accept: text/html, application/pdf
+Accept-Language: en, es
+
+<!-- Servidor no puede decidir automáticamente -->
+HTTP/1.1 300 Multiple Choices
+Location: /documento.html
+Content-Type: text/html
+Alternates: {"/documento.html" 1 {type text/html} {language en}},
+           {"/documento.pdf" 1 {type application/pdf} {language en}},
+           {"/documento-es.html" 1 {type text/html} {language es}}
+
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;Multiple Choices&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Choose your preferred format:&lt;/h1&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="/documento.html"&gt;HTML (English)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/documento.pdf"&gt;PDF (English)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/documento-es.html"&gt;HTML (Español)&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+<!-- Cliente elige y hace nueva request -->
+GET /documento.pdf HTTP/1.1
+Host: example.com
+
+HTTP/1.1 200 OK
+Content-Type: application/pdf
+                            </code>
+                        </div>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="info-card">
+                            <h3>💡 Tips pro</h3>
+                            <ul>
+                                <li>Server-driven negotiation es mejor</li>
+                                <li>Usa headers Accept-* para decidir</li>
+                                <li>Incluye Location con opción preferida</li>
+                                <li>Body debe ser human-readable</li>
+                                <li>Considera 406 si no hay match</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>⚡ Casos típicos</h3>
+                            <ul>
+                                <li>Sitios multiidioma sin autodetección</li>
+                                <li>APIs con múltiples formatos output</li>
+                                <li>Recursos con varias calidades</li>
+                                <li>Documentación en varios formatos</li>
+                                <li>Content negotiation explícita</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Codes -->
+        <section class="related-errors">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">Códigos relacionados</h2>
+                <p style="text-align: center; color: var(--text-secondary); font-size: 1.1rem;">Otros códigos que también molan</p>
+                
+                <div class="error-grid">
+                    <a href="#" class="error-card">
+                        <span class="error-number">301</span>
+                        <div class="error-title">Moved Permanently</div>
+                        <div class="error-desc">Redirección automática permanente</div>
+                    </a>
+                    
+                    <a href="#" class="error-card">
+                        <span class="error-number">302</span>
+                        <div class="error-title">Found</div>
+                        <div class="error-desc">Redirección automática temporal</div>
+                    </a>
+                    
+                    <a href="#" class="error-card">
+                        <span class="error-number">406</span>
+                        <div class="error-title">Not Acceptable</div>
+                        <div class="error-desc">Cuando no hay variante aceptable</div>
+                    </a>
+                    
+                    <a href="200.html" class="error-card">
+                        <span class="error-number">200</span>
+                        <div class="error-title">OK</div>
+                        <div class="error-desc">Cuando el servidor elige automáticamente</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#privacy">Privacidad</a>
+                    <a href="#terms">Términos</a>
+                    <a href="#contact">Contacto</a>
+                    <a href="#sitemap">Sitemap</a>
+                </div>
+                <p>&copy; 2025 EstoNoCarga. Hecho con frustración y mucho café. ☕</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;">Porque los errores web también necesitan amor (o al menos explicación).</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/error-page.js"></script>
+</body>
+</html>

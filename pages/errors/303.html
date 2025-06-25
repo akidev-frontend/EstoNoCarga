@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código 303 - See Other | EstoNoCarga</title>
+    <meta name="description" content="Todo sobre el código 303 See Other. El patrón POST-Redirect-GET en acción. Formularios, confirmaciones y el arte de evitar envíos duplicados.">
+    <meta name="keywords" content="código 303, see other, POST redirect GET, PRG pattern, formularios, desarrollo web">
+    <meta name="author" content="EstoNoCarga">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://estonocarga.dev/pages/errors/303">
+    <meta property="og:title" content="Código 303 - See Other | EstoNoCarga">
+    <meta property="og:description" content="El patrón POST-Redirect-GET en acción. Formularios, confirmaciones y el arte de evitar envíos duplicados.">
+    <meta property="og:image" content="https://estonocarga.dev/assets/images/303-og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://estonocarga.dev/pages/errors/303">
+    <meta property="twitter:title" content="Código 303 - See Other | EstoNoCarga">
+    <meta property="twitter:description" content="El patrón POST-Redirect-GET en acción. Formularios y confirmaciones.">
+    <meta property="twitter:image" content="https://estonocarga.dev/assets/images/303-og-image.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Código 303 - See Other",
+      "description": "Todo lo que necesitas saber sobre el código 303 See Other",
+      "author": {
+        "@type": "Organization",
+        "name": "EstoNoCarga"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "EstoNoCarga"
+      }
+    }
+    </script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="stylesheet" href="../../assets/css/error-page.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html" class="logo">EstoNoCarga</a>
+            <ul class="nav-links">
+                <li><a href="../../index.html#errores">Errores</a></li>
+                <li><a href="../../index.html#guías">Guías</a></li>
+                <li><a href="../../index.html#herramientas">Tools</a></li>
+                <li><a href="../../index.html#about">Nosotros</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Error Header -->
+        <section class="error-header">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../../index.html">Inicio</a>
+                    <span>→</span>
+                    <a href="../../index.html#errores">Códigos</a>
+                    <span>→</span>
+                    <span>303</span>
+                </div>
+                <div class="error-code-display">303</div>
+                <h1 class="error-name">See Other</h1>
+                <p class="error-description">El patrón POST-Redirect-GET en acción. Formularios, confirmaciones y el arte de evitar envíos duplicados.</p>
+                <div class="status-badge status-redirect">
+                    <span>📝</span>
+                    Redirection
+                </div>
+            </div>
+        </section>
+
+        <!-- What is it -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-title">
+                            <span class="section-icon">📋</span>
+                            ¿Qué narices es esto?
+                        </h2>
+                        
+                        <p>El <strong>código 303 See Other</strong> es el <strong>"tu formulario se envió, ahora ve a ver el resultado"</strong> de HTTP. Es la estrella del patrón <strong>POST-Redirect-GET (PRG)</strong>, diseñado específicamente para evitar el clásico problema del <strong>"¿Quieres reenviar este formulario?"</strong> cuando recargas una página. Como el camarero que te dice "tu pedido está listo, ve a recogerlo a la barra".</p>
+                        
+                        <p>Este código fue introducido en <strong>HTTP/1.1 para solucionar problemas del 302</strong>. Cuando envías un formulario con POST, el servidor procesa los datos y te responde con 303 + Location header apuntando a una página de confirmación. <strong>El navegador automáticamente hace un GET a esa nueva URL</strong>, y si recargas la página, solo repites el GET (seguro) en lugar del POST (peligroso).</p>
+                        
+                        <p>El 303 aparece típicamente en:</p>
+                        
+                        <ul style="margin-left: 2rem; margin-bottom: 2rem;">
+                            <li style="margin-bottom: 0.5rem;">Envío de formularios → página de confirmación</li>
+                            <li style="margin-bottom: 0.5rem;">Operaciones de compra → página "pedido recibido"</li>
+                            <li style="margin-bottom: 0.5rem;">APIs RESTful después de POST/PUT/DELETE</li>
+                            <li style="margin-bottom: 0.5rem;">Registro de usuarios → página de bienvenida</li>
+                            <li style="margin-bottom: 0.5rem;">Cualquier operación que modifica datos</li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <h4><span>🎯</span> Dato curioso</h4>
+                            <p>El 303 existe porque el 302 era ambiguo: algunos navegadores cambiaban POST a GET, otros no. El 303 clarifica: "usa GET obligatoriamente". Es HTTP siendo específico después de años de confusión.</p>
+                        </div>
+
+                        <p>La magia del 303 es que <strong>siempre fuerza el método GET</strong> en la redirección, sin importar qué método usaste originalmente. Esto hace que la página resultante sea "segura" para recargar, marcar como favorito o compartir. <strong>Es la diferencia entre hacer una acción y ver el resultado de esa acción</strong>.</p>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="info-card">
+                            <h3>📊 Info técnica</h3>
+                            <ul>
+                                <li><strong>Código:</strong> 303</li>
+                                <li><strong>Tipo:</strong> Redirection</li>
+                                <li><strong>Categoría:</strong> 3xx</li>
+                                <li><strong>Descripción:</strong> See Other</li>
+                                <li><strong>Cacheable:</strong> No</li>
+                                <li><strong>Estándar:</strong> HTTP/1.1 RFC 7231</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>🎯 Frecuencia</h3>
+                            <ul>
+                                <li><strong>Común en formularios</strong></li>
+                                <li>Patrón PRG estándar</li>
+                                <li>APIs RESTful modernas</li>
+                                <li>UX mejor que 302</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to implement -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-title">
+                            <span class="section-icon">🔧</span>
+                            Cómo implementar esto
+                        </h2>
+
+                        <div class="solution-steps">
+                            <h4>🖥️ Para servidores (patrón PRG)</h4>
+                            <ol>
+                                <li><strong>Recibe POST/PUT/DELETE:</strong> Procesa la operación que modifica datos.</li>
+                                <li><strong>Ejecuta la acción:</strong> Guarda en base de datos, envía email, etc.</li>
+                                <li><strong>Responde 303 + Location:</strong> Apunta a página que muestra el resultado.</li>
+                                <li><strong>Usuario hace GET automático:</strong> Ve página de confirmación.</li>
+                                <li><strong>Recargar es seguro:</strong> Solo repite GET, no la operación original.</li>
+                            </ol>
+                        </div>
+
+                        <div class="solution-steps">
+                            <h4>📱 Para desarrolladores frontend</h4>
+                            <ol>
+                                <li><strong>Diseña formularios normalmente:</strong> action="submit" method="POST".</li>
+                                <li><strong>Maneja 303 automáticamente:</strong> Los navegadores lo hacen solos.</li>
+                                <li><strong>Diseña páginas de confirmación:</strong> Donde aterrizará el usuario.</li>
+                                <li><strong>Testea el flujo completo:</strong> POST → 303 → GET → confirmación.</li>
+                                <li><strong>No muestres warnings de recarga:</strong> El 303 los elimina.</li>
+                            </ol>
+                        </div>
+
+                        <div class="code-block">
+                            <code>
+<!-- HTML: Formulario normal -->
+&lt;form action="/submit-order" method="POST"&gt;
+  &lt;input name="product" value="laptop"&gt;
+  &lt;input name="quantity" value="1"&gt;
+  &lt;button type="submit"&gt;Comprar&lt;/button&gt;
+&lt;/form&gt;
+
+<!-- Servidor procesa POST y responde 303 -->
+POST /submit-order HTTP/1.1
+Host: shop.example.com
+Content-Type: application/x-www-form-urlencoded
+
+product=laptop&quantity=1
+
+HTTP/1.1 303 See Other
+Location: /order-confirmation/12345
+Content-Length: 0
+
+<!-- Navegador automáticamente hace GET -->
+GET /order-confirmation/12345 HTTP/1.1
+Host: shop.example.com
+
+HTTP/1.1 200 OK
+Content-Type: text/html
+
+&lt;h1&gt;¡Pedido confirmado!&lt;/h1&gt;
+&lt;p&gt;Tu pedido #12345 ha sido recibido&lt;/p&gt;
+
+<!-- PHP ejemplo -->
+&lt;?php
+// Procesar formulario
+if ($_POST['product']) {
+    $orderId = saveOrder($_POST);
+    
+    // Redirección 303
+    header('HTTP/1.1 303 See Other');
+    header('Location: /confirmation/' . $orderId);
+    exit();
+}
+?&gt;
+
+<!-- Node.js ejemplo -->
+app.post('/submit-order', (req, res) =&gt; {
+    // Procesar orden
+    const orderId = saveOrder(req.body);
+    
+    // Responder 303
+    res.status(303)
+       .location(`/confirmation/${orderId}`)
+       .end();
+});
+                            </code>
+                        </div>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="info-card">
+                            <h3>💡 Tips pro</h3>
+                            <ul>
+                                <li>Siempre fuerza método GET</li>
+                                <li>Perfecto para patrón PRG</li>
+                                <li>Elimina warnings de recarga</li>
+                                <li>URLs resultantes son compartibles</li>
+                                <li>Separar acción de visualización</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>⚡ Casos típicos</h3>
+                            <ul>
+                                <li>Envío de formularios</li>
+                                <li>Compras online</li>
+                                <li>Registro de usuarios</li>
+                                <li>APIs REST después de modificar</li>
+                                <li>Cualquier POST → confirmación</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Codes -->
+        <section class="related-errors">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">Códigos relacionados</h2>
+                <p style="text-align: center; color: var(--text-secondary); font-size: 1.1rem;">Otros códigos que también molan</p>
+                
+                <div class="error-grid">
+                    <a href="302.html" class="error-card">
+                        <span class="error-number">302</span>
+                        <div class="error-title">Found</div>
+                        <div class="error-desc">El predecessor ambiguo del 303</div>
+                    </a>
+                    
+                    <a href="#" class="error-card">
+                        <span class="error-number">307</span>
+                        <div class="error-title">Temporary Redirect</div>
+                        <div class="error-desc">Mantiene método HTTP original</div>
+                    </a>
+                    
+                    <a href="200.html" class="error-card">
+                        <span class="error-number">200</span>
+                        <div class="error-title">OK</div>
+                        <div class="error-desc">Para la página de confirmación</div>
+                    </a>
+                    
+                    <a href="#" class="error-card">
+                        <span class="error-number">201</span>
+                        <div class="error-title">Created</div>
+                        <div class="error-desc">Cuando creas algo nuevo</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#privacy">Privacidad</a>
+                    <a href="#terms">Términos</a>
+                    <a href="#contact">Contacto</a>
+                    <a href="#sitemap">Sitemap</a>
+                </div>
+                <p>&copy; 2025 EstoNoCarga. Hecho con frustración y mucho café. ☕</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;">Porque los errores web también necesitan amor (o al menos explicación).</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/error-page.js"></script>
+</body>
+</html>
