@@ -4,7 +4,7 @@
 *"Porque el 404 es solo el principio de tus problemas"*
 
 [![GitHub stars](https://img.shields.io/github/stars/akidev-frontend/EstoNoCarga?style=social)](https://github.com/akidev-frontend/EstoNoCarga/stargazers)
-[![Licencia](https://img.shields.io/badge/licencia-WTFPL-brightgreen)](LICENSE)
+[![Licencia](https://img.shields.io/badge/licencia-MIT-brightgreen)](LICENSE)
 
 ---
 
