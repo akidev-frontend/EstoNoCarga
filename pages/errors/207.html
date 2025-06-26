@@ -172,43 +172,36 @@
                             </ol>
                         </div>
 
-                        <div class="code-block">
-                            <code>
-<!-- Cliente envía PROPFIND para múltiples archivos -->
-PROPFIND /documentos/ HTTP/1.1
-Host: webdav.empresa.com
-Depth: 1
-Content-Type: text/xml
+                        <!-- Problemas típicos con 207 -->
+                        <div class="warning-box">
+                            <h4><span>❌</span> Problemas típicos con 207</h4>
+                            <ul style="margin-left: 0; list-style: none;">
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Operaciones fallidas:</strong><br>
+                                    <code style="font-size: 0.9rem;">Algunos archivos en la operación pueden fallar</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">El código general es 2xx, pero el XML puede contener errores como 404 o 403.</span>
+                                </li>
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Falta de claridad en el reporte:</strong><br>
+                                    <code style="font-size: 0.9rem;">El XML puede volverse difícil de leer si hay demasiadas operaciones</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">La falta de claridad puede complicar la gestión de errores.</span>
+                                </li>
+                            </ul>
+                        </div>
 
-&lt;?xml version="1.0"?&gt;
-&lt;propfind xmlns="DAV:"&gt;
-  &lt;prop&gt;
-    &lt;getcontentlength/&gt;
-    &lt;getlastmodified/&gt;
-  &lt;/prop&gt;
-&lt;/propfind&gt;
-
-<!-- Servidor responde con status múltiple -->
-HTTP/1.1 207 Multi-Status
-Content-Type: text/xml; charset=utf-8
-
-&lt;?xml version="1.0"?&gt;
-&lt;multistatus xmlns="DAV:"&gt;
-  &lt;response&gt;
-    &lt;href&gt;/documentos/archivo1.pdf&lt;/href&gt;
-    &lt;propstat&gt;
-      &lt;status&gt;HTTP/1.1 200 OK&lt;/status&gt;
-      &lt;prop&gt;&lt;getcontentlength&gt;1024&lt;/getcontentlength&gt;&lt;/prop&gt;
-    &lt;/propstat&gt;
-  &lt;/response&gt;
-  &lt;response&gt;
-    &lt;href&gt;/documentos/secreto.doc&lt;/href&gt;
-    &lt;propstat&gt;
-      &lt;status&gt;HTTP/1.1 403 Forbidden&lt;/status&gt;
-    &lt;/propstat&gt;
-  &lt;/response&gt;
-&lt;/multistatus&gt;
-                            </code>
+                        <!-- Respuesta rápida para emergencias -->
+                        <div class="warning-box">
+                            <h4><span>🚀</span> Respuesta rápida para emergencias</h4>
+                            <div style="display: grid; gap: 0.8rem; margin-top: 1rem;">
+                                <div style="padding: 0.8rem; background: rgba(255,159,10,0.1); border-radius: 6px; border-left: 3px solid #ff9f0a;">
+                                    <strong>🔥 Si estás implementando 207:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">1. Asegúrate de que las operaciones fallidas estén bien documentadas<br>2. No omitas detalles del status en la respuesta<br>3. Asegúrate de que los errores estén claros para el usuario</span>
+                                </div>
+                                <div style="padding: 0.8rem; background: rgba(175,82,222,0.1); border-radius: 6px; border-left: 3px solid #af52de;">
+                                    <strong>🎯 Truco ninja:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">Si es posible, muestra los resultados individuales en la interfaz de usuario para mayor claridad.</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -252,19 +245,19 @@ Content-Type: text/xml; charset=utf-8
                         <div class="error-desc">Una sola operación exitosa</div>
                     </a>
                     
-                    <a href="#" class="error-card">
+                    <a href="422.html" class="error-card">
                         <span class="error-number">422</span>
                         <div class="error-title">Unprocessable Entity</div>
                         <div class="error-desc">Cuando alguna operación del batch falla</div>
                     </a>
                     
-                    <a href="#" class="error-card">
+                    <a href="403.html" class="error-card">
                         <span class="error-number">403</span>
                         <div class="error-title">Forbidden</div>
                         <div class="error-desc">Sin permisos para algún recurso</div>
                     </a>
                     
-                    <a href="#" class="error-card">
+                    <a href="404.html" class="error-card">
                         <span class="error-number">404</span>
                         <div class="error-title">Not Found</div>
                         <div class="error-desc">Algún archivo del lote no existe</div>

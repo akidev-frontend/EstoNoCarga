@@ -172,31 +172,36 @@
                             </ol>
                         </div>
 
-                        <div class="code-block">
-                            <code>
-<!-- Crear nuevo usuario -->
-POST /api/users HTTP/1.1
-Host: miapi.com
-Content-Type: application/json
+                        <!-- Problemas típicos con 201 -->
+                        <div class="warning-box">
+                            <h4><span>❌</span> Problemas típicos con 201</h4>
+                            <ul style="margin-left: 0; list-style: none;">
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Datos incompletos o inválidos:</strong><br>
+                                    <code style="font-size: 0.9rem;">El cliente envió datos incorrectos para la creación</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">Si los datos no cumplen los requisitos, no se puede crear el recurso.</span>
+                                </li>
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Recurso ya existe:</strong><br>
+                                    <code style="font-size: 0.9rem;">El servidor devuelve 201, pero el recurso ya estaba presente (confusión con 409)</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">Debe garantizarse que el recurso sea realmente nuevo.</span>
+                                </li>
+                            </ul>
+                        </div>
 
-{
-  "name": "Ana García",
-  "email": "ana@email.com"
-}
-
-<!-- Respuesta de creación exitosa -->
-HTTP/1.1 201 Created
-Content-Type: application/json
-Location: /api/users/12345
-Content-Length: 156
-
-{
-  "id": 12345,
-  "name": "Ana García",
-  "email": "ana@email.com",
-  "created_at": "2025-06-11T10:30:00Z"
-}
-                            </code>
+                        <!-- Respuesta rápida para emergencias -->
+                        <div class="warning-box">
+                            <h4><span>🚀</span> Respuesta rápida para emergencias</h4>
+                            <div style="display: grid; gap: 0.8rem; margin-top: 1rem;">
+                                <div style="padding: 0.8rem; background: rgba(255,159,10,0.1); border-radius: 6px; border-left: 3px solid #ff9f0a;">
+                                    <strong>🔥 Si estás implementando 201:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">1. Verifica que los datos sean válidos<br>2. Asegúrate de que el recurso sea único antes de la creación<br>3. Devuelve el Location header</span>
+                                </div>
+                                <div style="padding: 0.8rem; background: rgba(175,82,222,0.1); border-radius: 6px; border-left: 3px solid #af52de;">
+                                    <strong>🎯 Truco ninja:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">Considera devolver el recurso completo en la respuesta para que el cliente tenga acceso inmediato.</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 

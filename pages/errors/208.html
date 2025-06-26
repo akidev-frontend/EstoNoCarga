@@ -172,55 +172,36 @@
                             </ol>
                         </div>
 
-                        <div class="code-block">
-                            <code>
-<!-- Cliente solicita info de colección con bindings -->
-PROPFIND /shared/ HTTP/1.1
-Host: webdav.empresa.com
-Depth: infinity
-Content-Type: text/xml
+                        <!-- Problemas típicos con 208 -->
+                        <div class="warning-box">
+                            <h4><span>❌</span> Problemas típicos con 208</h4>
+                            <ul style="margin-left: 0; list-style: none;">
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Operaciones duplicadas no detectadas:</strong><br>
+                                    <code style="font-size: 0.9rem;">El servidor puede no detectar correctamente los recursos duplicados</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">Si no se implementa bien el binding, pueden enviarse datos duplicados.</span>
+                                </li>
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Compatibilidad con clientes antiguos:</strong><br>
+                                    <code style="font-size: 0.9rem;">Algunos clientes pueden no comprender el código 208</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">Esto puede generar confusión si el cliente espera un 200 o un 404.</span>
+                                </li>
+                            </ul>
+                        </div>
 
-&lt;?xml version="1.0"?&gt;
-&lt;propfind xmlns="DAV:"&gt;
-  &lt;prop&gt;
-    &lt;displayname/&gt;
-    &lt;resource-id/&gt;
-    &lt;getcontentlength/&gt;
-  &lt;/prop&gt;
-&lt;/propfind&gt;
-
-<!-- Servidor responde evitando duplicados -->
-HTTP/1.1 207 Multi-Status
-Content-Type: application/xml; charset=utf-8
-
-&lt;?xml version="1.0"?&gt;
-&lt;multistatus xmlns="DAV:"&gt;
-  &lt;response&gt;
-    &lt;href&gt;/shared/original/archivo.pdf&lt;/href&gt;
-    &lt;propstat&gt;
-      &lt;status&gt;HTTP/1.1 200 OK&lt;/status&gt;
-      &lt;prop&gt;
-        &lt;displayname&gt;Documento importante&lt;/displayname&gt;
-        &lt;resource-id&gt;
-          &lt;href&gt;urn:uuid:12345-abcd-6789&lt;/href&gt;
-        &lt;/resource-id&gt;
-        &lt;getcontentlength&gt;2048&lt;/getcontentlength&gt;
-      &lt;/prop&gt;
-    &lt;/propstat&gt;
-  &lt;/response&gt;
-  &lt;response&gt;
-    &lt;href&gt;/shared/link/mismo-archivo.pdf&lt;/href&gt;
-    &lt;propstat&gt;
-      &lt;status&gt;HTTP/1.1 208 Already Reported&lt;/status&gt;
-      &lt;prop&gt;
-        &lt;resource-id&gt;
-          &lt;href&gt;urn:uuid:12345-abcd-6789&lt;/href&gt;
-        &lt;/resource-id&gt;
-      &lt;/prop&gt;
-    &lt;/propstat&gt;
-  &lt;/response&gt;
-&lt;/multistatus&gt;
-                            </code>
+                        <!-- Respuesta rápida para emergencias -->
+                        <div class="warning-box">
+                            <h4><span>🚀</span> Respuesta rápida para emergencias</h4>
+                            <div style="display: grid; gap: 0.8rem; margin-top: 1rem;">
+                                <div style="padding: 0.8rem; background: rgba(255,159,10,0.1); border-radius: 6px; border-left: 3px solid #ff9f0a;">
+                                    <strong>🔥 Si estás implementando 208:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">1. Asegúrate de que los duplicados están correctamente identificados<br>2. Usa resource-id para claridad<br>3. Considera la compatibilidad con clientes antiguos</span>
+                                </div>
+                                <div style="padding: 0.8rem; background: rgba(175,82,222,0.1); border-radius: 6px; border-left: 3px solid #af52de;">
+                                    <strong>🎯 Truco ninja:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">Si trabajas con WebDAV, asegúrate de tener un buen sistema de manejo de bindings para evitar problemas de duplicados.</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -270,13 +251,13 @@ Content-Type: application/xml; charset=utf-8
                         <div class="error-desc">Para la primera aparición del recurso</div>
                     </a>
                     
-                    <a href="#" class="error-card">
+                    <a href="508.html" class="error-card">
                         <span class="error-number">508</span>
                         <div class="error-title">Loop Detected</div>
                         <div class="error-desc">Cuando hay bucles infinitos reales</div>
                     </a>
                     
-                    <a href="#" class="error-card">
+                    <a href="300.html" class="error-card">
                         <span class="error-number">300</span>
                         <div class="error-title">Multiple Choices</div>
                         <div class="error-desc">Múltiples opciones pero sin WebDAV</div>

@@ -172,182 +172,42 @@
                             </ol>
                         </div>
 
-                        <div class="code-block">
-                            <code>
-<!-- Ejemplos típicos de peticiones que generan 400 -->
+                        <div class="warning-box">
+                            <h4><span>❌</span> Errores típicos que generan 400</h4>
+                            <ul style="margin-left: 0; list-style: none;">
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>JSON mal formado:</strong><br>
+                                    <code style="font-size: 0.9rem;">{"name": "Juan" "email": "juan@test.com"}</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">Falta la coma entre campos</span>
+                                </li>
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Content-Type incorrecto:</strong><br>
+                                    <code style="font-size: 0.9rem;">Content-Type: text/plain</code> enviando JSON<br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">El servidor espera application/json</span>
+                                </li>
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Parámetros inválidos:</strong><br>
+                                    <code style="font-size: 0.9rem;">?age=abc&limit=infinito</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">Tipos de datos incorrectos</span>
+                                </li>
+                            </ul>
+                        </div>
 
-<!-- ❌ JSON mal formado -->
-POST /api/users HTTP/1.1
-Content-Type: application/json
-
-{
-  "name": "Juan",
-  "email": "juan@example.com"  // Falta coma
-  "age": 25
-}
-
-<!-- Respuesta del servidor -->
-HTTP/1.1 400 Bad Request
-Content-Type: application/json
-
-{
-  "error": "Bad Request",
-  "message": "Invalid JSON syntax",
-  "details": "Unexpected token 'a' at position 58"
-}
-
-<!-- ❌ Header Content-Type incorrecto -->
-POST /api/users HTTP/1.1
-Content-Type: text/plain
-
-{"name": "Juan", "email": "juan@example.com"}
-
-<!-- ❌ Parámetros de tipo incorrecto -->
-GET /api/users?age=not-a-number&limit=infinite HTTP/1.1
-
-<!-- ✅ PHP: Generar 400s útiles -->
-&lt;?php
-function validateUserInput($data) {
-    $errors = [];
-    
-    // Validar JSON
-    if (!is_array($data)) {
-        http_response_code(400);
-        return ['error' => 'Invalid JSON format'];
-    }
-    
-    // Validar campos obligatorios
-    if (empty($data['name'])) {
-        $errors[] = 'Field "name" is required';
-    }
-    
-    if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
-        $errors[] = 'Field "email" must be a valid email address';
-    }
-    
-    if (isset($data['age']) && (!is_numeric($data['age']) || $data['age'] < 0)) {
-        $errors[] = 'Field "age" must be a positive number';
-    }
-    
-    if (!empty($errors)) {
-        http_response_code(400);
-        header('Content-Type: application/json');
-        echo json_encode([
-            'error' => 'Bad Request',
-            'message' => 'Validation failed',
-            'details' => $errors
-        ]);
-        exit();
-    }
-    
-    return true;
-}
-
-// Procesar entrada
-$input = json_decode(file_get_contents('php://input'), true);
-if (json_last_error() !== JSON_ERROR_NONE) {
-    http_response_code(400);
-    echo json_encode(['error' => 'Invalid JSON: ' . json_last_error_msg()]);
-    exit();
-}
-
-validateUserInput($input);
-?&gt;
-
-<!-- ✅ Node.js: Validación y manejo de errores -->
-const express = require('express');
-const app = express();
-
-app.use(express.json());
-
-// Middleware para manejar JSON inválido
-app.use((error, req, res, next) => {
-    if (error instanceof SyntaxError && error.status === 400 && 'body' in error) {
-        return res.status(400).json({
-            error: 'Bad Request',
-            message: 'Invalid JSON syntax',
-            details: error.message
-        });
-    }
-    next();
-});
-
-app.post('/api/users', (req, res) => {
-    const { name, email, age } = req.body;
-    const errors = [];
-    
-    // Validaciones específicas
-    if (!name || typeof name !== 'string') {
-        errors.push('Field "name" is required and must be a string');
-    }
-    
-    if (!email || !isValidEmail(email)) {
-        errors.push('Field "email" must be a valid email address');
-    }
-    
-    if (age !== undefined && (!Number.isInteger(age) || age < 0)) {
-        errors.push('Field "age" must be a positive integer');
-    }
-    
-    if (errors.length > 0) {
-        return res.status(400).json({
-            error: 'Bad Request',
-            message: 'Validation failed',
-            details: errors
-        });
-    }
-    
-    // Procesar usuario válido
-    res.status(201).json({ id: 123, name, email, age });
-});
-
-<!-- ✅ JavaScript: Cliente que maneja 400s -->
-async function createUser(userData) {
-    try {
-        // Validación del lado cliente
-        if (!userData.name || !userData.email) {
-            throw new Error('Name and email are required');
-        }
-        
-        const response = await fetch('/api/users', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(userData)
-        });
-        
-        if (response.status === 400) {
-            const errorData = await response.json();
-            console.error('Validation errors:', errorData.details);
-            
-            // Mostrar errores específicos al usuario
-            displayValidationErrors(errorData.details);
-            return null;
-        }
-        
-        if (!response.ok) {
-            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-        }
-        
-        return await response.json();
-    } catch (error) {
-        console.error('Error creating user:', error);
-        throw error;
-    }
-}
-
-function displayValidationErrors(errors) {
-    const errorContainer = document.getElementById('errors');
-    errorContainer.innerHTML = errors.map(error => 
-        `<div class="error-message">${error}</div>`
-    ).join('');
-}
-
-// Uso
-createUser({ name: 'Juan', email: 'invalid-email' })
-    .catch(error => console.error('Failed to create user:', error));
-                            </code>
+                        <div class="warning-box">
+                            <h4><span>🚀</span> Respuesta rápida para emergencias</h4>
+                            <div style="display: grid; gap: 0.8rem; margin-top: 1rem;">
+                                <div style="padding: 0.8rem; background: rgba(255,159,10,0.1); border-radius: 6px; border-left: 3px solid #ff9f0a;">
+                                    <strong>🔥 Si estás debugging ahora mismo:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">1. Revisa el JSON en el body de la respuesta del error<br>
+                                    2. Verifica que el Content-Type sea correcto<br>
+                                    3. Usa herramientas como Postman para probar manualmente</span>
+                                </div>
+                                <div style="padding: 0.8rem; background: rgba(175,82,222,0.1); border-radius: 6px; border-left: 3px solid #af52de;">
+                                    <strong>🎯 Truco ninja:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">Muchos 400s son en realidad 422s mal etiquetados. Si la sintaxis está bien pero la validación falla, debería ser 422.</span>
+                                </div>
+                            </div>
+                        </div>
                         </div>
                     </div>
 

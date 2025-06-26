@@ -172,25 +172,36 @@
                             </ol>
                         </div>
 
-                        <div class="code-block">
-                            <code>
-<!-- Respuesta original del servidor -->
-HTTP/1.1 200 OK
-Content-Type: text/html
-Content-Length: 1234
-Cache-Control: max-age=300
+                        <!-- Problemas típicos con 203 -->
+                        <div class="warning-box">
+                            <h4><span>❌</span> Problemas típicos con 203</h4>
+                            <ul style="margin-left: 0; list-style: none;">
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Respuestas inconsistentes:</strong><br>
+                                    <code style="font-size: 0.9rem;">Los metadatos modificados pueden llevar a confusión</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">Aunque la respuesta sea válida, puede no coincidir con la fuente original.</span>
+                                </li>
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Problemas con proxies intermedios:</strong><br>
+                                    <code style="font-size: 0.9rem;">El proxy modifica respuestas de manera inesperada</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">Los cambios en los metadatos pueden alterar la interpretación de la respuesta.</span>
+                                </li>
+                            </ul>
+                        </div>
 
-&lt;html&gt;...contenido...&lt;/html&gt;
-
-<!-- Después de pasar por proxy que modifica cache -->
-HTTP/1.1 203 Non-Authoritative Information
-Content-Type: text/html
-Content-Length: 1234
-Cache-Control: max-age=600
-X-Proxy-Cache: modified
-
-&lt;html&gt;...mismo contenido...&lt;/html&gt;
-                            </code>
+                        <!-- Respuesta rápida para emergencias -->
+                        <div class="warning-box">
+                            <h4><span>🚀</span> Respuesta rápida para emergencias</h4>
+                            <div style="display: grid; gap: 0.8rem; margin-top: 1rem;">
+                                <div style="padding: 0.8rem; background: rgba(255,159,10,0.1); border-radius: 6px; border-left: 3px solid #ff9f0a;">
+                                    <strong>🔥 Si estás implementando 203:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">1. Asegúrate de documentar los cambios<br>2. Usa el código 203 para indicar modificaciones de proxies<br>3. Informa sobre los metadatos modificados</span>
+                                </div>
+                                <div style="padding: 0.8rem; background: rgba(175,82,222,0.1); border-radius: 6px; border-left: 3px solid #af52de;">
+                                    <strong>🎯 Truco ninja:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">Si el proxy o CDN modifica mucho los datos, considera proporcionar una opción de verificación para asegurar que la información es válida.</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -234,19 +245,19 @@ X-Proxy-Cache: modified
                         <div class="error-desc">La información original sin tocar</div>
                     </a>
                     
-                    <a href="#" class="error-card">
+                    <a href="304.html" class="error-card">
                         <span class="error-number">304</span>
                         <div class="error-title">Not Modified</div>
                         <div class="error-desc">Usa lo que tienes, no ha cambiado</div>
                     </a>
                     
-                    <a href="#" class="error-card">
+                    <a href="502.html" class="error-card">
                         <span class="error-number">502</span>
                         <div class="error-title">Bad Gateway</div>
                         <div class="error-desc">Cuando el proxy no puede contactar el origen</div>
                     </a>
                     
-                    <a href="#" class="error-card">
+                    <a href="504.html" class="error-card">
                         <span class="error-number">504</span>
                         <div class="error-title">Gateway Timeout</div>
                         <div class="error-desc">El proxy se cansó de esperar</div>

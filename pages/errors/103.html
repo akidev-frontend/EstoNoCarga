@@ -169,27 +169,36 @@
                             </ol>
                         </div>
 
-                        <div class="code-block">
-                            <code>
-<!-- El servidor envía 103 con hints -->
-HTTP/1.1 103 Early Hints
-Link: &lt;/style.css&gt;; rel=preload; as=style
-Link: &lt;/script.js&gt;; rel=preload; as=script
-Link: &lt;https://fonts.googleapis.com&gt;; rel=preconnect
+                        <!-- Problemas típicos con 103 -->
+                        <div class="warning-box">
+                            <h4><span>❌</span> Problemas típicos con 103</h4>
+                            <ul style="margin-left: 0; list-style: none;">
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Cliente no soporta 103:</strong><br>
+                                    <code style="font-size: 0.9rem;">HTTP client no entiende el 103 Early Hints</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">Algunos navegadores antiguos no soportan este código de estado.</span>
+                                </li>
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Proxies intermedios:</strong><br>
+                                    <code style="font-size: 0.9rem;">504 Gateway Timeout</code> antes del 103<br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">El proxy puede hacer timeout antes de que llegue el 103.</span>
+                                </li>
+                            </ul>
+                        </div>
 
-<!-- Luego la respuesta final -->
-HTTP/1.1 200 OK
-Content-Type: text/html
-Content-Length: 2048
-
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;link rel="stylesheet" href="/style.css"&gt;
-    &lt;script src="/script.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-...
-                            </code>
+                        <!-- Respuesta rápida para emergencias -->
+                        <div class="warning-box">
+                            <h4><span>🚀</span> Respuesta rápida para emergencias</h4>
+                            <div style="display: grid; gap: 0.8rem; margin-top: 1rem;">
+                                <div style="padding: 0.8rem; background: rgba(255,159,10,0.1); border-radius: 6px; border-left: 3px solid #ff9f0a;">
+                                    <strong>🔥 Si estás implementando 103:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">1. Envía el primer 103 rápido<br>2. Repite cada 30-60 segundos durante el procesamiento<br>3. Testea que tu cliente HTTP soporta códigos 1xx</span>
+                                </div>
+                                <div style="padding: 0.8rem; background: rgba(175,82,222,0.1); border-radius: 6px; border-left: 3px solid #af52de;">
+                                    <strong>🎯 Truco ninja:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">Si el 103 no es viable, considera usar APIs asíncronas, devuelve 202 Accepted y usa un job ID para permitir consultar el estado.</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 

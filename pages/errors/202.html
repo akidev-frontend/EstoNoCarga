@@ -172,28 +172,36 @@
                             </ol>
                         </div>
 
-                        <div class="code-block">
-                            <code>
-<!-- Subir archivo para procesamiento -->
-POST /api/process-video HTTP/1.1
-Host: miapi.com
-Content-Type: multipart/form-data
+                        <!-- Problemas típicos con 202 -->
+                        <div class="warning-box">
+                            <h4><span>❌</span> Problemas típicos con 202</h4>
+                            <ul style="margin-left: 0; list-style: none;">
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Retrasos excesivos:</strong><br>
+                                    <code style="font-size: 0.9rem;">El trabajo tarda mucho más de lo esperado</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">Cuando el procesamiento lleva más tiempo del estimado.</span>
+                                </li>
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Fallo en el procesamiento:</strong><br>
+                                    <code style="font-size: 0.9rem;">El trabajo en background falla o no se completa</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">El 202 no garantiza que todo vaya bien.</span>
+                                </li>
+                            </ul>
+                        </div>
 
-[archivo de video grande]
-
-<!-- Respuesta inmediata de aceptación -->
-HTTP/1.1 202 Accepted
-Content-Type: application/json
-Location: /api/jobs/abc123
-
-{
-  "job_id": "abc123",
-  "status": "queued",
-  "message": "Video en cola para procesamiento",
-  "estimated_time": "5-10 minutos",
-  "status_url": "/api/jobs/abc123/status"
-}
-                            </code>
+                        <!-- Respuesta rápida para emergencias -->
+                        <div class="warning-box">
+                            <h4><span>🚀</span> Respuesta rápida para emergencias</h4>
+                            <div style="display: grid; gap: 0.8rem; margin-top: 1rem;">
+                                <div style="padding: 0.8rem; background: rgba(255,159,10,0.1); border-radius: 6px; border-left: 3px solid #ff9f0a;">
+                                    <strong>🔥 Si estás implementando 202:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">1. Asegúrate de devolver información relevante en el 202<br>2. Incluye detalles sobre el estado del trabajo<br>3. Implementa un sistema de notificación (webhooks o polling)</span>
+                                </div>
+                                <div style="padding: 0.8rem; background: rgba(175,82,222,0.1); border-radius: 6px; border-left: 3px solid #af52de;">
+                                    <strong>🎯 Truco ninja:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">Si el trabajo tiene un alto tiempo de espera, asegúrate de actualizar el estado regularmente o permitir que el cliente consulte el estado en tiempo real.</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -243,13 +251,13 @@ Location: /api/jobs/abc123
                         <div class="error-desc">Creado exitosamente al momento</div>
                     </a>
                     
-                    <a href="#" class="error-card">
+                    <a href="102.html" class="error-card">
                         <span class="error-number">102</span>
                         <div class="error-title">Processing</div>
                         <div class="error-desc">Aún procesando, mantén la conexión</div>
                     </a>
                     
-                    <a href="#" class="error-card">
+                    <a href="429.html" class="error-card">
                         <span class="error-number">429</span>
                         <div class="error-title">Too Many Requests</div>
                         <div class="error-desc">Ralentiza, estás enviando demasiado</div>

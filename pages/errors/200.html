@@ -170,26 +170,36 @@
                             </ol>
                         </div>
 
-                        <div class="code-block">
-                            <code>
-<!-- Petición exitosa -->
-GET /index.html HTTP/1.1
-Host: ejemplo.com
-Accept: text/html
+                        <!-- Problemas típicos con 200 -->
+                        <div class="warning-box">
+                            <h4><span>❌</span> Problemas típicos con 200</h4>
+                            <ul style="margin-left: 0; list-style: none;">
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Petición incorrecta:</strong><br>
+                                    <code style="font-size: 0.9rem;">El cliente hace una solicitud mal formada</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">Aunque el servidor puede devolver un 200, la petición no será válida.</span>
+                                </li>
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Problemas con el recurso:</strong><br>
+                                    <code style="font-size: 0.9rem;">El servidor devuelve un 200, pero el contenido está dañado o incompleto.</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">El 200 no siempre significa que todo esté perfecto, solo que la petición fue procesada.</span>
+                                </li>
+                            </ul>
+                        </div>
 
-<!-- Respuesta perfecta -->
-HTTP/1.1 200 OK
-Content-Type: text/html; charset=utf-8
-Content-Length: 1234
-Cache-Control: max-age=3600
-Last-Modified: Wed, 11 Jun 2025 10:00:00 GMT
-
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;&lt;title&gt;Todo perfecto&lt;/title&gt;&lt;/head&gt;
-&lt;body&gt;&lt;h1&gt;¡Funcionó!&lt;/h1&gt;&lt;/body&gt;
-&lt;/html&gt;
-                            </code>
+                        <!-- Respuesta rápida para emergencias -->
+                        <div class="warning-box">
+                            <h4><span>🚀</span> Respuesta rápida para emergencias</h4>
+                            <div style="display: grid; gap: 0.8rem; margin-top: 1rem;">
+                                <div style="padding: 0.8rem; background: rgba(255,159,10,0.1); border-radius: 6px; border-left: 3px solid #ff9f0a;">
+                                    <strong>🔥 Si estás implementando 200:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">1. Asegúrate de que la petición esté correctamente formada<br>2. Verifica que el recurso esté disponible y sin errores</span>
+                                </div>
+                                <div style="padding: 0.8rem; background: rgba(175,82,222,0.1); border-radius: 6px; border-left: 3px solid #af52de;">
+                                    <strong>🎯 Truco ninja:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">Verifica que el contenido sea el esperado y que no haya errores ocultos.</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 

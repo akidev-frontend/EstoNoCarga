@@ -172,42 +172,28 @@
                             </ol>
                         </div>
 
-                        <div class="code-block">
-                            <code>
-<!-- Cliente solicita recurso ambiguo -->
-GET /documento HTTP/1.1
-Host: example.com
-Accept: text/html, application/pdf
-Accept-Language: en, es
-
-<!-- Servidor no puede decidir automáticamente -->
-HTTP/1.1 300 Multiple Choices
-Location: /documento.html
-Content-Type: text/html
-Alternates: {"/documento.html" 1 {type text/html} {language en}},
-           {"/documento.pdf" 1 {type application/pdf} {language en}},
-           {"/documento-es.html" 1 {type text/html} {language es}}
-
-&lt;html&gt;
-&lt;head&gt;&lt;title&gt;Multiple Choices&lt;/title&gt;&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;Choose your preferred format:&lt;/h1&gt;
-  &lt;ul&gt;
-    &lt;li&gt;&lt;a href="/documento.html"&gt;HTML (English)&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href="/documento.pdf"&gt;PDF (English)&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href="/documento-es.html"&gt;HTML (Español)&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-
-<!-- Cliente elige y hace nueva request -->
-GET /documento.pdf HTTP/1.1
-Host: example.com
-
-HTTP/1.1 200 OK
-Content-Type: application/pdf
-                            </code>
+                        <div class="warning-box">
+                            <h4><span>❌</span> Problemas típicos con 300</h4>
+                            <ul>
+                                <li><strong>Selección del cliente complicada:</strong><br> Si el cliente no maneja correctamente el 300, la respuesta puede ser inefectiva.</li>
+                                <li><strong>Navegadores que ignoran 300:</strong><br> Muchos navegadores prefieren manejar la negociación internamente y no muestran la lista de opciones.</li>
+                            </ul>
                         </div>
+
+                        <div class="warning-box">
+                            <h4><span>🚀</span> Respuesta rápida para emergencias</h4>
+                            <div style="display: grid; gap: 0.8rem;">
+                                <div style="padding: 0.8rem; background: rgba(255,159,10,0.1); border-radius: 6px;">
+                                    <strong>🔥 Si estás implementando 300:</strong><br>
+                                    <span>1. Evalúa si realmente necesitas ofrecer tantas opciones<br>2. Considera el uso de 406 si no puedes hacer una negociación eficiente<br>3. Proporciona una opción preferida para evitar la confusión</span>
+                                </div>
+                                <div style="padding: 0.8rem; background: rgba(175,82,222,0.1); border-radius: 6px;">
+                                    <strong>🎯 Truco ninja:</strong><br>
+                                    <span>Si el cliente no puede elegir adecuadamente, considera devolver 406 para manejar las negociaciones sin ambigüedad.</span>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
 
                     <div class="sidebar">
@@ -244,19 +230,19 @@ Content-Type: application/pdf
                 <p style="text-align: center; color: var(--text-secondary); font-size: 1.1rem;">Otros códigos que también molan</p>
                 
                 <div class="error-grid">
-                    <a href="#" class="error-card">
+                    <a href="301.html" class="error-card">
                         <span class="error-number">301</span>
                         <div class="error-title">Moved Permanently</div>
                         <div class="error-desc">Redirección automática permanente</div>
                     </a>
                     
-                    <a href="#" class="error-card">
+                    <a href="302.html" class="error-card">
                         <span class="error-number">302</span>
                         <div class="error-title">Found</div>
                         <div class="error-desc">Redirección automática temporal</div>
                     </a>
                     
-                    <a href="#" class="error-card">
+                    <a href="406.html" class="error-card">
                         <span class="error-number">406</span>
                         <div class="error-title">Not Acceptable</div>
                         <div class="error-desc">Cuando no hay variante aceptable</div>

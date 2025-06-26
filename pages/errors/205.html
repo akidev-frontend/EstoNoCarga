@@ -172,35 +172,36 @@
                             </ol>
                         </div>
 
-                        <div class="code-block">
-                            <code>
-<!-- Ejemplo: Enviar un comentario -->
-POST /api/comments HTTP/1.1
-Host: miblog.com
-Content-Type: application/json
+                        <!-- Problemas típicos con 205 -->
+                        <div class="warning-box">
+                            <h4><span>❌</span> Problemas típicos con 205</h4>
+                            <ul style="margin-left: 0; list-style: none;">
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Confusión por no cambiar la interfaz:</strong><br>
+                                    <code style="font-size: 0.9rem;">Aunque el código 205 indique éxito, algunos usuarios pueden no entender por qué el formulario se resetea.</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">Esto puede causar confusión si la interfaz no refleja claramente que debe hacerse otra entrada.</span>
+                                </li>
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Impacto en la experiencia del usuario:</strong><br>
+                                    <code style="font-size: 0.9rem;">Resetear formularios sin una razón clara puede frustrar a los usuarios.</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">El usuario puede sentirse perdido si no entiende por qué la entrada anterior desaparece.</span>
+                                </li>
+                            </ul>
+                        </div>
 
-{"content": "Gran artículo!", "post_id": 123}
-
-<!-- Respuesta del servidor -->
-HTTP/1.1 205 Reset Content
-Date: Thu, 12 Jun 2025 10:30:00 GMT
-Server: nginx/1.18.0
-
-<!-- Sin body, pero navegador debe resetear formulario -->
-
-<!-- Ejemplo en JavaScript -->
-fetch('/api/comments', {
-  method: 'POST',
-  body: JSON.stringify({content: comentario, post_id: 123})
-})
-.then(response => {
-  if (response.status === 205) {
-    console.log('Comentario enviado');
-    document.getElementById('commentForm').reset();
-    // Formulario limpio para siguiente comentario
-  }
-});
-                            </code>
+                        <!-- Respuesta rápida para emergencias -->
+                        <div class="warning-box">
+                            <h4><span>🚀</span> Respuesta rápida para emergencias</h4>
+                            <div style="display: grid; gap: 0.8rem; margin-top: 1rem;">
+                                <div style="padding: 0.8rem; background: rgba(255,159,10,0.1); border-radius: 6px; border-left: 3px solid #ff9f0a;">
+                                    <strong>🔥 Si estás implementando 205:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">1. Asegúrate de que el reset sea necesario y útil<br>2. No lo uses si realmente no ayuda en la UX<br>3. Documenta bien el comportamiento para que los usuarios sepan lo que esperar</span>
+                                </div>
+                                <div style="padding: 0.8rem; background: rgba(175,82,222,0.1); border-radius: 6px; border-left: 3px solid #af52de;">
+                                    <strong>🎯 Truco ninja:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">Si el formulario se reseteará, asegúrate de que el campo anterior sea recordado para mejorar la experiencia del usuario.</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -250,13 +251,13 @@ fetch('/api/comments', {
                         <div class="error-desc">Éxito con contenido de respuesta</div>
                     </a>
                     
-                    <a href="#" class="error-card">
+                    <a href="302.html" class="error-card">
                         <span class="error-number">302</span>
                         <div class="error-title">Found</div>
                         <div class="error-desc">Éxito con redirección a otra página</div>
                     </a>
                     
-                    <a href="#" class="error-card">
+                    <a href="422.html" class="error-card">
                         <span class="error-number">422</span>
                         <div class="error-title">Unprocessable Entity</div>
                         <div class="error-desc">Cuando el formulario tiene errores</div>

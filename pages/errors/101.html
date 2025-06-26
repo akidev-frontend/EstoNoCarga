@@ -87,27 +87,30 @@
                 <div class="content-grid">
                     <div class="main-content">
                         <h2 class="section-title">
-                            <span class="section-icon">🤔</span>
+                            <span class="section-icon">📋</span>
                             ¿Qué narices es esto?
                         </h2>
                         
-                        <p>El <strong>código 101 Switching Protocols</strong> es como ese amigo políglota que cambia de idioma según la situación. El servidor básicamente te dice: "Vale, entiendo que quieres hablar en otro protocolo, vamos a cambiar". Es elegante, civilizado y bastante útil.</p>
+                        <p>El <strong>código 101 Switching Protocols</strong> es como ese amigo políglota que cambia de idioma según la situación. El servidor básicamente te dice: "Vale, entiendo que quieres hablar en otro protocolo, vamos a cambiar". Es elegante, civilizado y bastante útil. <strong>A diferencia de los errores que todos conocemos, el 101 es un código informativo de éxito</strong>.</p>
                         
-                        <p>A diferencia de los errores que todos conocemos, el 101 es un código <strong>informativo de éxito</strong>. Aparece principalmente cuando:</p>
+                        <p>Este código es <strong>el diplomático de HTTP</strong>. Aparece cuando cliente y servidor se ponen de acuerdo para cambiar de protocolo sobre la marcha. Como cuando dos personas empiezan hablando en inglés y luego se dan cuenta de que ambos hablan español. <strong>Es pura cortesía digital</strong>.</p>
+                        
+                        <p>El 101 aparece típicamente cuando:</p>
                         
                         <ul style="margin-left: 2rem; margin-bottom: 2rem;">
                             <li style="margin-bottom: 0.5rem;">Se establece una conexión WebSocket</li>
                             <li style="margin-bottom: 0.5rem;">Se actualiza de HTTP/1.1 a HTTP/2</li>
                             <li style="margin-bottom: 0.5rem;">Se cambia a un protocolo personalizado</li>
                             <li style="margin-bottom: 0.5rem;">Se negocia un protocolo más eficiente</li>
+                            <li style="margin-bottom: 0.5rem;">Se establece comunicación bidireccional en tiempo real</li>
                         </ul>
 
                         <div class="warning-box">
-                            <h4><span>⚡</span> Dato curioso</h4>
-                            <p>El 101 es como el traductor simultáneo de internet. Una vez que se produce el cambio, toda la conversación posterior usa el nuevo protocolo. Es un cambio permanente, no temporal.</p>
+                            <h4><span>🎯</span> Dato curioso</h4>
+                            <p>El 101 es como el traductor simultáneo de internet. Una vez que se produce el cambio, toda la conversación posterior usa el nuevo protocolo. Es un cambio permanente para esa conexión, no temporal.</p>
                         </div>
 
-                        <p>La gracia del 101 es que es cooperativo. El cliente pide educadamente cambiar de protocolo y el servidor responde: "Por supuesto, cambiemos". Es diplomacia digital en estado puro.</p>
+                        <p>La gracia del 101 es que <strong>es completamente transparente para el usuario final</strong>. Mientras navegas, tu browser y el servidor pueden estar haciendo este baile de protocolos sin que te enteres. <strong>Es como tener un mayordomo digital que optimiza tu conexión automáticamente</strong>. Solo los desarrolladores necesitan preocuparse por implementarlo correctamente.</p>
                     </div>
 
                     <div class="sidebar">
@@ -119,14 +122,14 @@
                                 <li><strong>Categoría:</strong> 1xx</li>
                                 <li><strong>Descripción:</strong> Switching Protocols</li>
                                 <li><strong>Cacheable:</strong> No</li>
-                                <li><strong>Es error:</strong> No</li>
+                                <li><strong>Estándar:</strong> HTTP/1.1 RFC 2616</li>
                             </ul>
                         </div>
 
                         <div class="info-card">
                             <h3>🎯 Frecuencia</h3>
                             <ul>
-                                <li><strong>Poco común</strong></li>
+                                <li><strong>Poco común para usuarios</strong></li>
                                 <li>Principalmente en WebSockets</li>
                                 <li>Apps en tiempo real</li>
                                 <li>Transparente al usuario</li>
@@ -144,47 +147,66 @@
                     <div class="main-content">
                         <h2 class="section-title">
                             <span class="section-icon">🔧</span>
-                            Cómo funciona esta magia
+                            Cómo manejar esto
                         </h2>
 
                         <div class="solution-steps">
-                            <h4>🚀 Para usuarios normales</h4>
+                            <h4>🖥️ Para servidores (generar 101s correctos)</h4>
                             <ol>
-                                <li><strong>No hagas nada:</strong> El 101 es completamente transparente para ti.</li>
-                                <li><strong>Disfruta la mejora:</strong> Tu aplicación probablemente funciona mejor ahora.</li>
-                                <li><strong>Si algo falla:</strong> Recarga la página, puede ser un problema de conexión.</li>
-                                <li><strong>Revisa la consola:</strong> Los desarrolladores pueden querer ver logs.</li>
-                                <li><strong>Actualiza el navegador:</strong> Los navegadores viejos pueden tener problemas.</li>
+                                <li><strong>Valida headers de upgrade:</strong> Verifica Connection: Upgrade y protocolo solicitado.</li>
+                                <li><strong>Responde 101 + headers correctos:</strong> Confirma el cambio de protocolo.</li>
+                                <li><strong>Implementa el nuevo protocolo:</strong> Cambia inmediatamente tras enviar 101.</li>
+                                <li><strong>Maneja errores gracefully:</strong> Si no puedes cambiar, devuelve 426 o 400.</li>
+                                <li><strong>Testea compatibilidad:</strong> Algunos proxies bloquean protocol switching.</li>
                             </ol>
                         </div>
 
                         <div class="solution-steps">
-                            <h4>🛠️ Para desarrolladores</h4>
+                            <h4>📱 Para desarrolladores frontend</h4>
                             <ol>
-                                <li><strong>Implementa WebSockets correctamente:</strong> Maneja el handshake adecuadamente.</li>
-                                <li><strong>Verifica headers de upgrade:</strong> Connection: Upgrade y Upgrade: websocket.</li>
-                                <li><strong>Maneja errores del cambio:</strong> No todos los proxies soportan protocolo switching.</li>
-                                <li><strong>Testea la conexión:</strong> Asegúrate de que el nuevo protocolo funciona.</li>
-                                <li><strong>Implementa fallbacks:</strong> Si el 101 falla, ten un plan B.</li>
+                                <li><strong>Usa librerías probadas:</strong> WebSocket APIs nativas o Socket.io.</li>
+                                <li><strong>Maneja fallos de conexión:</strong> Fallback a HTTP normal si 101 falla.</li>
+                                <li><strong>Implementa reconexión:</strong> Conexiones WebSocket pueden caerse.</li>
+                                <li><strong>Monitorea estado de conexión:</strong> Usa heartbeat/ping-pong.</li>
+                                <li><strong>Testea en diferentes redes:</strong> Algunos firewalls bloquean WebSockets.</li>
                             </ol>
                         </div>
 
-                        <div class="code-block">
-                            <code>
-// Ejemplo de WebSocket handshake
-// Cliente solicita:
-GET /websocket HTTP/1.1
-Host: ejemplo.com
-Upgrade: websocket
-Connection: Upgrade
-Sec-WebSocket-Key: dGhlIHNhbXBsZSBub25jZQ==
+                        <div class="warning-box">
+                            <h4><span>❌</span> Problemas típicos con 101</h4>
+                            <ul style="margin-left: 0; list-style: none;">
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Headers mal formados:</strong><br>
+                                    <code style="font-size: 0.9rem;">Connection: keep-alive</code> en lugar de <code>Upgrade</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">El servidor no entiende que quieres cambiar protocolo</span>
+                                </li>
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Proxies intermedios:</strong><br>
+                                    <code style="font-size: 0.9rem;">502 Bad Gateway</code> en lugar de 101<br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">El proxy no soporta protocol switching</span>
+                                </li>
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Protocolo no implementado:</strong><br>
+                                    <code style="font-size: 0.9rem;">Upgrade: websocket</code> pero servidor no soporta WebSockets<br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">Devuelve 426 Upgrade Required o 501 Not Implemented</span>
+                                </li>
+                            </ul>
+                        </div>
 
-// Servidor responde con 101:
-HTTP/1.1 101 Switching Protocols
-Upgrade: websocket
-Connection: Upgrade
-Sec-WebSocket-Accept: s3pPLMBiTxaQ9kYGzzhZRbK+xOo=
-                            </code>
+                        <div class="warning-box">
+                            <h4><span>🚀</span> Respuesta rápida para emergencias</h4>
+                            <div style="display: grid; gap: 0.8rem; margin-top: 1rem;">
+                                <div style="padding: 0.8rem; background: rgba(255,159,10,0.1); border-radius: 6px; border-left: 3px solid #ff9f0a;">
+                                    <strong>🔥 Si tu WebSocket no funciona:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">1. Verifica que el servidor devuelve 101, no 200 o error<br>
+                                    2. Revisa headers: Connection: Upgrade, Upgrade: websocket<br>
+                                    3. Usa wss:// en producción, ws:// solo en desarrollo</span>
+                                </div>
+                                <div style="padding: 0.8rem; background: rgba(175,82,222,0.1); border-radius: 6px; border-left: 3px solid #af52de;">
+                                    <strong>🎯 Truco ninja:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">Si ves 101 en DevTools pero la conexión falla, es probable que un proxy intermedio esté bloqueando WebSockets. Prueba con polling como fallback.</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 

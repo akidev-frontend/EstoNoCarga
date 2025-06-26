@@ -172,36 +172,36 @@
                             </ol>
                         </div>
 
-                        <div class="code-block">
-                            <code>
-<!-- Cliente solicita con soporte delta -->
-GET /documento.html HTTP/1.1
-Host: example.com
-If-None-Match: "123abc"
-A-IM: vcdiff, diffe, gzip
+                        <!-- Problemas típicos con 226 -->
+                        <div class="warning-box">
+                            <h4><span>❌</span> Problemas típicos con 226</h4>
+                            <ul style="margin-left: 0; list-style: none;">
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Falta de adopción:</strong><br>
+                                    <code style="font-size: 0.9rem;">La mayoría de los servidores y clientes no implementan RFC 3229</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">Esto limita la efectividad del 226 en la práctica.</span>
+                                </li>
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Compatibilidad limitada:</strong><br>
+                                    <code style="font-size: 0.9rem;">Algunos clientes pueden no manejar correctamente los diffs</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">Esto podría generar inconsistencias o errores en la interpretación del recurso.</span>
+                                </li>
+                            </ul>
+                        </div>
 
-<!-- Servidor responde con delta -->
-HTTP/1.1 226 IM Used
-ETag: "456def"
-IM: vcdiff
-Delta-Base: "123abc"
-Content-Type: application/vcdiff
-Content-Length: 482
-
-[contenido binario del delta vcdiff]
-
-<!-- Lo que habría pasado sin delta encoding -->
-HTTP/1.1 200 OK
-ETag: "456def"
-Content-Type: text/html
-Content-Length: 15420
-
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;...todo el documento completo...&lt;/html&gt;
-
-<!-- Con 226: 482 bytes vs sin delta: 15420 bytes -->
-<!-- ¡Ahorro del 97%! -->
-                            </code>
+                        <!-- Respuesta rápida para emergencias -->
+                        <div class="warning-box">
+                            <h4><span>🚀</span> Respuesta rápida para emergencias</h4>
+                            <div style="display: grid; gap: 0.8rem; margin-top: 1rem;">
+                                <div style="padding: 0.8rem; background: rgba(255,159,10,0.1); border-radius: 6px; border-left: 3px solid #ff9f0a;">
+                                    <strong>🔥 Si estás implementando 226:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">1. Asegúrate de que tanto el cliente como el servidor soporten delta encoding<br>2. Usa vcdiff o diffe para los algoritmos de delta más comunes<br>3. Documenta bien los cambios y las expectativas del cliente</span>
+                                </div>
+                                <div style="padding: 0.8rem; background: rgba(175,82,222,0.1); border-radius: 6px; border-left: 3px solid #af52de;">
+                                    <strong>🎯 Truco ninja:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">Si el cliente no soporta delta encoding, puedes devolver el archivo completo con un 200 OK para no romper la funcionalidad.</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -245,13 +245,13 @@ Content-Length: 15420
                         <div class="error-desc">Cuando envías el recurso completo</div>
                     </a>
                     
-                    <a href="#" class="error-card">
+                    <a href="304.html" class="error-card">
                         <span class="error-number">304</span>
                         <div class="error-title">Not Modified</div>
                         <div class="error-desc">Cuando no hay cambios (sin delta)</div>
                     </a>
                     
-                    <a href="#" class="error-card">
+                    <a href="206.html" class="error-card">
                         <span class="error-number">206</span>
                         <div class="error-title">Partial Content</div>
                         <div class="error-desc">Contenido parcial por rangos</div>

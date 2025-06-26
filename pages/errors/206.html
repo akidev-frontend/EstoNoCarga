@@ -172,34 +172,36 @@
                             </ol>
                         </div>
 
-                        <div class="code-block">
-                            <code>
-<!-- Cliente pide rango específico -->
-GET /video.mp4 HTTP/1.1
-Host: micdn.com
-Range: bytes=1000000-2000000
+                        <!-- Problemas típicos con 206 -->
+                        <div class="warning-box">
+                            <h4><span>❌</span> Problemas típicos con 206</h4>
+                            <ul style="margin-left: 0; list-style: none;">
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Rangos incorrectos:</strong><br>
+                                    <code style="font-size: 0.9rem;">El cliente puede solicitar un rango que no es válido</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">Esto puede causar errores o respuestas vacías si el rango no está dentro del archivo.</span>
+                                </li>
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Compatibilidad de rangos múltiples:</strong><br>
+                                    <code style="font-size: 0.9rem;">El manejo de múltiples rangos en una solicitud puede ser complejo</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">Si no se gestionan correctamente, puede resultar en respuestas inconsistentes o fallos en la descarga.</span>
+                                </li>
+                            </ul>
+                        </div>
 
-<!-- Servidor responde con esa porción -->
-HTTP/1.1 206 Partial Content
-Content-Type: video/mp4
-Content-Length: 1000001
-Content-Range: bytes 1000000-2000000/50000000
-Accept-Ranges: bytes
-
-[1MB de datos del video desde byte 1000000 al 2000000]
-
-<!-- Ejemplo JavaScript -->
-fetch('/archivo-grande.pdf', {
-  headers: {
-    'Range': 'bytes=0-1023'  // Primeros 1KB
-  }
-})
-.then(response => {
-  console.log(response.status); // 206
-  console.log(response.headers.get('Content-Range'));
-  // "bytes 0-1023/2048000"
-});
-                            </code>
+                        <!-- Respuesta rápida para emergencias -->
+                        <div class="warning-box">
+                            <h4><span>🚀</span> Respuesta rápida para emergencias</h4>
+                            <div style="display: grid; gap: 0.8rem; margin-top: 1rem;">
+                                <div style="padding: 0.8rem; background: rgba(255,159,10,0.1); border-radius: 6px; border-left: 3px solid #ff9f0a;">
+                                    <strong>🔥 Si estás implementando 206:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">1. Asegúrate de validar los rangos correctamente<br>2. Usa Content-Range para indicar la porción específica<br>3. Maneja adecuadamente las solicitudes múltiples de rangos</span>
+                                </div>
+                                <div style="padding: 0.8rem; background: rgba(175,82,222,0.1); border-radius: 6px; border-left: 3px solid #af52de;">
+                                    <strong>🎯 Truco ninja:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">Cuando trabajes con streaming o descargas, asegúrate de que el archivo es fragmentable (e.g., en segmentos pequeños).</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -243,19 +245,19 @@ fetch('/archivo-grande.pdf', {
                         <div class="error-desc">El archivo completo de una vez</div>
                     </a>
                     
-                    <a href="#" class="error-card">
+                    <a href="416.html" class="error-card">
                         <span class="error-number">416</span>
                         <div class="error-title">Range Not Satisfiable</div>
                         <div class="error-desc">Pediste un rango que no existe</div>
                     </a>
                     
-                    <a href="#" class="error-card">
+                    <a href="304.html" class="error-card">
                         <span class="error-number">304</span>
                         <div class="error-title">Not Modified</div>
                         <div class="error-desc">Tu cache ya tiene la versión correcta</div>
                     </a>
                     
-                    <a href="#" class="error-card">
+                    <a href="412.html" class="error-card">
                         <span class="error-number">412</span>
                         <div class="error-title">Precondition Failed</div>
                         <div class="error-desc">Cuando fallan las condiciones del range</div>

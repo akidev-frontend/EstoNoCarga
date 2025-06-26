@@ -87,27 +87,30 @@
                 <div class="content-grid">
                     <div class="main-content">
                         <h2 class="section-title">
-                            <span class="section-icon">🤔</span>
+                            <span class="section-icon">📋</span>
                             ¿Qué narices es esto?
                         </h2>
                         
-                        <p>El <strong>código 102 Processing</strong> es el servidor diciéndote "espérame, que estoy pensando". No es un error, es más bien un "dale un segundo que esto va a tardar". Es como cuando le preguntas algo complicado a tu amigo y te dice "espera, déjame pensar" para no quedarse callado como un mueble.</p>
+                        <p>El <strong>código 102 Processing</strong> es el servidor diciéndote "espérame, que estoy pensando". No es un error, es más bien un "dale un segundo que esto va a tardar". Es como cuando le preguntas algo complicado a tu amigo y te dice "espera, déjame pensar" para no quedarse callado como un mueble. <strong>Es pura cortesía digital para evitar timeouts</strong>.</p>
                         
-                        <p>Este código es parte del estándar <strong>WebDAV</strong> y se usa para evitar timeouts cuando el servidor necesita <strong>más tiempo del habitual</strong> para procesar una petición. Es básicamente una manera educada de decir <strong>"no me cuelgues, que estoy trabajando"</strong>. Se envía cuando:</p>
+                        <p>Este código es <strong>el mensajero de la paciencia</strong>. Forma parte del estándar WebDAV y se usa para evitar que el cliente se impaciente cuando el servidor necesita más tiempo del habitual para procesar una petición. <strong>Es básicamente una manera educada de decir "no me cuelgues, que estoy trabajando"</strong>.</p>
+                        
+                        <p>El 102 aparece típicamente cuando:</p>
                         
                         <ul style="margin-left: 2rem; margin-bottom: 2rem;">
                             <li style="margin-bottom: 0.5rem;">El servidor está procesando algo complejo (cálculos pesados)</li>
-                            <li style="margin-bottom: 0.5rem;">Hay operaciones de archivo que tardan mucho</li>
+                            <li style="margin-bottom: 0.5rem;">Hay operaciones de archivo que tardan mucho (uploads grandes)</li>
                             <li style="margin-bottom: 0.5rem;">Se están ejecutando scripts que no acaban nunca</li>
                             <li style="margin-bottom: 0.5rem;">El servidor quiere evitar que el cliente se impaciente</li>
+                            <li style="margin-bottom: 0.5rem;">Operaciones WebDAV complejas (sincronización masiva)</li>
                         </ul>
 
                         <div class="warning-box">
-                            <h4><span>⚡</span> Dato curioso</h4>
+                            <h4><span>🎯</span> Dato curioso</h4>
                             <p>El 102 es como el "aguanta que estoy cargando" de los videojuegos, pero para servidores web. La diferencia es que aquí no hay una barra de progreso molona, solo la promesa de que eventualmente va a acabar.</p>
                         </div>
 
-                        <p>Lo curioso del 102 es que es bastante raro verlo en la web normal. Es más común en aplicaciones especializadas que manejan archivos grandes o procesamientos complejos.</p>
+                        <p>Lo curioso del 102 es que <strong>es bastante raro verlo en la web normal</strong>. Es más común en aplicaciones especializadas que manejan archivos grandes o procesamientos complejos. <strong>Es como el unicornio de los códigos HTTP: existe, pero pocos lo han visto en libertad</strong>. La mayoría de APIs modernas prefieren respuestas asíncronas en lugar de mantener conexiones abiertas esperando.</p>
                     </div>
 
                     <div class="sidebar">
@@ -127,7 +130,7 @@
                             <h3>🎯 Frecuencia</h3>
                             <ul>
                                 <li><strong>Muy raro</strong></li>
-                                <li>Solo en WebDAV</li>
+                                <li>Solo en WebDAV principalmente</li>
                                 <li>Operaciones complejas</li>
                                 <li>Casi invisible al usuario</li>
                             </ul>
@@ -144,47 +147,66 @@
                     <div class="main-content">
                         <h2 class="section-title">
                             <span class="section-icon">🔧</span>
-                            Cómo implementar esto
+                            Cómo manejar esto
                         </h2>
 
                         <div class="solution-steps">
-                            <h4>🚀 Para clientes</h4>
+                            <h4>🖥️ Para servidores (generar 102s útiles)</h4>
                             <ol>
-                                <li><strong>Espera el 102:</strong> No es la respuesta final, solo un aviso.</li>
-                                <li><strong>Mantén la conexión:</strong> No cierres ni reintendes la petición.</li>
-                                <li><strong>Incrementa timeouts:</strong> Va a tardar más de lo normal.</li>
-                                <li><strong>Muestra progreso:</strong> Informa al usuario que algo está pasando.</li>
-                                <li><strong>Espera la respuesta final:</strong> 200, 404, etc.</li>
+                                <li><strong>Detecta operaciones lentas:</strong> Identifica cuándo vas a tardar más de 10-15 segundos.</li>
+                                <li><strong>Envía 102 rápido:</strong> Antes de que el cliente se impaciente o haga timeout.</li>
+                                <li><strong>Mantén conexión viva:</strong> Continúa procesando mientras mantienes la conexión activa.</li>
+                                <li><strong>Envía más 102 si es necesario:</strong> Cada 30-60 segundos para mantener vivo el cliente.</li>
+                                <li><strong>Termina con respuesta final:</strong> 200, 201, 4xx, 5xx según corresponda.</li>
                             </ol>
                         </div>
 
                         <div class="solution-steps">
-                            <h4>🛠️ Para servidores</h4>
+                            <h4>📱 Para desarrolladores cliente</h4>
                             <ol>
-                                <li><strong>Detecta operaciones lentas:</strong> Identifica cuándo vas a tardar.</li>
-                                <li><strong>Envía 102 rápido:</strong> Antes de que el cliente se impaciente.</li>
-                                <li><strong>Continúa procesando:</strong> Mientras mantienes la conexión viva.</li>
-                                <li><strong>Envía más 102 si es necesario:</strong> Cada cierto tiempo.</li>
-                                <li><strong>Termina con respuesta final:</strong> El resultado real de la operación.</li>
+                                <li><strong>Espera el 102:</strong> No es la respuesta final, solo un aviso intermedio.</li>
+                                <li><strong>Mantén la conexión:</strong> No cierres ni reintendes la petición automáticamente.</li>
+                                <li><strong>Incrementa timeouts:</strong> Va a tardar más de lo normal, ajusta tus timeouts.</li>
+                                <li><strong>Muestra progreso al usuario:</strong> Informa que algo está pasando aunque no sepas el progreso exacto.</li>
+                                <li><strong>Espera la respuesta final:</strong> El resultado real será 200, 404, 500, etc.</li>
                             </ol>
                         </div>
 
-                        <div class="code-block">
-                            <code>
-<!-- El servidor envía 102 mientras procesa -->
-HTTP/1.1 102 Processing
+                        <div class="warning-box">
+                            <h4><span>❌</span> Problemas típicos con 102</h4>
+                            <ul style="margin-left: 0; list-style: none;">
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Cliente no soporta 102:</strong><br>
+                                    <code style="font-size: 0.9rem;">HTTP client trata 102 como error</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">Algunos clients antiguos no entienden códigos 1xx</span>
+                                </li>
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Proxies intermedios:</strong><br>
+                                    <code style="font-size: 0.9rem;">504 Gateway Timeout</code> antes del 102<br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">El proxy hace timeout antes que llegue el 102</span>
+                                </li>
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Mal timing del 102:</strong><br>
+                                    <code style="font-size: 0.9rem;">102 después de 60 segundos</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">Llega muy tarde, el cliente ya hizo timeout</span>
+                                </li>
+                            </ul>
+                        </div>
 
-<!-- Pueden enviarse múltiples 102 -->
-HTTP/1.1 102 Processing
-
-<!-- Finalmente la respuesta real -->
-HTTP/1.1 200 OK
-Content-Type: application/xml
-Content-Length: 1024
-
-&lt;?xml version="1.0"?&gt;
-&lt;multistatus&gt;...&lt;/multistatus&gt;
-                            </code>
+                        <div class="warning-box">
+                            <h4><span>🚀</span> Respuesta rápida para emergencias</h4>
+                            <div style="display: grid; gap: 0.8rem; margin-top: 1rem;">
+                                <div style="padding: 0.8rem; background: rgba(255,159,10,0.1); border-radius: 6px; border-left: 3px solid #ff9f0a;">
+                                    <strong>🔥 Si estás implementando operaciones lentas:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">1. Envía el primer 102 antes de los 10 segundos<br>
+                                    2. Repite cada 30-60 segundos durante el procesamiento<br>
+                                    3. Testea que tu cliente HTTP soporta códigos 1xx</span>
+                                </div>
+                                <div style="padding: 0.8rem; background: rgba(175,82,222,0.1); border-radius: 6px; border-left: 3px solid #af52de;">
+                                    <strong>🎯 Truco ninja:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">En lugar de 102, considera APIs asíncronas: devuelve 202 Accepted + job ID y permite consultar el estado. Es más moderno y flexible.</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -201,13 +223,13 @@ Content-Length: 1024
                         </div>
 
                         <div class="info-card">
-                            <h3>⚡ Herramientas</h3>
+                            <h3>⚡ Casos de uso</h3>
                             <ul>
-                                <li>WebDAV clients</li>
-                                <li>cURL</li>
-                                <li>Wireshark</li>
-                                <li>HTTP sniffers</li>
-                                <li>File sync tools</li>
+                                <li>WebDAV sync masivo</li>
+                                <li>Operaciones de archivo grandes</li>
+                                <li>Cálculos complejos</li>
+                                <li>Procesamiento de lotes</li>
+                                <li>APIs legacy lentas</li>
                             </ul>
                         </div>
                     </div>

@@ -172,28 +172,36 @@
                             </ol>
                         </div>
 
-                        <div class="code-block">
-                            <code>
-<!-- Ejemplo: Eliminar un usuario -->
-DELETE /api/users/123 HTTP/1.1
-Host: miapi.com
+                        <!-- Problemas típicos con 204 -->
+                        <div class="warning-box">
+                            <h4><span>❌</span> Problemas típicos con 204</h4>
+                            <ul style="margin-left: 0; list-style: none;">
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Contenido faltante:</strong><br>
+                                    <code style="font-size: 0.9rem;">No hay nada que mostrar, pero la acción fue exitosa</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">El usuario puede no entender que la operación fue exitosa debido a la ausencia de contenido.</span>
+                                </li>
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Confusión con otros códigos:</strong><br>
+                                    <code style="font-size: 0.9rem;">Puede confundirse con un 404 o 500 si no se comprende bien el propósito del 204</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">La ausencia de contenido puede dar la impresión de que algo salió mal, pero realmente está bien.</span>
+                                </li>
+                            </ul>
+                        </div>
 
-<!-- Respuesta del servidor -->
-HTTP/1.1 204 No Content
-Date: Thu, 12 Jun 2025 10:30:00 GMT
-Server: nginx/1.18.0
-
-<!-- Sin body, completamente vacío -->
-
-<!-- Ejemplo en JavaScript -->
-fetch('/api/users/123', { method: 'DELETE' })
-  .then(response => {
-    if (response.status === 204) {
-      console.log('Usuario eliminado correctamente');
-      // Actualizar UI sin esperar contenido
-    }
-  });
-                            </code>
+                        <!-- Respuesta rápida para emergencias -->
+                        <div class="warning-box">
+                            <h4><span>🚀</span> Respuesta rápida para emergencias</h4>
+                            <div style="display: grid; gap: 0.8rem; margin-top: 1rem;">
+                                <div style="padding: 0.8rem; background: rgba(255,159,10,0.1); border-radius: 6px; border-left: 3px solid #ff9f0a;">
+                                    <strong>🔥 Si estás implementando 204:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">1. Asegúrate de no enviar contenido vacío accidentalmente<br>2. Usa 204 solo cuando no haya nada que devolver<br>3. Considera documentar lo que sucedió si el usuario podría confundirse</span>
+                                </div>
+                                <div style="padding: 0.8rem; background: rgba(175,82,222,0.1); border-radius: 6px; border-left: 3px solid #af52de;">
+                                    <strong>🎯 Truco ninja:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">Si estás usando AJAX, no olvides que el navegador no redirige, por lo que tu UI debe manejar los cambios apropiadamente.</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -243,13 +251,13 @@ fetch('/api/users/123', { method: 'DELETE' })
                         <div class="error-desc">Creado exitosamente con contenido</div>
                     </a>
                     
-                    <a href="#" class="error-card">
+                    <a href="404.html" class="error-card">
                         <span class="error-number">404</span>
                         <div class="error-title">Not Found</div>
                         <div class="error-desc">No encontrado (diferente a sin contenido)</div>
                     </a>
                     
-                    <a href="#" class="error-card">
+                    <a href="410.html" class="error-card">
                         <span class="error-number">410</span>
                         <div class="error-title">Gone</div>
                         <div class="error-desc">Ya no existe y no volverá</div>
