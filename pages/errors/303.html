@@ -171,61 +171,53 @@
                                 <li><strong>No muestres warnings de recarga:</strong> El 303 los elimina.</li>
                             </ol>
                         </div>
+                        <!-- Problemas típicos con 303 -->
+                        <div class="warning-box">
+                            <h4><span>❌</span> Problemas típicos con 303</h4>
+                            <ul style="margin-left: 0; list-style: none;">
+                                <li
+                                    style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Uso incorrecto en APIs:</strong><br>
+                                    <span style="font-size: 0.9rem;">Algunas APIs devuelven 303 cuando deberían usar 201 (Created) tras un POST. El 303 es para redirigir al usuario a ver el resultado, no para indicar creación de recurso.</span>
+                                </li>
+                                <li
+                                    style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Olvidar el header Location:</strong><br>
+                                    <span style="font-size: 0.9rem;">Sin el header <b>Location</b>, el navegador no sabe a dónde redirigir tras el 303. Es obligatorio.</span>
+                                </li>
+                                <li
+                                    style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Redirecciones en bucle:</strong><br>
+                                    <span style="font-size: 0.9rem;">Si el Location apunta a una URL que vuelve a devolver 303, puedes crear un bucle infinito. Revisa la lógica de tus redirecciones.</span>
+                                </li>
+                                <li
+                                    style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Usar 303 para GET o sin modificar datos:</strong><br>
+                                    <span style="font-size: 0.9rem;">El 303 está pensado para POST/PUT/DELETE, no para GET. Si no hay acción previa, no tiene sentido usarlo.</span>
+                                </li>
+                            </ul>
+                        </div>
 
-                        <div class="code-block">
-                            <code>
-<!-- HTML: Formulario normal -->
-&lt;form action="/submit-order" method="POST"&gt;
-  &lt;input name="product" value="laptop"&gt;
-  &lt;input name="quantity" value="1"&gt;
-  &lt;button type="submit"&gt;Comprar&lt;/button&gt;
-&lt;/form&gt;
-
-<!-- Servidor procesa POST y responde 303 -->
-POST /submit-order HTTP/1.1
-Host: shop.example.com
-Content-Type: application/x-www-form-urlencoded
-
-product=laptop&quantity=1
-
-HTTP/1.1 303 See Other
-Location: /order-confirmation/12345
-Content-Length: 0
-
-<!-- Navegador automáticamente hace GET -->
-GET /order-confirmation/12345 HTTP/1.1
-Host: shop.example.com
-
-HTTP/1.1 200 OK
-Content-Type: text/html
-
-&lt;h1&gt;¡Pedido confirmado!&lt;/h1&gt;
-&lt;p&gt;Tu pedido #12345 ha sido recibido&lt;/p&gt;
-
-<!-- PHP ejemplo -->
-&lt;?php
-// Procesar formulario
-if ($_POST['product']) {
-    $orderId = saveOrder($_POST);
-    
-    // Redirección 303
-    header('HTTP/1.1 303 See Other');
-    header('Location: /confirmation/' . $orderId);
-    exit();
-}
-?&gt;
-
-<!-- Node.js ejemplo -->
-app.post('/submit-order', (req, res) =&gt; {
-    // Procesar orden
-    const orderId = saveOrder(req.body);
-    
-    // Responder 303
-    res.status(303)
-       .location(`/confirmation/${orderId}`)
-       .end();
-});
-                            </code>
+                        <!-- Respuesta rápida para emergencias -->
+                        <div class="warning-box">
+                            <h4><span>🚀</span> Respuesta rápida para emergencias</h4>
+                            <div style="display: grid; gap: 0.8rem; margin-top: 1rem;">
+                                <div
+                                    style="padding: 0.8rem; background: rgba(255,159,10,0.1); border-radius: 6px; border-left: 3px solid #ff9f0a;">
+                                    <strong>🔥 Si el usuario ve el formulario al recargar:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">1. Asegúrate de responder con 303 tras el POST.<br>2. Comprueba que el header Location apunte a la página de confirmación.<br>3. Testea el flujo POST → 303 → GET.</span>
+                                </div>
+                                <div
+                                    style="padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 6px; border-left: 3px solid #ff453a;">
+                                    <strong>⚡ Si hay bucles de redirección:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">1. Revisa que la URL de Location no devuelva otro 303.<br>2. Testea el flujo con herramientas como redirect-checker.org.<br>3. Corrige la lógica para terminar en una página final (200).</span>
+                                </div>
+                                <div
+                                    style="padding: 0.8rem; background: rgba(175,82,222,0.1); border-radius: 6px; border-left: 3px solid #af52de;">
+                                    <strong>🎯 Truco UX:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">El 303 elimina el mensaje de "¿Quieres reenviar este formulario?" al recargar. Si sigue apareciendo, revisa tu implementación.</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 

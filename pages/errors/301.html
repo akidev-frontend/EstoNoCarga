@@ -172,40 +172,50 @@
                             </ol>
                         </div>
 
-                        <div class="code-block">
-                            <code>
-<!-- Configuración Apache (.htaccess) -->
-RewriteEngine On
-RewriteRule ^old-page/?$ /new-page/ [R=301,L]
-RewriteRule ^categoria/(.*)$ /nueva-categoria/$1 [R=301,L]
+                        <!-- Problemas típicos con 301 -->
+                        <div class="warning-box">
+                            <h4><span>❌</span> Problemas típicos con 301</h4>
+                            <ul style="margin-left: 0; list-style: none;">
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Cadenas de redirección:</strong><br>
+                                    <code style="font-size: 0.9rem;">página-A → página-B → página-C</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">Cada salto pierde fuerza SEO y ralentiza la carga. Siempre redirige directamente al destino final.</span>
+                                </li>
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Redirección a página irrelevante:</strong><br>
+                                    <code style="font-size: 0.9rem;">/zapatos-rojos/ → /inicio/</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">Google penaliza redirecciones que no mantienen relevancia temática. Mejor 410 Gone si no hay alternativa.</span>
+                                </li>
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Bucles de redirección:</strong><br>
+                                    <code style="font-size: 0.9rem;">A → B → A (infinito)</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">Error brutal que rompe completamente la experiencia. Revisa conflictos en reglas de redirección.</span>
+                                </li>
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Headers Location mal formados:</strong><br>
+                                    <code style="font-size: 0.9rem;">Location: /nueva-pagina (relativo)</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">Debe ser absoluto: https://dominio.com/nueva-pagina/. URLs relativas pueden causar problemas.</span>
+                                </li>
+                            </ul>
+                        </div>
 
-<!-- Migración HTTP a HTTPS -->
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-<!-- Response del servidor -->
-HTTP/1.1 301 Moved Permanently
-Location: https://example.com/new-page/
-Cache-Control: max-age=31536000
-Date: Fri, 20 Jun 2025 10:30:00 GMT
-Content-Length: 0
-
-<!-- Configuración Nginx -->
-server {
-    location /old-page/ {
-        return 301 /new-page/;
-    }
-    
-    location /old-section/ {
-        return 301 /new-section/;
-    }
-}
-
-<!-- Plugin WordPress (Yoast SEO) -->
-<!-- Redirects → Add New → 301 Moved Permanently -->
-<!-- Old URL: /old-page/ -->
-<!-- New URL: /new-page/ -->
-                            </code>
+                        <!-- Respuesta rápida para emergencias -->
+                        <div class="warning-box">
+                            <h4><span>🚀</span> Respuesta rápida para emergencias</h4>
+                            <div style="display: grid; gap: 0.8rem; margin-top: 1rem;">
+                                <div style="padding: 0.8rem; background: rgba(255,159,10,0.1); border-radius: 6px; border-left: 3px solid #ff9f0a;">
+                                    <strong>🔥 Si perdiste ranking tras migración:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">1. Verifica que todos los 301 funcionen correctamente<br>2. Actualiza enlaces internos para apuntar directamente a nuevas URLs<br>3. Envía nuevo sitemap a Google Search Console<br>4. Paciencia: Google puede tardar semanas en procesar completamente</span>
+                                </div>
+                                <div style="padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 6px; border-left: 3px solid #ff453a;">
+                                    <strong>⚡ Si hay bucles de redirección:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">1. Desactiva todas las redirecciones temporalmente<br>2. Revisa conflictos en .htaccess o nginx.conf<br>3. Testea cada regla individualmente<br>4. Usa herramientas como redirect-checker.org</span>
+                                </div>
+                                <div style="padding: 0.8rem; background: rgba(175,82,222,0.1); border-radius: 6px; border-left: 3px solid #af52de;">
+                                    <strong>🎯 Truco ninja:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">Usa Google Search Console para ver exactamente qué URLs están siendo redirigidas y detectar problemas. La sección "Cobertura" te mostrará 301s que Google ha procesado.</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
