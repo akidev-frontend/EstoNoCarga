@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error 411 - Length Required | EstoNoCarga</title>
+    <meta name="description"
+        content="Todo lo que necesitas saber sobre el error 411 Length Required. Qué significa, por qué aparece y cómo solucionarlo. La guía definitiva para cuando al servidor le falta la talla.">
+    <meta name="keywords" content="error 411, length required, longitud requerida, solucionar 411, desarrollo web">
+    <meta name="author" content="EstoNoCarga">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://estonocarga.dev/pages/errors/411">
+    <meta property="og:title" content="Error 411 - Length Required | EstoNoCarga">
+    <meta property="og:description"
+        content="Cuando el servidor te pide que le digas cuánto mide tu petición. Explicación sencilla y soluciones para el error 411.">
+    <meta property="og:image" content="https://estonocarga.dev/assets/images/411-og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://estonocarga.dev/pages/errors/411">
+    <meta property="twitter:title" content="Error 411 - Length Required | EstoNoCarga">
+    <meta property="twitter:description" content="Cuando el servidor te pide que le digas cuánto mide tu petición.">
+    <meta property="twitter:image" content="https://estonocarga.dev/assets/images/411-og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Error 411 - Length Required",
+      "description": "Todo lo que necesitas saber sobre el error 411 Length Required",
+      "author": {
+        "@type": "Organization",
+        "name": "EstoNoCarga"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "EstoNoCarga"
+      }
+    }
+    </script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="stylesheet" href="../../assets/css/error-page.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html" class="logo">EstoNoCarga</a>
+            <ul class="nav-links">
+                <li><a href="../../index.html#errores">Errores</a></li>
+                <li><a href="../../index.html#guias">Guías</a></li>
+                <li><a href="../../index.html#herramientas">Tools</a></li>
+                <li><a href="../../index.html#about">Nosotros</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Error Header -->
+        <section class="error-header">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../../index.html">Inicio</a>
+                    <span>→</span>
+                    <a href="../../index.html#errores">Errores</a>
+                    <span>→</span>
+                    <span>411</span>
+                </div>
+                <div class="error-code-display">411</div>
+                <h1 class="error-name">Length Required</h1>
+                <p class="error-description">Cuando el servidor te pide que le digas cuánto mide tu petición. Sin talla, no hay trato.</p>
+                <div class="status-badge status-client">
+                    <span>⚠️</span>
+                    Error del Cliente
+                </div>
+            </div>
+        </section>
+
+        <!-- What is it -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-title">
+                            <span class="section-icon">🤔</span>
+                            ¿Qué narices es esto?
+                        </h2>
+
+                        <p>El <strong>error 411 Length Required</strong> es como ir a una tienda y que no te vendan nada si no dices tu talla. El servidor necesita saber la longitud de tu petición (con el header <code>Content-Length</code>) y, si no se la das, te manda a paseo.</p>
+
+                        <p>Este error aparece cuando intentas enviar datos (por ejemplo, con un <code>POST</code> o <code>PUT</code>) y no indicas cuánto mide el contenido. El servidor, por seguridad o por manías, no acepta peticiones sin esa información.</p>
+
+                        <ul style="margin-left: 2rem; margin-bottom: 2rem;">
+                            <li style="margin-bottom: 0.5rem;">Falta el header <code>Content-Length</code> en la petición</li>
+                            <li style="margin-bottom: 0.5rem;">El cliente (navegador, app, etc.) no lo pone automáticamente</li>
+                            <li style="margin-bottom: 0.5rem;">El servidor exige saber la longitud antes de aceptar nada</li>
+                            <li style="margin-bottom: 0.5rem;">Problemas de configuración en proxies o firewalls</li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <h4><span>⚡</span> Dato curioso</h4>
+                            <p>El 411 es poco común porque la mayoría de navegadores y librerías lo ponen por ti. Pero si montas tus propias peticiones, ojo con olvidarte del <code>Content-Length</code>.</p>
+                        </div>
+
+                        <p>No es el error más habitual, pero cuando aparece suele ser por peticiones manuales, APIs raras o servidores muy estrictos.</p>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="info-card">
+                            <h3>📊 Info técnica</h3>
+                            <ul>
+                                <li><strong>Código:</strong> 411</li>
+                                <li><strong>Tipo:</strong> Error del cliente</li>
+                                <li><strong>Categoría:</strong> 4xx</li>
+                                <li><strong>Descripción:</strong> Length Required</li>
+                                <li><strong>Cacheable:</strong> No</li>
+                                <li><strong>Retryable:</strong> Sí (si añades la longitud)</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>🎯 Frecuencia</h3>
+                            <ul>
+                                <li><strong>Muy raro</strong></li>
+                                <li>Más típico en APIs y peticiones manuales</li>
+                                <li>Suele pillar por sorpresa</li>
+                                <li>Normalmente por falta de headers</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to fix -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-title">
+                            <span class="section-icon">🔧</span>
+                            Cómo arreglar este desastre
+                        </h2>
+
+                        <div class="solution-steps">
+                            <h4>🚀 Para usuarios normales</h4>
+                            <ol>
+                                <li><strong>Recarga la página:</strong> Puede ser un fallo puntual.</li>
+                                <li><strong>Prueba desde otro navegador o app:</strong> Por si el problema es del cliente.</li>
+                                <li><strong>Contacta con el soporte:</strong> Si no puedes hacer nada, pregunta al administrador.</li>
+                            </ol>
+                        </div>
+
+                        <div class="solution-steps">
+                            <h4>🛠️ Para desarrolladores</h4>
+                            <ol>
+                                <li><strong>Añade el header <code>Content-Length</code>:</strong> Indica la longitud exacta del cuerpo de la petición.</li>
+                                <li><strong>Usa librerías modernas:</strong> Suelen poner el header automáticamente.</li>
+                                <li><strong>Revisa la configuración del servidor:</strong> Permite métodos alternativos si es posible.</li>
+                                <li><strong>Comprueba proxies y firewalls:</strong> Que no estén bloqueando headers.</li>
+                                <li><strong>Lee la documentación:</strong> Algunas APIs exigen este header sí o sí.</li>
+                            </ol>
+                        </div>
+
+                        <div class="warning-box">
+                            <h4><span>❌</span> Problemas típicos con 411</h4>
+                            <ul style="margin-left: 0; list-style: none;">
+                                <li
+                                    style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Olvidar el <code>Content-Length</code>:</strong><br>
+                                    <span style="font-size: 0.9rem;">Si montas peticiones a mano y no pones la longitud, el servidor te corta el rollo.</span>
+                                </li>
+                                <li
+                                    style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Clientes antiguos o raros:</strong><br>
+                                    <span style="font-size: 0.9rem;">Algunas apps viejas no añaden el header y fallan.</span>
+                                </li>
+                                <li
+                                    style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Proxies que eliminan headers:</strong><br>
+                                    <span style="font-size: 0.9rem;">Un proxy mal configurado puede borrar el <code>Content-Length</code> y liarla.</span>
+                                </li>
+                                <li
+                                    style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Servidores demasiado estrictos:</strong><br>
+                                    <span style="font-size: 0.9rem;">Algunos solo aceptan peticiones si saben la longitud exacta.</span>
+                                </li>
+                                <li
+                                    style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>APIs que lo exigen siempre:</strong><br>
+                                    <span style="font-size: 0.9rem;">Algunas APIs modernas no aceptan nada sin ese header.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="warning-box">
+                            <h4><span>🚀</span> Respuesta rápida para emergencias</h4>
+                            <div style="display: grid; gap: 0.8rem; margin-top: 1rem;">
+                                <div
+                                    style="padding: 0.8rem; background: rgba(255,159,10,0.1); border-radius: 6px; border-left: 3px solid #ff9f0a;">
+                                    <strong>🔥 Si todo el sitio da 411:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">1. Revisa la configuración del servidor.<br>2. Comprueba si los proxies eliminan headers.<br>3. Asegúrate de que todas las peticiones llevan <code>Content-Length</code>.</span>
+                                </div>
+                                <div
+                                    style="padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 6px; border-left: 3px solid #ff453a;">
+                                    <strong>⚡ Si solo una petición da 411:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">1. Añade el header <code>Content-Length</code>.<br>2. Usa una librería moderna.<br>3. Prueba desde otro cliente.</span>
+                                </div>
+                                <div
+                                    style="padding: 0.8rem; background: rgba(175,82,222,0.1); border-radius: 6px; border-left: 3px solid #af52de;">
+                                    <strong>🎯 Truco pro:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">Automatiza el cálculo de la longitud en tus scripts y APIs.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="info-card">
+                            <h3>💡 Tips pro</h3>
+                            <ul>
+                                <li>Usa librerías HTTP modernas</li>
+                                <li>Comprueba los headers antes de enviar</li>
+                                <li>Lee la documentación de la API</li>
+                                <li>Monitoriza los logs del servidor</li>
+                                <li>Evita proxies que modifiquen las peticiones</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>⚡ Herramientas</h3>
+                            <ul>
+                                <li>Postman</li>
+                                <li>curl</li>
+                                <li>Wireshark</li>
+                                <li>Google Chrome DevTools</li>
+                                <li>Logs del servidor</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Errors -->
+        <section class="related-errors">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">Errores relacionados</h2>
+                <p style="text-align: center; color: var(--text-secondary); font-size: 1.1rem;">Otros errores que también te pueden dejar a medias</p>
+
+                <div class="error-grid">
+                    <a href="400.html" class="error-card">
+                        <span class="error-number">400</span>
+                        <div class="error-title">Bad Request</div>
+                        <div class="error-desc">Tu petición está más rota que tus expectativas</div>
+                    </a>
+
+                    <a href="411.html" class="error-card error-card-active">
+                        <span class="error-number">411</span>
+                        <div class="error-title">Length Required</div>
+                        <div class="error-desc">Sin talla, no hay trato</div>
+                    </a>
+
+                    <a href="413.html" class="error-card">
+                        <span class="error-number">413</span>
+                        <div class="error-title">Payload Too Large</div>
+                        <div class="error-desc">Te has pasado de peso</div>
+                    </a>
+
+                    <a href="415.html" class="error-card">
+                        <span class="error-number">415</span>
+                        <div class="error-title">Unsupported Media Type</div>
+                        <div class="error-desc">Eso no me lo trago</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#privacy">Privacidad</a>
+                    <a href="#terms">Términos</a>
+                    <a href="#contact">Contacto</a>
+                    <a href="#sitemap">Sitemap</a>
+                </div>
+                <p>&copy; 2025 EstoNoCarga. Hecho con frustración y mucho café. ☕</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;">Porque los errores web también necesitan amor (o al menos explicación).</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/error-page.js"></script>

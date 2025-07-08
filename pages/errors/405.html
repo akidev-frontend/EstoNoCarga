@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error 405 - Method Not Allowed | EstoNoCarga</title>
+    <meta name="description"
+        content="Todo lo que necesitas saber sobre el error 405 Method Not Allowed. Qué significa, por qué aparece y cómo solucionarlo. La guía definitiva para cuando tu método no cuela.">
+    <meta name="keywords" content="error 405, method not allowed, método no permitido, solucionar 405, desarrollo web">
+    <meta name="author" content="EstoNoCarga">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://estonocarga.dev/pages/errors/405">
+    <meta property="og:title" content="Error 405 - Method Not Allowed | EstoNoCarga">
+    <meta property="og:description"
+        content="Cuando el servidor te dice que por ahí no, chaval. Explicación sencilla y soluciones para el error 405.">
+    <meta property="og:image" content="https://estonocarga.dev/assets/images/405-og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://estonocarga.dev/pages/errors/405">
+    <meta property="twitter:title" content="Error 405 - Method Not Allowed | EstoNoCarga">
+    <meta property="twitter:description" content="Cuando el servidor te dice que por ahí no, chaval.">
+    <meta property="twitter:image" content="https://estonocarga.dev/assets/images/405-og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Error 405 - Method Not Allowed",
+      "description": "Todo lo que necesitas saber sobre el error 405 Method Not Allowed",
+      "author": {
+        "@type": "Organization",
+        "name": "EstoNoCarga"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "EstoNoCarga"
+      }
+    }
+    </script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="stylesheet" href="../../assets/css/error-page.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html" class="logo">EstoNoCarga</a>
+            <ul class="nav-links">
+                <li><a href="../../index.html#errores">Errores</a></li>
+                <li><a href="../../index.html#guias">Guías</a></li>
+                <li><a href="../../index.html#herramientas">Tools</a></li>
+                <li><a href="../../index.html#about">Nosotros</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Error Header -->
+        <section class="error-header">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../../index.html">Inicio</a>
+                    <span>→</span>
+                    <a href="../../index.html#errores">Errores</a>
+                    <span>→</span>
+                    <span>405</span>
+                </div>
+                <div class="error-code-display">405</div>
+                <h1 class="error-name">Method Not Allowed</h1>
+                <p class="error-description">Cuando intentas hacer algo y el servidor te dice: “Por aquí no, campeón”.</p>
+                <div class="status-badge status-client">
+                    <span>⚠️</span>
+                    Error del Cliente
+                </div>
+            </div>
+        </section>
+
+        <!-- What is it -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-title">
+                            <span class="section-icon">🤔</span>
+                            ¿Qué narices es esto?
+                        </h2>
+
+                        <p>El <strong>error 405 Method Not Allowed</strong> es como intentar entrar en una discoteca con zapatillas: la puerta está ahí, pero el portero (el servidor) te dice que con ese método no pasas.</p>
+
+                        <p>Este error aparece cuando intentas usar un método HTTP (<code>POST</code>, <code>GET</code>, <code>PUT</code>, etc.) que el servidor no acepta para esa URL. Es decir, la página existe, pero no le gusta cómo le hablas.</p>
+
+                        <ul style="margin-left: 2rem; margin-bottom: 2rem;">
+                            <li style="margin-bottom: 0.5rem;">Intentaste hacer un <code>POST</code> donde solo aceptan <code>GET</code></li>
+                            <li style="margin-bottom: 0.5rem;">El backend está configurado en modo “tiquismiquis”</li>
+                            <li style="margin-bottom: 0.5rem;">El frontend se ha liado con los métodos</li>
+                            <li style="margin-bottom: 0.5rem;">Alguien ha cambiado la API y no te han avisado (clásico)</li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <h4><span>⚡</span> Dato curioso</h4>
+                            <p>El 405 es uno de esos errores que te hacen dudar de si eres tú o el servidor el que no se entera. Spoiler: a veces es culpa de ambos.</p>
+                        </div>
+
+                        <p>El 405 no es tan famoso como el 404, pero cuando aparece suele pillar a más de uno con el pie cambiado. Y sí, también tiene su hueco en el folklore de internet.</p>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="info-card">
+                            <h3>📊 Info técnica</h3>
+                            <ul>
+                                <li><strong>Código:</strong> 405</li>
+                                <li><strong>Tipo:</strong> Error del cliente</li>
+                                <li><strong>Categoría:</strong> 4xx</li>
+                                <li><strong>Descripción:</strong> Method Not Allowed</li>
+                                <li><strong>Cacheable:</strong> Depende</li>
+                                <li><strong>Retryable:</strong> No</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>🎯 Frecuencia</h3>
+                            <ul>
+                                <li><strong>Poco común</strong></li>
+                                <li>Más típico en APIs</li>
+                                <li>Confunde a usuarios y devs</li>
+                                <li>Puede ser señal de mala configuración</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to fix -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-title">
+                            <span class="section-icon">🔧</span>
+                            Cómo arreglar este desastre
+                        </h2>
+
+                        <div class="solution-steps">
+                            <h4>🚀 Para usuarios normales</h4>
+                            <ol>
+                                <li><strong>Actualiza la página:</strong> A veces es un fallo puntual.</li>
+                                <li><strong>Vuelve atrás:</strong> Usa el botón atrás y prueba otra vez.</li>
+                                <li><strong>Comprueba la URL:</strong> Igual has llegado aquí por un enlace raro.</li>
+                                <li><strong>Contacta al sitio:</strong> Si necesitas hacer algo y no te deja, pregunta.</li>
+                            </ol>
+                        </div>
+
+                        <div class="solution-steps">
+                            <h4>🛠️ Para desarrolladores</h4>
+                            <ol>
+                                <li><strong>Revisa los métodos permitidos:</strong> Comprueba qué métodos acepta tu endpoint.</li>
+                                <li><strong>Configura bien el backend:</strong> Asegúrate de que los métodos HTTP estén habilitados donde toca.</li>
+                                <li><strong>Corrige el frontend:</strong> Que no intente hacer un <code>POST</code> donde solo hay <code>GET</code>.</li>
+                                <li><strong>Lee la documentación:</strong> Igual la API ha cambiado y no te has enterado.</li>
+                                <li><strong>Devuelve el header Allow:</strong> El servidor debería decir qué métodos acepta (por si acaso).</li>
+                            </ol>
+                        </div>
+
+                        <div class="warning-box">
+                            <h4><span>❌</span> Problemas típicos con 405</h4>
+                            <ul style="margin-left: 0; list-style: none;">
+                                <li
+                                    style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Método HTTP incorrecto:</strong><br>
+                                    <span style="font-size: 0.9rem;">Intentas hacer un <code>PUT</code> o <code>DELETE</code> donde solo aceptan <code>GET</code> o <code>POST</code>.</span>
+                                </li>
+                                <li
+                                    style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Endpoints mal configurados:</strong><br>
+                                    <span style="font-size: 0.9rem;">El backend no tiene habilitados todos los métodos necesarios.</span>
+                                </li>
+                                <li
+                                    style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>APIs REST estrictas:</strong><br>
+                                    <span style="font-size: 0.9rem;">Algunas APIs solo aceptan ciertos métodos y el resto los rechazan sin piedad.</span>
+                                </li>
+                                <li
+                                    style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Errores en frameworks:</strong><br>
+                                    <span style="font-size: 0.9rem;">A veces el framework web bloquea métodos por defecto y ni te enteras.</span>
+                                </li>
+                                <li
+                                    style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Confusión entre 404 y 405:</strong><br>
+                                    <span style="font-size: 0.9rem;">La URL existe, pero el método no está permitido. No es lo mismo que “no encontrado”.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="warning-box">
+                            <h4><span>🚀</span> Respuesta rápida para emergencias</h4>
+                            <div style="display: grid; gap: 0.8rem; margin-top: 1rem;">
+                                <div
+                                    style="padding: 0.8rem; background: rgba(255,159,10,0.1); border-radius: 6px; border-left: 3px solid #ff9f0a;">
+                                    <strong>🔥 Si toda tu API da 405:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">1. Revisa la configuración del servidor o framework.<br>2. Comprueba los métodos permitidos en cada ruta.<br>3. Mira los logs del backend.</span>
+                                </div>
+                                <div
+                                    style="padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 6px; border-left: 3px solid #ff453a;">
+                                    <strong>⚡ Si solo una ruta da 405:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">1. Verifica el método HTTP usado.<br>2. Consulta la documentación de la API.<br>3. Añade el método necesario si falta.</span>
+                                </div>
+                                <div
+                                    style="padding: 0.8rem; background: rgba(175,82,222,0.1); border-radius: 6px; border-left: 3px solid #af52de;">
+                                    <strong>🎯 Truco pro:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">Devuelve siempre el header <code>Allow</code> para que quede claro qué métodos acepta tu endpoint.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="info-card">
+                            <h3>💡 Tips pro</h3>
+                            <ul>
+                                <li>Lee la documentación de la API</li>
+                                <li>Usa herramientas tipo Postman</li>
+                                <li>Comprueba los headers <code>Allow</code></li>
+                                <li>Valida los métodos en el backend</li>
+                                <li>Monitoriza los logs de errores</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>⚡ Herramientas</h3>
+                            <ul>
+                                <li>Postman</li>
+                                <li>Insomnia</li>
+                                <li>curl</li>
+                                <li>Google Chrome DevTools</li>
+                                <li>Logs del servidor</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Errors -->
+        <section class="related-errors">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">Errores relacionados</h2>
+                <p style="text-align: center; color: var(--text-secondary); font-size: 1.1rem;">Otros errores que también te pueden fastidiar el día</p>
+
+                <div class="error-grid">
+                    <a href="403.html" class="error-card">
+                        <span class="error-number">403</span>
+                        <div class="error-title">Forbidden</div>
+                        <div class="error-desc">Como intentar entrar a un club exclusivo con chanclas</div>
+                    </a>
+
+                    <a href="401.html" class="error-card">
+                        <span class="error-number">401</span>
+                        <div class="error-title">Unauthorized</div>
+                        <div class="error-desc">Tu contraseña es más débil que tus excusas</div>
+                    </a>
+
+                    <a href="404.html" class="error-card">
+                        <span class="error-number">404</span>
+                        <div class="error-title">Not Found</div>
+                        <div class="error-desc">Como buscar tus llaves cuando tienes prisa</div>
+                    </a>
+
+                    <a href="#" class="error-card">
+                        <span class="error-number">400</span>
+                        <div class="error-title">Bad Request</div>
+                        <div class="error-desc">Tu petición está más rota que tus expectativas</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#privacy">Privacidad</a>
+                    <a href="#terms">Términos</a>
+                    <a href="#contact">Contacto</a>
+                    <a href="#sitemap">Sitemap</a>
+                </div>
+                <p>&copy; 2025 EstoNoCarga. Hecho con frustración y mucho café. ☕</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;">Porque los errores web también necesitan amor (o al menos explicación).</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/error-page.js"></script>
+</body>
