@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error 421 - Misdirected Request | EstoNoCarga</title>
+    <meta name="description"
+        content="Todo el que necessites saber sobre l'error 421 Misdirected Request. Què significa, per què apareix i com solucionar-lo. La guia definitiva per quan el servidor no sap a qui va la petició.">
+    <meta name="keywords" content="error 421, misdirected request, petició mal dirigida, solucionar 421, desenvolupament web">
+    <meta name="author" content="EstoNoCarga">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://estonocarga.dev/pages/errors/421">
+    <meta property="og:title" content="Error 421 - Misdirected Request | EstoNoCarga">
+    <meta property="og:description"
+        content="Quan el servidor rep una petició que no li toca. Explicació senzilla i solucions per a l'error 421.">
+    <meta property="og:image" content="https://estonocarga.dev/assets/images/421-og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://estonocarga.dev/pages/errors/421">
+    <meta property="twitter:title" content="Error 421 - Misdirected Request | EstoNoCarga">
+    <meta property="twitter:description" content="Quan el servidor rep una petició que no li toca.">
+    <meta property="twitter:image" content="https://estonocarga.dev/assets/images/421-og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Error 421 - Misdirected Request",
+      "description": "Tot el que necessites saber sobre l'error 421 Misdirected Request",
+      "author": {
+        "@type": "Organization",
+        "name": "EstoNoCarga"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "EstoNoCarga"
+      }
+    }
+    </script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="stylesheet" href="../../assets/css/error-page.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html" class="logo">EstoNoCarga</a>
+            <ul class="nav-links">
+                <li><a href="../../index.html#errores">Errors</a></li>
+                <li><a href="../../index.html#guias">Guies</a></li>
+                <li><a href="../../index.html#herramientas">Eines</a></li>
+                <li><a href="../../index.html#about">Nosaltres</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Error Header -->
+        <section class="error-header">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../../index.html">Inici</a>
+                    <span>→</span>
+                    <a href="../../index.html#errores">Errors</a>
+                    <span>→</span>
+                    <span>421</span>
+                </div>
+                <div class="error-code-display">421</div>
+                <h1 class="error-name">Misdirected Request</h1>
+                <p class="error-description">Quan el servidor rep una petició que no li correspon. T'has equivocat de destinatari!</p>
+                <div class="status-badge status-client">
+                    <span>⚠️</span>
+                    Error del Client
+                </div>
+            </div>
+        </section>
+
+        <!-- What is it -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-title">
+                            <span class="section-icon">🤔</span>
+                            Què narices és això?
+                        </h2>
+
+                        <p>L'<strong>error 421 Misdirected Request</strong> és com enviar una carta a la casa equivocada. El servidor ha rebut una petició que no estava destinada a ell, normalment perquè el client ha enviat la sol·licitud al servidor equivocat o la configuració de proxy/SNI no està ben feta.</p>
+
+                        <p>Aquest error sol aparèixer en entorns amb múltiples dominis, balancejadors de càrrega o servidors virtuals, quan la petició HTTP arriba a un servidor que no pot respondre-la correctament.</p>
+
+                        <ul style="margin-left: 2rem; margin-bottom: 2rem;">
+                            <li style="margin-bottom: 0.5rem;">Configuració incorrecta de SNI (Server Name Indication)</li>
+                            <li style="margin-bottom: 0.5rem;">Proxies o balancejadors que redirigeixen malament</li>
+                            <li style="margin-bottom: 0.5rem;">El client reutilitza connexions per a dominis diferents</li>
+                            <li style="margin-bottom: 0.5rem;">Errors en la configuració de servidors virtuals</li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <h4><span>⚡</span> Dada curiosa</h4>
+                            <p>L'error 421 és relativament nou i està pensat per a HTTP/2, però pot aparèixer també en HTTP/1.1 si el servidor detecta una petició mal dirigida.</p>
+                        </div>
+
+                        <p>No és un error habitual, però si el veus, revisa la configuració de dominis, proxies i servidors virtuals.</p>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="info-card">
+                            <h3>📊 Info tècnica</h3>
+                            <ul>
+                                <li><strong>Codi:</strong> 421</li>
+                                <li><strong>Tipus:</strong> Error del client</li>
+                                <li><strong>Categoria:</strong> 4xx</li>
+                                <li><strong>Descripció:</strong> Misdirected Request</li>
+                                <li><strong>Cacheable:</strong> No</li>
+                                <li><strong>Retryable:</strong> Sí (si envies la petició al servidor correcte)</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>🎯 Freqüència</h3>
+                            <ul>
+                                <li><strong>Molt poc comú</strong></li>
+                                <li>Més típic en entorns amb molts dominis</li>
+                                <li>Sol aparèixer per configuracions avançades</li>
+                                <li>Normalment per errors de proxy o SNI</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to fix -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-title">
+                            <span class="section-icon">🔧</span>
+                            Com arreglar aquest embolic
+                        </h2>
+
+                        <div class="solution-steps">
+                            <h4>🚀 Per a usuaris normals</h4>
+                            <ol>
+                                <li><strong>Recàrrega la pàgina:</strong> Pot ser un error puntual.</li>
+                                <li><strong>Prova des d'un altre navegador o dispositiu:</strong> Per si el problema és local.</li>
+                                <li><strong>Contacta amb suport:</strong> Si no pots fer res, pregunta a l'administrador.</li>
+                            </ol>
+                        </div>
+
+                        <div class="solution-steps">
+                            <h4>🛠️ Per a desenvolupadors</h4>
+                            <ol>
+                                <li><strong>Revisa la configuració de SNI i dominis:</strong> Assegura't que cada domini apunta al servidor correcte.</li>
+                                <li><strong>Comprova els proxies i balancejadors:</strong> Que no redirigeixin peticions a servidors equivocats.</li>
+                                <li><strong>Evita reutilitzar connexions per a dominis diferents:</strong> Especialment en HTTP/2.</li>
+                                <li><strong>Configura bé els servidors virtuals:</strong> Cada host ha de respondre només a les seves peticions.</li>
+                                <li><strong>Monitoritza els logs:</strong> Així podràs detectar patrons i millorar la configuració.</li>
+                            </ol>
+                        </div>
+
+                        <div class="warning-box">
+                            <h4><span>❌</span> Problemes típics amb 421</h4>
+                            <ul style="margin-left: 0; list-style: none;">
+                                <li
+                                    style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>SNI mal configurat:</strong><br>
+                                    <span style="font-size: 0.9rem;">El servidor no sap a quin domini ha d'atendre.</span>
+                                </li>
+                                <li
+                                    style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Proxies que barregen dominis:</strong><br>
+                                    <span style="font-size: 0.9rem;">Envien peticions a servidors equivocats.</span>
+                                </li>
+                                <li
+                                    style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Connexions HTTP/2 reutilitzades malament:</strong><br>
+                                    <span style="font-size: 0.9rem;">El client reutilitza una connexió per a un altre domini.</span>
+                                </li>
+                                <li
+                                    style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Servidors virtuals sense aïllament:</strong><br>
+                                    <span style="font-size: 0.9rem;">Un host respon a peticions d'altres dominis.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="warning-box">
+                            <h4><span>🚀</span> Resposta ràpida per emergències</h4>
+                            <div style="display: grid; gap: 0.8rem; margin-top: 1rem;">
+                                <div
+                                    style="padding: 0.8rem; background: rgba(255,159,10,0.1); border-radius: 6px; border-left: 3px solid #ff9f0a;">
+                                    <strong>🔥 Si tot el lloc dóna 421:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">1. Revisa la configuració de dominis i SNI.<br>2. Comprova els proxies.<br>3. Assegura't que cada host només respon a les seves peticions.</span>
+                                </div>
+                                <div
+                                    style="padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 6px; border-left: 3px solid #ff453a;">
+                                    <strong>⚡ Si només una petició dóna 421:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">1. Torna a enviar la petició al servidor correcte.<br>2. Revisa la configuració del client.<br>3. Contacta amb suport si cal.</span>
+                                </div>
+                                <div
+                                    style="padding: 0.8rem; background: rgba(175,82,222,0.1); border-radius: 6px; border-left: 3px solid #af52de;">
+                                    <strong>🎯 Truc pro:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">No reutilitzis connexions HTTP/2 per a dominis diferents.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="info-card">
+                            <h3>💡 Tips pro</h3>
+                            <ul>
+                                <li>Configura bé SNI i servidors virtuals</li>
+                                <li>Evita barreges de dominis en proxies</li>
+                                <li>Monitoritza els logs d'errors</li>
+                                <li>Documenta la infraestructura</li>
+                                <li>Fes proves amb diferents navegadors</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>⚡ Eines</h3>
+                            <ul>
+                                <li>curl</li>
+                                <li>Postman</li>
+                                <li>Google Chrome DevTools</li>
+                                <li>Logs del servidor</li>
+                                <li>Eines de monitorització</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Errors -->
+        <section class="related-errors">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">Errors relacionats</h2>
+                <p style="text-align: center; color: var(--text-secondary); font-size: 1.1rem;">Altres errors que també poden confondre el servidor</p>
+
+                <div class="error-grid">
+                    <a href="400.html" class="error-card">
+                        <span class="error-number">400</span>
+                        <div class="error-title">Bad Request</div>
+                        <div class="error-desc">La teva petició està més trencada que les teves expectatives</div>
+                    </a>
+
+                    <a href="421.html" class="error-card error-card-active">
+                        <span class="error-number">421</span>
+                        <div class="error-title">Misdirected Request</div>
+                        <div class="error-desc">Això no era per a mi!</div>
+                    </a>
+
+                    <a href="404.html" class="error-card">
+                        <span class="error-number">404</span>
+                        <div class="error-title">Not Found</div>
+                        <div class="error-desc">Com buscar les claus quan tens pressa</div>
+                    </a>
+
+                    <a href="502.html" class="error-card">
+                        <span class="error-number">502</span>
+                        <div class="error-title">Bad Gateway</div>
+                        <div class="error-desc">Quan el servidor tampoc sap a qui li tocava</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#privacy">Privacitat</a>
+                    <a href="#terms">Termes</a>
+                    <a href="#contact">Contacte</a>
+                    <a href="#sitemap">Sitemap</a>
+                </div>
+                <p>&copy; 2025 EstoNoCarga. Fet amb frustració i molt de cafè. ☕</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;">Perquè els errors web també necessiten amor (o almenys explicació).</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/error-page.js"></script>
