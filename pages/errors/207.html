@@ -1,51 +1,73 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Código 207 - Multi-Status | EstoNoCarga</title>
-    <meta name="description" content="Todo sobre el código 207 Multi-Status. El informe trimestral de HTTP que te cuenta cómo fue cada operación. WebDAV y múltiples resultados en uno.">
-    <meta name="keywords" content="código 207, multi-status, webdav, múltiples operaciones, bulk operations, desarrollo web">
-    <meta name="author" content="EstoNoCarga">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://estonocarga.dev/pages/errors/207">
-    <meta property="og:title" content="Código 207 - Multi-Status | EstoNoCarga">
-    <meta property="og:description" content="El informe trimestral de HTTP que te cuenta cómo fue cada operación. WebDAV y múltiples resultados en uno.">
-    <meta property="og:image" content="https://estonocarga.dev/assets/images/207-og-image.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://estonocarga.dev/pages/errors/207">
-    <meta property="twitter:title" content="Código 207 - Multi-Status | EstoNoCarga">
-    <meta property="twitter:description" content="El informe trimestral de HTTP que te cuenta cómo fue cada operación.">
-    <meta property="twitter:image" content="https://estonocarga.dev/assets/images/207-og-image.png">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
-    
-    <!-- Schema.org structured data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Código 207 - Multi-Status",
-      "description": "Todo lo que necesitas saber sobre el código 207 Multi-Status",
-      "author": {
-        "@type": "Organization",
-        "name": "EstoNoCarga"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "EstoNoCarga"
+  <!-- SEO Básico -->
+  <title>Código HTTP 207 Multi-Status: Guía Completa para Operaciones en Lote | EstoNoCarga</title>
+  <meta name="description" content="Explicación técnica avanzada del código HTTP 207: implementación en WebDAV, manejo de operaciones múltiples, procesamiento batch y respuestas complejas con múltiples estados en una sola solicitud.">
+  <meta name="keywords" content="HTTP 207, Multi-Status, código 207, WebDAV, operaciones batch, bulk operations, procesamiento en lote, desarrollo web avanzado, APIs complejas">
+  <meta name="author" content="EstoNoCarga">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://estonocarga.akidojo.dev/pages/errors/207" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="HTTP 207 Multi-Status: Dominando Operaciones Múltiples en WebDAV | EstoNoCarga">
+  <meta property="og:description" content="Guía técnica completa sobre el código 207: desde implementaciones WebDAV hasta APIs complejas que requieren reportar múltiples estados en una sola respuesta.">
+  <meta property="og:url" content="https://estonocarga.akidojo.dev/pages/errors/207">
+  <meta property="og:image" content="https://estonocarga.akidojo.dev/assets/images/207-og-image.png">
+  <meta property="og:site_name" content="EstoNoCarga">
+  <meta property="og:locale" content="es_ES">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HTTP 207: El Poder de las Operaciones en Lote | EstoNoCarga">
+  <meta name="twitter:description" content="Todo sobre el código Multi-Status: implementación avanzada en WebDAV y APIs que manejan múltiples operaciones simultáneas con reporte detallado de estados.">
+  <meta name="twitter:url" content="https://estonocarga.akidojo.dev/pages/errors/207">
+  <meta name="twitter:image" content="https://estonocarga.akidojo.dev/assets/images/207-og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+
+  <!-- Structured Data con Schema.org mejorado -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Código HTTP 207 - Multi-Status: Operaciones Complejas en WebDAV",
+    "description": "Análisis técnico exhaustivo del código 207: implementación en sistemas WebDAV, diseño de APIs para operaciones batch, estructura de respuestas XML multi-estado y casos de uso avanzados en gestión de recursos distribuidos.",
+    "author": {
+      "@type": "Organization",
+      "name": "EstoNoCarga",
+      "url": "https://estonocarga.akidojo.dev"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "EstoNoCarga",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://estonocarga.akidojo.dev/assets/images/logo.svg"
       }
-    }
-    </script>
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="../../assets/css/styles.css">
-    <link rel="stylesheet" href="../../assets/css/error-page.css">
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://estonocarga.akidojo.dev/pages/errors/207"
+    },
+    "inLanguage": "es",
+    "keywords": "HTTP 207, Multi-Status, WebDAV, operaciones batch, bulk operations, procesamiento en lote, APIs complejas, gestión de recursos, desarrollo web avanzado",
+    "datePublished": "2023-11-15",
+    "image": "https://estonocarga.akidojo.dev/assets/images/207-og-image.png",
+    "articleBody": "El código HTTP 207 es fundamental para sistemas que manejan operaciones múltiples como WebDAV. Este artículo cubre su implementación técnica, estructura de respuestas XML multi-estado, casos de uso en gestión de recursos distribuidos y mejores prácticas para APIs complejas que requieren reportar múltiples resultados en una sola respuesta."
+  }
+  </script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+  <link rel="stylesheet" href="../../assets/css/error-page.css" />
 </head>
 <body>
     <header>

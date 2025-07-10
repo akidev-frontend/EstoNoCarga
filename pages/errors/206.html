@@ -1,51 +1,73 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Código 206 - Partial Content | EstoNoCarga</title>
-    <meta name="description" content="Todo sobre el código 206 Partial Content. El Netflix de HTTP que te sirve solo el trozo que quieres. Streaming y descargas parciales hechas arte.">
-    <meta name="keywords" content="código 206, partial content, range requests, streaming, descargas parciales, desarrollo web">
-    <meta name="author" content="EstoNoCarga">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://estonocarga.dev/pages/errors/206">
-    <meta property="og:title" content="Código 206 - Partial Content | EstoNoCarga">
-    <meta property="og:description" content="El Netflix de HTTP que te sirve solo el trozo que quieres. Streaming y descargas parciales hechas arte.">
-    <meta property="og:image" content="https://estonocarga.dev/assets/images/206-og-image.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://estonocarga.dev/pages/errors/206">
-    <meta property="twitter:title" content="Código 206 - Partial Content | EstoNoCarga">
-    <meta property="twitter:description" content="El Netflix de HTTP que te sirve solo el trozo que quieres.">
-    <meta property="twitter:image" content="https://estonocarga.dev/assets/images/206-og-image.png">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
-    
-    <!-- Schema.org structured data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Código 206 - Partial Content",
-      "description": "Todo lo que necesitas saber sobre el código 206 Partial Content",
-      "author": {
-        "@type": "Organization",
-        "name": "EstoNoCarga"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "EstoNoCarga"
+  <!-- SEO Básico -->
+  <title>Código HTTP 206 Partial Content: Guía Completa de Solicitudes por Rango | EstoNoCarga</title>
+  <meta name="description" content="Explicación técnica avanzada del código HTTP 206: implementación en streaming de video/audio, descargas resumables, Range Requests y optimización de transferencia de archivos grandes.">
+  <meta name="keywords" content="HTTP 206, Partial Content, código 206, Range Requests, Content-Range, streaming HTTP, descargas parciales, archivos grandes, desarrollo web, optimización de ancho de banda">
+  <meta name="author" content="EstoNoCarga">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://estonocarga.akidojo.dev/pages/errors/206" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="HTTP 206 Partial Content: Dominando las Solicitudes por Rango | EstoNoCarga">
+  <meta property="og:description" content="Guía técnica completa sobre el código 206: desde streaming multimedia hasta descargas eficientes de archivos grandes con manejo de rangos HTTP.">
+  <meta property="og:url" content="https://estonocarga.akidojo.dev/pages/errors/206">
+  <meta property="og:image" content="https://estonocarga.akidojo.dev/assets/images/206-og-image.png">
+  <meta property="og:site_name" content="EstoNoCarga">
+  <meta property="og:locale" content="es_ES">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HTTP 206: El Corazón del Streaming Moderno | EstoNoCarga">
+  <meta name="twitter:description" content="Todo sobre las solicitudes por rango: implementación avanzada del código 206 en servicios de streaming y transferencia eficiente de datos.">
+  <meta name="twitter:url" content="https://estonocarga.akidojo.dev/pages/errors/206">
+  <meta name="twitter:image" content="https://estonocarga.akidojo.dev/assets/images/206-og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+
+  <!-- Structured Data con Schema.org mejorado -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Código HTTP 206 - Partial Content: Transferencia Eficiente por Rangos",
+    "description": "Análisis técnico exhaustivo del código 206: implementación en plataformas de streaming, optimización para archivos grandes, cabeceras Range y Content-Range, y comparativa con HTTP/2 y HTTP/3.",
+    "author": {
+      "@type": "Organization",
+      "name": "EstoNoCarga",
+      "url": "https://estonocarga.akidojo.dev"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "EstoNoCarga",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://estonocarga.akidojo.dev/assets/images/logo.svg"
       }
-    }
-    </script>
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="../../assets/css/styles.css">
-    <link rel="stylesheet" href="../../assets/css/error-page.css">
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://estonocarga.akidojo.dev/pages/errors/206"
+    },
+    "inLanguage": "es",
+    "keywords": "HTTP 206, Partial Content, Range Requests, Content-Range, streaming HTTP, descargas resumables, optimización de ancho de banda, transferencia de archivos, desarrollo web avanzado",
+    "datePublished": "2023-11-15",
+    "image": "https://estonocarga.akidojo.dev/assets/images/206-og-image.png",
+    "articleBody": "El código HTTP 206 es fundamental para tecnologías modernas de streaming y transferencia eficiente de datos. Este artículo cubre su implementación técnica, cabeceras relacionadas, casos de uso avanzados y mejores prácticas para optimizar la entrega de contenido parcial en aplicaciones web."
+  }
+  </script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+  <link rel="stylesheet" href="../../assets/css/error-page.css" />
 </head>
 <body>
     <header>

@@ -1,51 +1,73 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Código 203 - Non-Authoritative Information | EstoNoCarga</title>
-    <meta name="description" content="Todo sobre el código 203 Non-Authoritative Information. El teléfono escacharrado de HTTP que funciona. Información de segunda mano pero válida.">
-    <meta name="keywords" content="código 203, non-authoritative, proxy, cache, información secundaria, desarrollo web">
-    <meta name="author" content="EstoNoCarga">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://estonocarga.dev/pages/errors/203">
-    <meta property="og:title" content="Código 203 - Non-Authoritative Information | EstoNoCarga">
-    <meta property="og:description" content="El teléfono escacharrado de HTTP que funciona. Información de segunda mano pero válida.">
-    <meta property="og:image" content="https://estonocarga.dev/assets/images/203-og-image.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://estonocarga.dev/pages/errors/203">
-    <meta property="twitter:title" content="Código 203 - Non-Authoritative Information | EstoNoCarga">
-    <meta property="twitter:description" content="El teléfono escacharrado de HTTP que funciona.">
-    <meta property="twitter:image" content="https://estonocarga.dev/assets/images/203-og-image.png">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
-    
-    <!-- Schema.org structured data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Código 203 - Non-Authoritative Information",
-      "description": "Todo lo que necesitas saber sobre el código 203 Non-Authoritative Information",
-      "author": {
-        "@type": "Organization",
-        "name": "EstoNoCarga"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "EstoNoCarga"
+  <!-- SEO Básico -->
+  <title>Código HTTP 203 Non-Authoritative Information: Guía Completa | EstoNoCarga</title>
+  <meta name="description" content="Explicación técnica del código HTTP 203: cuándo se usa en proxies y sistemas de caché, diferencias con respuestas autoritativas, y casos prácticos de implementación en arquitecturas distribuidas.">
+  <meta name="keywords" content="HTTP 203, Non-Authoritative Information, código 203, respuestas proxy, caché HTTP, transformación de respuestas, intermediarios HTTP, desarrollo web, arquitectura de redes">
+  <meta name="author" content="EstoNoCarga">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://estonocarga.akidojo.dev/pages/errors/203" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="HTTP 203 Non-Authoritative Information: Explicación Técnica | EstoNoCarga">
+  <meta property="og:description" content="Guía avanzada sobre el código 203: funcionamiento en proxies, transformación de respuestas, y manejo de metadatos en sistemas intermediarios.">
+  <meta property="og:url" content="https://estonocarga.akidojo.dev/pages/errors/203">
+  <meta property="og:image" content="https://estonocarga.akidojo.dev/assets/images/203-og-image.png">
+  <meta property="og:site_name" content="EstoNoCarga">
+  <meta property="og:locale" content="es_ES">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HTTP 203: Respuestas No Autoritativas en Proxies | EstoNoCarga">
+  <meta name="twitter:description" content="Análisis técnico del código 203: cómo proxies y cachés transforman respuestas HTTP manteniendo la funcionalidad.">
+  <meta name="twitter:url" content="https://estonocarga.akidojo.dev/pages/errors/203">
+  <meta name="twitter:image" content="https://estonocarga.akidojo.dev/assets/images/203-og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+
+  <!-- Structured Data con Schema.org mejorado -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Código HTTP 203 - Non-Authoritative Information",
+    "description": "Análisis completo del código 203: funcionamiento en intermediarios HTTP, casos de transformación válida de respuestas, y diferencias críticas con respuestas autoritativas en sistemas distribuidos.",
+    "author": {
+      "@type": "Organization",
+      "name": "EstoNoCarga",
+      "url": "https://estonocarga.akidojo.dev"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "EstoNoCarga",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://estonocarga.akidojo.dev/assets/images/logo.svg"
       }
-    }
-    </script>
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="../../assets/css/styles.css">
-    <link rel="stylesheet" href="../../assets/css/error-page.css">
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://estonocarga.akidojo.dev/pages/errors/203"
+    },
+    "inLanguage": "es",
+    "keywords": "HTTP 203, Non-Authoritative, proxy HTTP, caché, transformación respuestas, intermediarios, arquitectura web",
+    "datePublished": "2023-11-15",
+    "image": "https://estonocarga.akidojo.dev/assets/images/203-og-image.png",
+    "articleBody": "El código HTTP 203 es clave en arquitecturas con intermediarios. Este artículo explica su uso en proxies y sistemas de caché, cómo manejar metadatos transformados, y cuándo es apropiado usarlo frente a respuestas autoritativas."
+  }
+  </script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+  <link rel="stylesheet" href="../../assets/css/error-page.css" />
 </head>
 <body>
     <header>
