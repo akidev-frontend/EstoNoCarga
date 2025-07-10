@@ -1,54 +1,78 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Código 302 - Found (Moved Temporarily) | EstoNoCarga</title>
-    <meta name="description"
-        content="Todo sobre el código 302 Found. El 'me mudé pero vuelvo' de HTTP. Redirecciones temporales, SEO, PageRank y cuándo NO usar 301. La redirección malentendida.">
-    <meta name="keywords" content="código 302, found, moved temporarily, redirección temporal, SEO, desarrollo web">
-    <meta name="author" content="EstoNoCarga">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://estonocarga.dev/pages/errors/302">
-    <meta property="og:title" content="Código 302 - Found (Moved Temporarily) | EstoNoCarga">
-    <meta property="og:description"
-        content="El 'me mudé pero vuelvo' de HTTP. Redirecciones temporales, SEO y cuándo NO usar 301.">
-    <meta property="og:image" content="https://estonocarga.dev/assets/images/302-og-image.png">
+  <!-- SEO Básico -->
+  <title>Código HTTP 302 Found: Guía Completa de Redirecciones Temporales | EstoNoCarga</title>
+  <meta name="description" content="Guía definitiva sobre redirecciones 302: cuándo usarlas, diferencias con 301, impacto en SEO y casos prácticos. Aprende a implementar redirecciones temporales correctamente.">
+  <meta name="keywords" content="HTTP 302, Found, Moved Temporarily, redirección temporal, redirección 302, SEO técnico, desarrollo web, status code 302, diferencias 301 y 302">
+  <meta name="author" content="EstoNoCarga">
+  <meta name="robots" content="index, follow">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://estonocarga.dev/pages/errors/302">
-    <meta property="twitter:title" content="Código 302 - Found (Moved Temporarily) | EstoNoCarga">
-    <meta property="twitter:description" content="El 'me mudé pero vuelvo' de HTTP. Redirecciones temporales y SEO.">
-    <meta property="twitter:image" content="https://estonocarga.dev/assets/images/302-og-image.png">
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://estonocarga.akidojo.dev/pages/errors/302.html" />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Código HTTP 302 Found: Guía Completa de Redirecciones Temporales | EstoNoCarga">
+  <meta property="og:description" content="Todo sobre redirecciones temporales 302: cuándo usarlas, cómo implementarlas y su impacto en SEO. Diferencias clave con las redirecciones 301.">
+  <meta property="og:url" content="https://estonocarga.akidojo.dev/pages/errors/302.html">
+  <meta property="og:image" content="https://estonocarga.akidojo.dev/assets/images/302-og-image.png">
+  <meta property="og:site_name" content="EstoNoCarga">
+  <meta property="og:locale" content="es_ES">
 
-    <!-- Schema.org structured data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Código 302 - Found (Moved Temporarily)",
-      "description": "Todo lo que necesitas saber sobre el código 302 Found",
-      "author": {
-        "@type": "Organization",
-        "name": "EstoNoCarga"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "EstoNoCarga"
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Redirecciones 302: Guía Completa | EstoNoCarga">
+  <meta name="twitter:description" content="Domina las redirecciones temporales 302: cuándo usarlas, cómo implementarlas y su impacto en SEO. Diferencias con 301.">
+  <meta name="twitter:url" content="https://estonocarga.akidojo.dev/pages/errors/302.html">
+  <meta name="twitter:image" content="https://estonocarga.akidojo.dev/assets/images/302-og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+
+  <!-- Structured Data con Schema.org mejorado -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Redirecciones 302 Found - Guía Completa",
+    "description": "Guía técnica detallada sobre el código HTTP 302: implementación de redirecciones temporales, diferencias con 301 y mejores prácticas para desarrolladores y SEO.",
+    "author": {
+      "@type": "Organization",
+      "name": "EstoNoCarga",
+      "url": "https://estonocarga.akidojo.dev"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "EstoNoCarga",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://estonocarga.akidojo.dev/assets/images/logo.svg"
       }
-    }
-    </script>
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://estonocarga.akidojo.dev/pages/errors/302"
+    },
+    "inLanguage": "es",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://estonocarga.akidojo.dev/assets/images/302-og-image.png",
+      "width": "1200",
+      "height": "630"
+    },
+    "datePublished": "2023-01-01",
+    "dateModified": "2023-01-01",
+    "keywords": "HTTP 302, redirección temporal, SEO técnico, desarrollo web"
+  }
+  </script>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="../../assets/css/styles.css">
-    <link rel="stylesheet" href="../../assets/css/error-page.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+  <link rel="stylesheet" href="../../assets/css/error-page.css" />
 </head>
 
 <body>
