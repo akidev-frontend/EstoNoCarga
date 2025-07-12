@@ -2,53 +2,78 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Error 421 - Misdirected Request | EstoNoCarga</title>
-    <meta name="description"
-        content="Todo el que necessites saber sobre l'error 421 Misdirected Request. Què significa, per què apareix i com solucionar-lo. La guia definitiva per quan el servidor no sap a qui va la petició.">
-    <meta name="keywords" content="error 421, misdirected request, petició mal dirigida, solucionar 421, desenvolupament web">
-    <meta name="author" content="EstoNoCarga">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://estonocarga.dev/pages/errors/421">
-    <meta property="og:title" content="Error 421 - Misdirected Request | EstoNoCarga">
-    <meta property="og:description"
-        content="Quan el servidor rep una petició que no li toca. Explicació senzilla i solucions per a l'error 421.">
-    <meta property="og:image" content="https://estonocarga.dev/assets/images/421-og-image.png">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://estonocarga.dev/pages/errors/421">
-    <meta property="twitter:title" content="Error 421 - Misdirected Request | EstoNoCarga">
-    <meta property="twitter:description" content="Quan el servidor rep una petició que no li toca.">
-    <meta property="twitter:image" content="https://estonocarga.dev/assets/images/421-og-image.png">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
-
-    <!-- Schema.org structured data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Error 421 - Misdirected Request",
-      "description": "Tot el que necessites saber sobre l'error 421 Misdirected Request",
-      "author": {
-        "@type": "Organization",
-        "name": "EstoNoCarga"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "EstoNoCarga"
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO Básico -->
+  <title>Código HTTP 421 Misdirected Request: Guía de HTTP/2 y Conexiones | EstoNoCarga</title>
+  <meta name="description" content="Guía completa sobre el código HTTP 421 Misdirected Request: problemas de HTTP/2, multiplexing de conexiones, certificate mismatch y troubleshooting de requests mal dirigidos.">
+  <meta name="keywords" content="HTTP 421, Misdirected Request, HTTP/2 multiplexing, connection pooling, certificate mismatch, TLS certificate, server name indication, HTTP/2 problems">
+  <meta name="author" content="EstoNoCarga">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://estonocarga.akidojo.dev/pages/errors/421.html" />
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Código HTTP 421 Misdirected Request: Guía de HTTP/2 y Conexiones | EstoNoCarga">
+  <meta property="og:description" content="Soluciona problemas de HTTP/2: entiende el multiplexing, diagnostica certificate mismatch y optimiza las conexiones reutilizadas en aplicaciones modernas.">
+  <meta property="og:url" content="https://estonocarga.akidojo.dev/pages/errors/421.html">
+  <meta property="og:image" content="https://estonocarga.akidojo.dev/assets/images/421-og-image.png">
+  <meta property="og:site_name" content="EstoNoCarga">
+  <meta property="og:locale" content="es_ES">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HTTP 421 Misdirected Request: HTTP/2 Multiplexing | EstoNoCarga">
+  <meta name="twitter:description" content="Aprende HTTP/2 avanzado: soluciona requests mal dirigidos, maneja connection pooling y optimiza multiplexing de conexiones.">
+  <meta name="twitter:url" content="https://estonocarga.akidojo.dev/pages/errors/421.html">
+  <meta name="twitter:image" content="https://estonocarga.akidojo.dev/assets/images/421-og-image.png">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+  
+  <!-- Structured Data con Schema.org mejorado -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Código 421 Misdirected Request - HTTP/2 Multiplexing",
+    "description": "Guía técnica completa sobre el código HTTP 421 Misdirected Request: problemas de HTTP/2 multiplexing, connection pooling, certificate mismatch y optimización de conexiones.",
+    "author": {
+      "@type": "Organization",
+      "name": "EstoNoCarga",
+      "url": "https://estonocarga.akidojo.dev"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "EstoNoCarga",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://estonocarga.akidojo.dev/assets/images/logo.svg"
       }
-    }
-    </script>
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="../../assets/css/styles.css">
-    <link rel="stylesheet" href="../../assets/css/error-page.css">
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://estonocarga.akidojo.dev/pages/errors/421.html"
+    },
+    "inLanguage": "es",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://estonocarga.akidojo.dev/assets/images/421-og-image.png",
+      "width": "1200",
+      "height": "630"
+    },
+    "datePublished": "2023-01-01",
+    "dateModified": "2023-01-01",
+    "keywords": "HTTP 421, Misdirected Request, HTTP/2 multiplexing, connection pooling"
+  }
+  </script>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+  <link rel="stylesheet" href="../../assets/css/error-page.css" />
 </head>
 
 <body>

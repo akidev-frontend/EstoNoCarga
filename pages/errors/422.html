@@ -2,53 +2,78 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Error 422 - Unprocessable Entity | EstoNoCarga</title>
-    <meta name="description"
-        content="Todo lo que necesitas saber sobre el error 422 Unprocessable Entity. Qué significa, por qué aparece y cómo solucionarlo. La guía definitiva para cuando el servidor no puede procesar tu petición.">
-    <meta name="keywords" content="error 422, unprocessable entity, entidad no procesable, solucionar 422, desarrollo web">
-    <meta name="author" content="EstoNoCarga">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://estonocarga.dev/pages/errors/422">
-    <meta property="og:title" content="Error 422 - Unprocessable Entity | EstoNoCarga">
-    <meta property="og:description"
-        content="Cuando el servidor entiende la petición, pero no puede procesarla. Explicación sencilla y soluciones para el error 422.">
-    <meta property="og:image" content="https://estonocarga.dev/assets/images/422-og-image.png">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://estonocarga.dev/pages/errors/422">
-    <meta property="twitter:title" content="Error 422 - Unprocessable Entity | EstoNoCarga">
-    <meta property="twitter:description" content="Cuando el servidor entiende la petición, pero no puede procesarla.">
-    <meta property="twitter:image" content="https://estonocarga.dev/assets/images/422-og-image.png">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
-
-    <!-- Schema.org structured data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Error 422 - Unprocessable Entity",
-      "description": "Todo lo que necesitas saber sobre el error 422 Unprocessable Entity",
-      "author": {
-        "@type": "Organization",
-        "name": "EstoNoCarga"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "EstoNoCarga"
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO Básico -->
+  <title>Código HTTP 422 Unprocessable Entity: Guía de Validación de Datos | EstoNoCarga</title>
+  <meta name="description" content="Guía completa sobre el código HTTP 422 Unprocessable Entity: validación de datos, diferencias con 400, manejo de errores semánticos y mejores prácticas para APIs robustas.">
+  <meta name="keywords" content="HTTP 422, Unprocessable Entity, validación datos, errores semánticos, diferencias 422 vs 400, API validation, form validation, WebDAV, data integrity">
+  <meta name="author" content="EstoNoCarga">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://estonocarga.akidojo.dev/pages/errors/422.html" />
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Código HTTP 422 Unprocessable Entity: Guía de Validación de Datos | EstoNoCarga">
+  <meta property="og:description" content="Mejora la validación de tu API: implementa correctamente el código 422, maneja errores semánticos y crea mensajes de error útiles para desarrolladores.">
+  <meta property="og:url" content="https://estonocarga.akidojo.dev/pages/errors/422.html">
+  <meta property="og:image" content="https://estonocarga.akidojo.dev/assets/images/422-og-image.png">
+  <meta property="og:site_name" content="EstoNoCarga">
+  <meta property="og:locale" content="es_ES">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HTTP 422 Unprocessable Entity: Validación API | EstoNoCarga">
+  <meta name="twitter:description" content="Aprende validación de datos HTTP: implementa 422 correctamente, maneja errores semánticos y mejora la robustez de tu API.">
+  <meta name="twitter:url" content="https://estonocarga.akidojo.dev/pages/errors/422.html">
+  <meta name="twitter:image" content="https://estonocarga.akidojo.dev/assets/images/422-og-image.png">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+  
+  <!-- Structured Data con Schema.org mejorado -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Código 422 Unprocessable Entity - Validación de Datos",
+    "description": "Guía técnica completa sobre el código HTTP 422 Unprocessable Entity: implementación de validación de datos, diferencias con 400 Bad Request y mejores prácticas para APIs.",
+    "author": {
+      "@type": "Organization",
+      "name": "EstoNoCarga",
+      "url": "https://estonocarga.akidojo.dev"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "EstoNoCarga",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://estonocarga.akidojo.dev/assets/images/logo.svg"
       }
-    }
-    </script>
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="../../assets/css/styles.css">
-    <link rel="stylesheet" href="../../assets/css/error-page.css">
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://estonocarga.akidojo.dev/pages/errors/422.html"
+    },
+    "inLanguage": "es",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://estonocarga.akidojo.dev/assets/images/422-og-image.png",
+      "width": "1200",
+      "height": "630"
+    },
+    "datePublished": "2023-01-01",
+    "dateModified": "2023-01-01",
+    "keywords": "HTTP 422, Unprocessable Entity, validación datos, errores semánticos, API validation"
+  }
+  </script>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+  <link rel="stylesheet" href="../../assets/css/error-page.css" />
 </head>
 
 <body>
