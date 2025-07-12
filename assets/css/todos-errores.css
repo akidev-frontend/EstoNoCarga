@@ -1,6 +1,6 @@
 /* === HERO SECTION === */
 .hero-section {
-    padding: 8rem 0 4rem;
+    padding: clamp(6rem, 12vw, 8rem) 0 clamp(3rem, 6vw, 4rem);
     text-align: center;
     background: radial-gradient(ellipse at center, rgba(239, 68, 68, 0.05) 0%, transparent 70%);
     border-bottom: 1px solid var(--border);
@@ -9,24 +9,28 @@
 .page-title {
     font-size: clamp(2.5rem, 6vw, 4rem);
     font-weight: 800;
-    margin-bottom: 1rem;
+    margin-bottom: clamp(0.75rem, 2vw, 1rem);
     color: var(--text-primary);
     background: linear-gradient(135deg, var(--text-primary), var(--accent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    line-height: 1.1;
+    padding: 0 1rem;
 }
 
 .page-description {
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
     color: var(--text-secondary);
     max-width: 600px;
     margin: 0 auto;
+    padding: 0 1rem;
+    line-height: 1.6;
 }
 
 /* === FILTROS === */
 .filters-section {
-    padding: 3rem 0;
+    padding: clamp(2rem, 5vw, 3rem) 0;
     background: var(--bg-secondary);
     border-bottom: 1px solid var(--border);
 }
@@ -34,21 +38,24 @@
 .filters {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: clamp(0.5rem, 1.5vw, 1rem);
     justify-content: center;
-    margin-bottom: 2rem;
+    margin-bottom: clamp(1.5rem, 3vw, 2rem);
+    padding: 0 1rem;
 }
 
 .filter-btn {
-    padding: 0.75rem 1.5rem;
+    padding: clamp(0.6rem, 1.5vw, 0.75rem) clamp(1rem, 2.5vw, 1.5rem);
     background: var(--bg-primary);
     border: 1px solid var(--border);
     border-radius: 6px;
     color: var(--text-secondary);
-    font-size: 0.9rem;
+    font-size: clamp(0.8rem, 1.8vw, 0.9rem);
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .filter-btn:hover {
@@ -66,16 +73,18 @@
 .search-box {
     max-width: 400px;
     margin: 0 auto;
+    padding: 0 1rem;
+    width: 100%;
 }
 
 .search-box input {
     width: 100%;
-    padding: 1rem;
+    padding: clamp(0.75rem, 2vw, 1rem);
     background: var(--bg-primary);
     border: 1px solid var(--border);
     border-radius: 8px;
     color: var(--text-primary);
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
 .search-box input:focus {
@@ -90,11 +99,11 @@
 
 /* === CATÁLOGO DE ERRORES === */
 .errors-catalog {
-    padding: 4rem 0;
+    padding: clamp(3rem, 6vw, 4rem) 0;
 }
 
 .category-section {
-    margin-bottom: 5rem;
+    margin-bottom: clamp(4rem, 8vw, 5rem);
     transition: opacity 0.3s ease;
 }
 
@@ -103,37 +112,42 @@
 }
 
 .category-title {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 4vw, 2rem);
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: clamp(0.75rem, 2vw, 1rem);
     color: var(--text-primary);
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: clamp(0.5rem, 2vw, 1rem);
+    flex-wrap: wrap;
+    padding: 0 1rem;
 }
 
 .category-icon {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 4vw, 2.5rem);
 }
 
 .category-desc {
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 2.2vw, 1.1rem);
     color: var(--text-secondary);
-    margin-bottom: 3rem;
+    margin-bottom: clamp(2rem, 5vw, 3rem);
     max-width: 600px;
+    line-height: 1.6;
+    padding: 0 1rem;
 }
 
 .errors-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
+    gap: clamp(1rem, 2.5vw, 1.5rem);
+    padding: 0 1rem;
 }
 
 .error-card {
     background: var(--bg-secondary);
     border: 1px solid var(--border);
     border-radius: 8px;
-    padding: 1.5rem;
+    padding: clamp(1.25rem, 3vw, 1.5rem);
     text-align: center;
     transition: all 0.3s ease;
     cursor: pointer;
@@ -167,7 +181,7 @@
 }
 
 .error-card .error-number {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 4vw, 2.5rem);
     font-weight: 800;
     color: var(--accent);
     display: block;
@@ -179,11 +193,11 @@
     font-weight: 600;
     margin-bottom: 0.5rem;
     color: var(--text-primary);
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 2.2vw, 1.1rem);
 }
 
 .error-card .error-desc {
-    font-size: 0.9rem;
+    font-size: clamp(0.85rem, 1.8vw, 0.9rem);
     color: var(--text-secondary);
     line-height: 1.4;
 }
@@ -191,21 +205,42 @@
 /* === ESTADOS ESPECIALES === */
 .no-results {
     text-align: center;
-    padding: 4rem 0;
+    padding: clamp(3rem, 6vw, 4rem) 1rem;
     color: var(--text-secondary);
 }
 
 .no-results h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    margin-bottom: clamp(0.75rem, 2vw, 1rem);
     color: var(--text-primary);
 }
 
 .no-results p {
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 2.2vw, 1.1rem);
+    line-height: 1.6;
 }
 
-/* === RESPONSIVE === */
+/* === RESPONSIVE BREAKPOINTS === */
+
+/* Tablets y pantallas medianas */
+@media (max-width: 1024px) {
+    .errors-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    .category-title {
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .category-desc {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Tablets pequeñas */
 @media (max-width: 768px) {
     .hero-section {
         padding: 6rem 0 3rem;
@@ -224,7 +259,25 @@
     }
     
     .filters {
-        gap: 0.5rem;
+        gap: 0.75rem;
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding: 0 1rem 0.5rem;
+        scrollbar-width: thin;
+        scrollbar-color: var(--accent) var(--bg-primary);
+    }
+    
+    .filters::-webkit-scrollbar {
+        height: 4px;
+    }
+    
+    .filters::-webkit-scrollbar-track {
+        background: var(--bg-primary);
+    }
+    
+    .filters::-webkit-scrollbar-thumb {
+        background: var(--accent);
+        border-radius: 2px;
     }
     
     .filter-btn {
@@ -234,15 +287,23 @@
     
     .category-title {
         font-size: 1.5rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .category-icon {
+        order: -1;
     }
     
     .category-desc {
         font-size: 1rem;
         margin-bottom: 2rem;
+        text-align: center;
     }
     
     .errors-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
         gap: 1rem;
     }
     
@@ -261,17 +322,235 @@
     .category-section {
         margin-bottom: 4rem;
     }
+    
+    .search-box {
+        max-width: 100%;
+        padding: 0 1rem;
+    }
 }
 
+/* Móviles */
 @media (max-width: 480px) {
+    .hero-section {
+        padding: 5rem 0 2rem;
+    }
+    
+    .page-title {
+        padding: 0 0.75rem;
+    }
+    
+    .page-description {
+        padding: 0 0.75rem;
+        font-size: 1rem;
+    }
+    
+    .filters-section {
+        padding: 1.5rem 0;
+    }
+    
     .filters {
         justify-content: flex-start;
         overflow-x: auto;
-        padding-bottom: 0.5rem;
+        padding: 0 0.75rem 0.5rem;
+        gap: 0.5rem;
     }
     
     .filter-btn {
         white-space: nowrap;
         flex-shrink: 0;
+        padding: 0.5rem 0.75rem;
+        font-size: 0.75rem;
     }
+    
+    .search-box {
+        padding: 0 0.75rem;
+    }
+    
+    .errors-catalog {
+        padding: 2rem 0;
+    }
+    
+    .category-section {
+        margin-bottom: 3rem;
+    }
+    
+    .category-title {
+        padding: 0 0.75rem;
+        font-size: 1.25rem;
+    }
+    
+    .category-icon {
+        font-size: 1.75rem;
+    }
+    
+    .category-desc {
+        padding: 0 0.75rem;
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .errors-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        padding: 0 0.75rem;
+    }
+    
+    .error-card {
+        padding: 1rem;
+    }
+    
+    .error-card .error-number {
+        font-size: 1.75rem;
+    }
+    
+    .error-card .error-name {
+        font-size: 1rem;
+    }
+    
+    .error-card .error-desc {
+        font-size: 0.85rem;
+    }
+    
+    .error-card:hover {
+        transform: none;
+    }
+    
+    .no-results {
+        padding: 2rem 0.75rem;
+    }
+    
+    .no-results h3 {
+        font-size: 1.1rem;
+    }
+    
+    .no-results p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 320px) {
+    .hero-section {
+        padding: 4rem 0 1.5rem;
+    }
+    
+    .page-title {
+        padding: 0 0.5rem;
+        font-size: 1.75rem;
+    }
+    
+    .page-description {
+        padding: 0 0.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .filters-section {
+        padding: 1rem 0;
+    }
+    
+    .filters {
+        padding: 0 0.5rem 0.5rem;
+        gap: 0.25rem;
+    }
+    
+    .filter-btn {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.7rem;
+    }
+    
+    .search-box {
+        padding: 0 0.5rem;
+    }
+    
+    .search-box input {
+        padding: 0.6rem;
+        font-size: 0.85rem;
+    }
+    
+    .errors-catalog {
+        padding: 1.5rem 0;
+    }
+    
+    .category-section {
+        margin-bottom: 2.5rem;
+    }
+    
+    .category-title {
+        padding: 0 0.5rem;
+        font-size: 1.1rem;
+    }
+    
+    .category-icon {
+        font-size: 1.5rem;
+    }
+    
+    .category-desc {
+        padding: 0 0.5rem;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+    
+    .errors-grid {
+        padding: 0 0.5rem;
+        gap: 0.5rem;
+    }
+    
+    .error-card {
+        padding: 0.75rem;
+    }
+    
+    .error-card .error-number {
+        font-size: 1.5rem;
+    }
+    
+    .error-card .error-name {
+        font-size: 0.9rem;
+    }
+    
+    .error-card .error-desc {
+        font-size: 0.8rem;
+    }
+    
+    .no-results {
+        padding: 1.5rem 0.5rem;
+    }
+    
+    .no-results h3 {
+        font-size: 1rem;
+    }
+    
+    .no-results p {
+        font-size: 0.85rem;
+    }
+}
+
+/* === MEJORAS PARA ACCESIBILIDAD === */
+@media (prefers-reduced-motion: reduce) {
+    .error-card,
+    .error-card::before,
+    .filter-btn,
+    .category-section {
+        transition: none;
+    }
+    
+    .error-card:hover {
+        transform: none;
+    }
+}
+
+/* Mejora del scroll horizontal en filtros */
+.filters {
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Mejora de focus para accesibilidad */
+.filter-btn:focus,
+.search-box input:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.error-card:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
 }
