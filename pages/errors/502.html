@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO Básico -->
+  <title>Código HTTP 502 Bad Gateway: Error de Proxy y Gateway | EstoNoCarga</title>
+  <meta name="description" content="Guía completa sobre el código HTTP 502 Bad Gateway: problemas de proxy, gateway, load balancer, debugging y soluciones para desarrolladores.">
+  <meta name="keywords" content="HTTP 502, Bad Gateway, proxy error, gateway error, load balancer, debugging, nginx, apache, servidor proxy">
+  <meta name="author" content="EstoNoCarga">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://estonocarga.akidojo.dev/pages/errors/502.html" />
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Código HTTP 502 Bad Gateway: Error de Proxy y Gateway | EstoNoCarga">
+  <meta property="og:description" content="Aprende sobre el error 502: problemas de proxy, gateway, load balancer, debugging y soluciones efectivas para administradores.">
+  <meta property="og:url" content="https://estonocarga.akidojo.dev/pages/errors/502.html">
+  <meta property="og:image" content="https://estonocarga.akidojo.dev/assets/images/502-og-image.png">
+  <meta property="og:site_name" content="EstoNoCarga">
+  <meta property="og:locale" content="es_ES">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HTTP 502 Bad Gateway: Error de Proxy y Gateway | EstoNoCarga">
+  <meta name="twitter:description" content="Guía técnica del error 502: problemas de proxy, gateway, load balancer, debugging y soluciones prácticas.">
+  <meta name="twitter:url" content="https://estonocarga.akidojo.dev/pages/errors/502.html">
+  <meta name="twitter:image" content="https://estonocarga.akidojo.dev/assets/images/502-og-image.png">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+  
+  <!-- Structured Data con Schema.org mejorado -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Código 502 Bad Gateway - Error de Proxy y Gateway",
+    "description": "Guía técnica completa sobre el código HTTP 502 Bad Gateway: problemas de proxy, gateway, load balancer, debugging y mejores prácticas para administradores.",
+    "author": {
+      "@type": "Organization",
+      "name": "EstoNoCarga",
+      "url": "https://estonocarga.akidojo.dev"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "EstoNoCarga",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://estonocarga.akidojo.dev/assets/images/logo.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://estonocarga.akidojo.dev/pages/errors/502.html"
+    },
+    "inLanguage": "es",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://estonocarga.akidojo.dev/assets/images/502-og-image.png",
+      "width": "1200",
+      "height": "630"
+    },
+    "datePublished": "2023-01-01",
+    "dateModified": "2023-01-01",
+    "keywords": "HTTP 502, Bad Gateway, proxy error, gateway error, load balancer"
+  }
+  </script>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+  <link rel="stylesheet" href="../../assets/css/error-page.css" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">EstoNoCarga</a>
+            <ul class="nav-links">
+                <li><a href="../index.html#errores">Errores</a></li>
+                <li><a href="guias.html">Guías</a></li>
+                <li><a href="herramientas.html">Tools</a></li>
+                <li><a href="about.html">Nosotros</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <div class="mobile-menu" id="mobile-menu">
+            <ul>
+                <li><a href="../index.html#errores">Errores</a></li>
+                <li><a href="guias.html">Guías</a></li>
+                <li><a href="herramientas.html">Tools</a></li>
+                <li><a href="about.html">Nosotros</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Error Header -->
+        <section class="error-header">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../../index.html">Inicio</a>
+                    <span>→</span>
+                    <a href="../../index.html#errores">Errores</a>
+                    <span>→</span>
+                    <span>502</span>
+                </div>
+                <div class="error-code-display">502</div>
+                <h1 class="error-name">Bad Gateway</h1>
+                <p class="error-description">El proxy recibió basura del servidor</p>
+                <div class="status-badge status-server">
+                    <span>🌉</span>
+                    Error del Servidor
+                </div>
+            </div>
+        </section>
+
+        <!-- What is it -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-title">
+                            <span class="section-icon">🤔</span>
+                            ¿Qué narices es esto?
+                        </h2>
+
+                        <p>El <strong>error 502 Bad Gateway</strong> es como el juego del teléfono roto, pero en versión servidor. Tienes un proxy o gateway que debería hacer de intermediario entre tu navegador y el servidor real, pero algo salió mal en la comunicación.</p>
+
+                        <p>Este error aparece cuando un servidor que actúa como proxy o gateway recibe una respuesta inválida del servidor upstream. Es como si el cartero recibiera una carta escrita en jeroglíficos: sabe que tiene que entregarla, pero no tiene ni idea de qué pone.</p>
+
+                        <ul style="margin-left: 2rem; margin-bottom: 2rem;">
+                            <li style="margin-bottom: 0.5rem;">Servidor backend caído o inaccesible</li>
+                            <li style="margin-bottom: 0.5rem;">Timeout en la comunicación entre proxy y servidor</li>
+                            <li style="margin-bottom: 0.5rem;">Respuesta malformada del servidor upstream</li>
+                            <li style="margin-bottom: 0.5rem;">Problemas de DNS o conectividad de red</li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <h4><span>⚡</span> Dato curioso</h4>
+                            <p>El error 502 es especialmente común en arquitecturas modernas con microservicios, load balancers y CDNs. Cuantas más capas tengas en tu stack, más probabilidades hay de que algo se rompa en el camino. Es el precio de la escalabilidad.</p>
+                        </div>
+
+                        <p>Lo verás mucho en sitios que usan Cloudflare, Nginx como proxy reverso, load balancers, o cuando el servidor de aplicaciones (como Node.js, PHP-FPM, o Python) se cuelga pero el servidor web (Apache, Nginx) sigue funcionando.</p>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="info-card">
+                            <h3>📊 Info técnica</h3>
+                            <ul>
+                                <li><strong>Código:</strong> 502</li>
+                                <li><strong>Tipo:</strong> Error del servidor</li>
+                                <li><strong>Categoría:</strong> 5xx</li>
+                                <li><strong>Descripción:</strong> Bad Gateway</li>
+                                <li><strong>Cacheable:</strong> No</li>
+                                <li><strong>Retryable:</strong> Sí (temporal)</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>🎯 Frecuencia</h3>
+                            <ul>
+                                <li><strong>Muy común</strong></li>
+                                <li>Típico en deploys</li>
+                                <li>Frecuente con microservicios</li>
+                                <li>Común en alta carga</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to fix -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-title">
+                            <span class="section-icon">🔧</span>
+                            Cómo arreglar este desastre
+                        </h2>
+
+                        <div class="solution-steps">
+                            <h4>🚀 Para usuarios normales</h4>
+                            <ol>
+                                <li><strong>Recarga la página:</strong> Muchas veces es un problema temporal.</li>
+                                <li><strong>Espera unos minutos:</strong> El servidor puede estar reiniciándose.</li>
+                                <li><strong>Limpia caché DNS:</strong> Usa `ipconfig /flushdns` en Windows o `sudo dscacheutil -flushcache` en Mac.</li>
+                                <li><strong>Prueba desde otro dispositivo:</strong> Verifica si es un problema local.</li>
+                                <li><strong>Cambia de red:</strong> Usa datos móviles o otra WiFi.</li>
+                            </ol>
+                        </div>
+
+                        <div class="solution-steps">
+                            <h4>🛠️ Para desarrolladores/administradores</h4>
+                            <ol>
+                                <li><strong>Verifica el servidor backend:</strong> Asegúrate de que esté funcionando y accesible.</li>
+                                <li><strong>Revisa logs del proxy:</strong> Nginx, Apache, load balancer logs.</li>
+                                <li><strong>Comprueba la configuración:</strong> Upstream servers, timeouts, health checks.</li>
+                                <li><strong>Testa conectividad:</strong> Ping, telnet, curl directo al backend.</li>
+                                <li><strong>Verifica recursos:</strong> CPU, memoria, conexiones del backend.</li>
+                                <li><strong>Reinicia servicios:</strong> Proxy, load balancer, aplicación backend.</li>
+                            </ol>
+                        </div>
+
+                        <div class="warning-box">
+                            <h4><span>❌</span> Causas típicas del 502</h4>
+                            <ul style="margin-left: 0; list-style: none;">
+                                <li
+                                    style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Servidor backend caído:</strong><br>
+                                    <span style="font-size: 0.9rem;">Aplicación crasheada, servicio parado, puerto cerrado.</span>
+                                </li>
+                                <li
+                                    style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Timeout de conexión:</strong><br>
+                                    <span style="font-size: 0.9rem;">Proxy timeout, servidor lento, red congestionada.</span>
+                                </li>
+                                <li
+                                    style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Configuración incorrecta:</strong><br>
+                                    <span style="font-size: 0.9rem;">Upstream mal configurado, proxy_pass incorrecto.</span>
+                                </li>
+                                <li
+                                    style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Sobrecarga del backend:</strong><br>
+                                    <span style="font-size: 0.9rem;">Demasiadas conexiones, recursos agotados, memoria insuficiente.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="warning-box">
+                            <h4><span>🚀</span> Respuesta rápida para emergencias</h4>
+                            <div style="display: grid; gap: 0.8rem; margin-top: 1rem;">
+                                <div
+                                    style="padding: 0.8rem; background: rgba(255,159,10,0.1); border-radius: 6px; border-left: 3px solid #ff9f0a;">
+                                    <strong>🔥 Si todo el sitio está down:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">1. Verifica estado del servidor backend inmediatamente.<br>2. Revisa logs del proxy/load balancer.<br>3. Reinicia servicios si es necesario.</span>
+                                </div>
+                                <div
+                                    style="padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 6px; border-left: 3px solid #ff453a;">
+                                    <strong>⚡ Si es intermitente:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">1. Configura health checks en el load balancer.<br>2. Ajusta timeouts del proxy.<br>3. Implementa retry logic.</span>
+                                </div>
+                                <div
+                                    style="padding: 0.8rem; background: rgba(175,82,222,0.1); border-radius: 6px; border-left: 3px solid #af52de;">
+                                    <strong>🎯 Truco pro:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">Configura páginas de error personalizadas en tu proxy para dar mejor información a los usuarios.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="info-card">
+                            <h3>💡 Tips pro</h3>
+                            <ul>
+                                <li>Configura health checks automáticos</li>
+                                <li>Implementa retry logic inteligente</li>
+                                <li>Monitoriza upstream servers</li>
+                                <li>Usa timeouts apropiados</li>
+                                <li>Configura failover automático</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>⚡ Herramientas útiles</h3>
+                            <ul>
+                                <li>Nginx/Apache error logs</li>
+                                <li>Load balancer monitoring</li>
+                                <li>curl para testing directo</li>
+                                <li>netstat para conexiones activas</li>
+                                <li>Health check endpoints</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Errors -->
+        <section class="related-errors">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">Errores relacionados</h2>
+                <p style="text-align: center; color: var(--text-secondary); font-size: 1.1rem;">Otros errores de servidor que también pueden arruinarte el día</p>
+
+                <div class="error-grid">
+                    <a href="500.html" class="error-card">
+                        <span class="error-number">500</span>
+                        <div class="error-title">Internal Server Error</div>
+                        <div class="error-desc">El servidor se ha estrellado</div>
+                    </a>
+
+                    <a href="502.html" class="error-card error-card-active">
+                        <span class="error-number">502</span>
+                        <div class="error-title">Bad Gateway</div>
+                        <div class="error-desc">El proxy recibió basura del servidor</div>
+                    </a>
+
+                    <a href="503.html" class="error-card">
+                        <span class="error-number">503</span>
+                        <div class="error-title">Service Unavailable</div>
+                        <div class="error-desc">El servidor está de vacaciones</div>
+                    </a>
+
+                    <a href="504.html" class="error-card">
+                        <span class="error-number">504</span>
+                        <div class="error-title">Gateway Timeout</div>
+                        <div class="error-desc">El servidor tardó más que una cita con el dentista</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#privacy">Privacidad</a>
+                    <a href="#terms">Términos</a>
+                    <a href="#contact">Contacto</a>
+                    <a href="#sitemap">Sitemap</a>
+                </div>
+                <p>&copy; 2025 EstoNoCarga. Hecho con frustración y mucho café. ☕</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;">Porque los errores web también necesitan amor (o al menos explicación).</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/error-page.js"></script>
+</body>
+</html>
