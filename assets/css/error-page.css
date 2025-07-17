@@ -228,8 +228,32 @@
         padding: 6rem 0 3rem;
     }
     
+    /* Breadcrumb que no se apile */
+    .breadcrumb {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+        font-size: 0.9rem;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    .breadcrumb a,
+    .breadcrumb span {
+        flex-shrink: 0;
+    }
+    
+    /* Números más grandes en móvil */
     .error-code-display {
-        font-size: clamp(3rem, 15vw, 6rem);
+        font-size: clamp(5rem, 20vw, 8rem);
+    }
+    
+    /* Números de error-cards más grandes en móvil */
+    .error-card .error-number {
+        font-size: 2.5rem;
     }
     
     .content-grid {
