@@ -161,10 +161,10 @@ nav {
 .mobile-menu a {
     color: var(--text-secondary);
     text-decoration: none;
-    font-size: clamp(1rem, 2.5vw, 1.1rem);
     display: block;
-    padding: 0.5rem;
     transition: color 0.3s ease;
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    padding: 0.75rem 1rem; /* Mayor área táctil */
 }
 
 .mobile-menu a:hover {
@@ -404,13 +404,14 @@ footer {
     }
     
     .hamburger {
-        padding: 0.25rem;
+        padding: 0.75rem; /* Antes era 0.5rem */
+        touch-action: manipulation; /* Mejora interacción táctil */
     }
     
     .hamburger span {
-        width: 20px;
-        height: 2px;
-        margin: 2px 0;
+        width: 28px;
+        height: 3px;
+        margin: 4px 0;
     }
     
     .section-title {
