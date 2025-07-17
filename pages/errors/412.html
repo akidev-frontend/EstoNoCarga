@@ -2,66 +2,104 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Error 412 - Precondition Failed | EstoNoCarga</title>
-    <meta name="description"
-        content="Todo lo que necesitas saber sobre el error 412 Precondition Failed. Qué significa, por qué aparece y cómo solucionarlo. La guía definitiva para cuando tus condiciones no se cumplen.">
-    <meta name="keywords" content="error 412, precondition failed, precondición fallida, solucionar 412, desarrollo web">
-    <meta name="author" content="EstoNoCarga">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://estonocarga.dev/pages/errors/412">
-    <meta property="og:title" content="Error 412 - Precondition Failed | EstoNoCarga">
-    <meta property="og:description"
-        content="Cuando el servidor te dice que no cumples los requisitos. Explicación sencilla y soluciones para el error 412.">
-    <meta property="og:image" content="https://estonocarga.dev/assets/images/412-og-image.png">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://estonocarga.dev/pages/errors/412">
-    <meta property="twitter:title" content="Error 412 - Precondition Failed | EstoNoCarga">
-    <meta property="twitter:description" content="Cuando el servidor te dice que no cumples los requisitos.">
-    <meta property="twitter:image" content="https://estonocarga.dev/assets/images/412-og-image.png">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
-
-    <!-- Schema.org structured data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Error 412 - Precondition Failed",
-      "description": "Todo lo que necesitas saber sobre el error 412 Precondition Failed",
-      "author": {
-        "@type": "Organization",
-        "name": "EstoNoCarga"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "EstoNoCarga"
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO Básico -->
+  <title>Código HTTP 412 Precondition Failed: Guía de Headers Condicionales | EstoNoCarga</title>
+  <meta name="description" content="Guía completa sobre el código HTTP 412 Precondition Failed: headers If-Match, If-None-Match, If-Modified-Since, ETags y implementación de requests condicionales seguros.">
+  <meta name="keywords" content="HTTP 412, Precondition Failed, If-Match, If-None-Match, If-Modified-Since, ETags, conditional requests, optimistic concurrency, cache validation">
+  <meta name="author" content="EstoNoCarga">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://estonocarga.akidojo.dev/pages/errors/412.html" />
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Código HTTP 412 Precondition Failed: Guía de Headers Condicionales | EstoNoCarga">
+  <meta property="og:description" content="Domina las precondiciones HTTP: implementa headers If-Match, maneja ETags correctamente y previene conflictos de datos con requests condicionales.">
+  <meta property="og:url" content="https://estonocarga.akidojo.dev/pages/errors/412.html">
+  <meta property="og:image" content="https://estonocarga.akidojo.dev/assets/images/412-og-image.png">
+  <meta property="og:site_name" content="EstoNoCarga">
+  <meta property="og:locale" content="es_ES">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HTTP 412 Precondition Failed: Headers Condicionales | EstoNoCarga">
+  <meta name="twitter:description" content="Aprende precondiciones HTTP: implementa If-Match, maneja ETags y previene conflictos con requests condicionales seguros.">
+  <meta name="twitter:url" content="https://estonocarga.akidojo.dev/pages/errors/412.html">
+  <meta name="twitter:image" content="https://estonocarga.akidojo.dev/assets/images/412-og-image.png">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+  
+  <!-- Structured Data con Schema.org mejorado -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Código 412 Precondition Failed - Headers Condicionales",
+    "description": "Guía técnica completa sobre el código HTTP 412 Precondition Failed: implementación de headers condicionales, If-Match, If-None-Match, ETags y optimistic concurrency control.",
+    "author": {
+      "@type": "Organization",
+      "name": "EstoNoCarga",
+      "url": "https://estonocarga.akidojo.dev"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "EstoNoCarga",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://estonocarga.akidojo.dev/assets/images/logo.svg"
       }
-    }
-    </script>
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="../../assets/css/styles.css">
-    <link rel="stylesheet" href="../../assets/css/error-page.css">
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://estonocarga.akidojo.dev/pages/errors/412.html"
+    },
+    "inLanguage": "es",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://estonocarga.akidojo.dev/assets/images/412-og-image.png",
+      "width": "1200",
+      "height": "630"
+    },
+    "datePublished": "2023-01-01",
+    "dateModified": "2023-01-01",
+    "keywords": "HTTP 412, Precondition Failed, If-Match, ETags, conditional requests"
+  }
+  </script>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+  <link rel="stylesheet" href="../../assets/css/error-page.css" />
 </head>
 
 <body>
     <header>
         <nav>
-            <a href="../../index.html" class="logo">EstoNoCarga</a>
+            <a href="../index.html" class="logo">EstoNoCarga</a>
             <ul class="nav-links">
-                <li><a href="../../index.html#errores">Errores</a></li>
-                <li><a href="../../index.html#guias">Guías</a></li>
-                <li><a href="../../index.html#herramientas">Tools</a></li>
-                <li><a href="../../index.html#about">Nosotros</a></li>
+                <li><a href="../index.html#errores">Errores</a></li>
+                <li><a href="guias.html">Guías</a></li>
+                <li><a href="herramientas.html">Tools</a></li>
+                <li><a href="about.html">Nosotros</a></li>
             </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
+        <div class="mobile-menu" id="mobile-menu">
+            <ul>
+                <li><a href="../index.html#errores">Errores</a></li>
+                <li><a href="guias.html">Guías</a></li>
+                <li><a href="herramientas.html">Tools</a></li>
+                <li><a href="about.html">Nosotros</a></li>
+            </ul>
+        </div>
     </header>
 
     <main>

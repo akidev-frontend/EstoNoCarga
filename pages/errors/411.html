@@ -2,66 +2,104 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Error 411 - Length Required | EstoNoCarga</title>
-    <meta name="description"
-        content="Todo lo que necesitas saber sobre el error 411 Length Required. Qué significa, por qué aparece y cómo solucionarlo. La guía definitiva para cuando al servidor le falta la talla.">
-    <meta name="keywords" content="error 411, length required, longitud requerida, solucionar 411, desarrollo web">
-    <meta name="author" content="EstoNoCarga">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://estonocarga.dev/pages/errors/411">
-    <meta property="og:title" content="Error 411 - Length Required | EstoNoCarga">
-    <meta property="og:description"
-        content="Cuando el servidor te pide que le digas cuánto mide tu petición. Explicación sencilla y soluciones para el error 411.">
-    <meta property="og:image" content="https://estonocarga.dev/assets/images/411-og-image.png">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://estonocarga.dev/pages/errors/411">
-    <meta property="twitter:title" content="Error 411 - Length Required | EstoNoCarga">
-    <meta property="twitter:description" content="Cuando el servidor te pide que le digas cuánto mide tu petición.">
-    <meta property="twitter:image" content="https://estonocarga.dev/assets/images/411-og-image.png">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
-
-    <!-- Schema.org structured data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Error 411 - Length Required",
-      "description": "Todo lo que necesitas saber sobre el error 411 Length Required",
-      "author": {
-        "@type": "Organization",
-        "name": "EstoNoCarga"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "EstoNoCarga"
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO Básico -->
+  <title>Código HTTP 411 Length Required: Guía del Header Content-Length | EstoNoCarga</title>
+  <meta name="description" content="Guía completa sobre el código HTTP 411 Length Required: header Content-Length obligatorio, chunked transfer encoding, POST requests y mejores prácticas para envío de datos.">
+  <meta name="keywords" content="HTTP 411, Length Required, Content-Length header, chunked transfer, POST requests, upload files, transfer encoding, HTTP headers validation">
+  <meta name="author" content="EstoNoCarga">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://estonocarga.akidojo.dev/pages/errors/411.html" />
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Código HTTP 411 Length Required: Guía del Header Content-Length | EstoNoCarga">
+  <meta property="og:description" content="Soluciona errores 411: implementa Content-Length correctamente, maneja chunked transfer encoding y optimiza el envío de datos en tu aplicación.">
+  <meta property="og:url" content="https://estonocarga.akidojo.dev/pages/errors/411.html">
+  <meta property="og:image" content="https://estonocarga.akidojo.dev/assets/images/411-og-image.png">
+  <meta property="og:site_name" content="EstoNoCarga">
+  <meta property="og:locale" content="es_ES">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HTTP 411 Length Required: Content-Length Obligatorio | EstoNoCarga">
+  <meta name="twitter:description" content="Aprende a manejar Content-Length: soluciona errores 411, implementa chunked transfer y mejora el envío de datos HTTP.">
+  <meta name="twitter:url" content="https://estonocarga.akidojo.dev/pages/errors/411.html">
+  <meta name="twitter:image" content="https://estonocarga.akidojo.dev/assets/images/411-og-image.png">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+  
+  <!-- Structured Data con Schema.org mejorado -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Código 411 Length Required - Header Content-Length",
+    "description": "Guía técnica completa sobre el código HTTP 411 Length Required: implementación correcta del header Content-Length, chunked transfer encoding y validación de datos HTTP.",
+    "author": {
+      "@type": "Organization",
+      "name": "EstoNoCarga",
+      "url": "https://estonocarga.akidojo.dev"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "EstoNoCarga",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://estonocarga.akidojo.dev/assets/images/logo.svg"
       }
-    }
-    </script>
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="../../assets/css/styles.css">
-    <link rel="stylesheet" href="../../assets/css/error-page.css">
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://estonocarga.akidojo.dev/pages/errors/411.html"
+    },
+    "inLanguage": "es",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://estonocarga.akidojo.dev/assets/images/411-og-image.png",
+      "width": "1200",
+      "height": "630"
+    },
+    "datePublished": "2023-01-01",
+    "dateModified": "2023-01-01",
+    "keywords": "HTTP 411, Length Required, Content-Length header, chunked transfer"
+  }
+  </script>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+  <link rel="stylesheet" href="../../assets/css/error-page.css" />
 </head>
 
 <body>
     <header>
         <nav>
-            <a href="../../index.html" class="logo">EstoNoCarga</a>
+            <a href="../index.html" class="logo">EstoNoCarga</a>
             <ul class="nav-links">
-                <li><a href="../../index.html#errores">Errores</a></li>
-                <li><a href="../../index.html#guias">Guías</a></li>
-                <li><a href="../../index.html#herramientas">Tools</a></li>
-                <li><a href="../../index.html#about">Nosotros</a></li>
+                <li><a href="../index.html#errores">Errores</a></li>
+                <li><a href="guias.html">Guías</a></li>
+                <li><a href="herramientas.html">Tools</a></li>
+                <li><a href="about.html">Nosotros</a></li>
             </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
+        <div class="mobile-menu" id="mobile-menu">
+            <ul>
+                <li><a href="../index.html#errores">Errores</a></li>
+                <li><a href="guias.html">Guías</a></li>
+                <li><a href="herramientas.html">Tools</a></li>
+                <li><a href="about.html">Nosotros</a></li>
+            </ul>
+        </div>
     </header>
 
     <main>

@@ -2,66 +2,104 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Error 415 - Unsupported Media Type | EstoNoCarga</title>
-    <meta name="description"
-        content="Todo lo que necesitas saber sobre el error 415 Unsupported Media Type. Qué significa, por qué aparece y cómo solucionarlo. La guía definitiva para cuando el servidor no se traga tu archivo.">
-    <meta name="keywords" content="error 415, unsupported media type, tipo de medio no soportado, solucionar 415, desarrollo web">
-    <meta name="author" content="EstoNoCarga">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://estonocarga.dev/pages/errors/415">
-    <meta property="og:title" content="Error 415 - Unsupported Media Type | EstoNoCarga">
-    <meta property="og:description"
-        content="Cuando el servidor no se traga tu archivo. Explicación sencilla y soluciones para el error 415.">
-    <meta property="og:image" content="https://estonocarga.dev/assets/images/415-og-image.png">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://estonocarga.dev/pages/errors/415">
-    <meta property="twitter:title" content="Error 415 - Unsupported Media Type | EstoNoCarga">
-    <meta property="twitter:description" content="Cuando el servidor no se traga tu archivo.">
-    <meta property="twitter:image" content="https://estonocarga.dev/assets/images/415-og-image.png">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
-
-    <!-- Schema.org structured data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Error 415 - Unsupported Media Type",
-      "description": "Todo lo que necesitas saber sobre el error 415 Unsupported Media Type",
-      "author": {
-        "@type": "Organization",
-        "name": "EstoNoCarga"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "EstoNoCarga"
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO Básico -->
+  <title>Código HTTP 415 Unsupported Media Type: Guía de Content-Type | EstoNoCarga</title>
+  <meta name="description" content="Guía completa sobre el código HTTP 415 Unsupported Media Type: manejo de Content-Type, MIME types, validación de formatos y mejores prácticas para APIs multi-formato.">
+  <meta name="keywords" content="HTTP 415, Unsupported Media Type, Content-Type header, MIME types, JSON XML validation, file format validation, API content types, media type negotiation">
+  <meta name="author" content="EstoNoCarga">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://estonocarga.akidojo.dev/pages/errors/415.html" />
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Código HTTP 415 Unsupported Media Type: Guía de Content-Type | EstoNoCarga">
+  <meta property="og:description" content="Domina los Content-Type HTTP: maneja MIME types correctamente, valida formatos de archivo y crea APIs flexibles que soporten múltiples tipos de contenido.">
+  <meta property="og:url" content="https://estonocarga.akidojo.dev/pages/errors/415.html">
+  <meta property="og:image" content="https://estonocarga.akidojo.dev/assets/images/415-og-image.png">
+  <meta property="og:site_name" content="EstoNoCarga">
+  <meta property="og:locale" content="es_ES">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HTTP 415 Unsupported Media Type: MIME Types | EstoNoCarga">
+  <meta name="twitter:description" content="Aprende Content-Type HTTP: maneja MIME types, valida formatos y crea APIs que soporten múltiples tipos de contenido.">
+  <meta name="twitter:url" content="https://estonocarga.akidojo.dev/pages/errors/415.html">
+  <meta name="twitter:image" content="https://estonocarga.akidojo.dev/assets/images/415-og-image.png">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+  
+  <!-- Structured Data con Schema.org mejorado -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Código 415 Unsupported Media Type - Content-Type HTTP",
+    "description": "Guía técnica completa sobre el código HTTP 415 Unsupported Media Type: manejo de Content-Type headers, MIME types, validación de formatos y media type negotiation.",
+    "author": {
+      "@type": "Organization",
+      "name": "EstoNoCarga",
+      "url": "https://estonocarga.akidojo.dev"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "EstoNoCarga",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://estonocarga.akidojo.dev/assets/images/logo.svg"
       }
-    }
-    </script>
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="../../assets/css/styles.css">
-    <link rel="stylesheet" href="../../assets/css/error-page.css">
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://estonocarga.akidojo.dev/pages/errors/415.html"
+    },
+    "inLanguage": "es",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://estonocarga.akidojo.dev/assets/images/415-og-image.png",
+      "width": "1200",
+      "height": "630"
+    },
+    "datePublished": "2023-01-01",
+    "dateModified": "2023-01-01",
+    "keywords": "HTTP 415, Unsupported Media Type, Content-Type, MIME types, validación formatos"
+  }
+  </script>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+  <link rel="stylesheet" href="../../assets/css/error-page.css" />
 </head>
 
 <body>
     <header>
         <nav>
-            <a href="../../index.html" class="logo">EstoNoCarga</a>
+            <a href="../index.html" class="logo">EstoNoCarga</a>
             <ul class="nav-links">
-                <li><a href="../../index.html#errores">Errores</a></li>
-                <li><a href="../../index.html#guias">Guías</a></li>
-                <li><a href="../../index.html#herramientas">Tools</a></li>
-                <li><a href="../../index.html#about">Nosotros</a></li>
+                <li><a href="../index.html#errores">Errores</a></li>
+                <li><a href="guias.html">Guías</a></li>
+                <li><a href="herramientas.html">Tools</a></li>
+                <li><a href="about.html">Nosotros</a></li>
             </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
+        <div class="mobile-menu" id="mobile-menu">
+            <ul>
+                <li><a href="../index.html#errores">Errores</a></li>
+                <li><a href="guias.html">Guías</a></li>
+                <li><a href="herramientas.html">Tools</a></li>
+                <li><a href="about.html">Nosotros</a></li>
+            </ul>
+        </div>
     </header>
 
     <main>

@@ -2,66 +2,104 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Error 404 - Not Found | EstoNoCarga</title>
-    <meta name="description"
-        content="Todo lo que necesitas saber sobre el error 404 Not Found. Qué significa, por qué aparece y cómo solucionarlo. La guía definitiva del error más famoso de internet.">
-    <meta name="keywords" content="error 404, not found, página no encontrada, solucionar 404, desarrollo web">
-    <meta name="author" content="EstoNoCarga">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://estonocarga.dev/pages/errors/404">
-    <meta property="og:title" content="Error 404 - Not Found | EstoNoCarga">
-    <meta property="og:description"
-        content="El error más famoso de internet explicado sin rodeos. Como buscar tus llaves cuando tienes prisa.">
-    <meta property="og:image" content="https://estonocarga.dev/assets/images/404-og-image.png">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://estonocarga.dev/pages/errors/404">
-    <meta property="twitter:title" content="Error 404 - Not Found | EstoNoCarga">
-    <meta property="twitter:description" content="El error más famoso de internet explicado sin rodeos.">
-    <meta property="twitter:image" content="https://estonocarga.dev/assets/images/404-og-image.png">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
-
-    <!-- Schema.org structured data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Error 404 - Not Found",
-      "description": "Todo lo que necesitas saber sobre el error 404 Not Found",
-      "author": {
-        "@type": "Organization",
-        "name": "EstoNoCarga"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "EstoNoCarga"
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO Básico -->
+  <title>Código HTTP 403 Forbidden: Guía Completa de Permisos y Autorización | EstoNoCarga</title>
+  <meta name="description" content="Guía completa sobre el código HTTP 403 Forbidden: diferencias con 401, configuración de permisos, control de acceso, htaccess y mejores prácticas de autorización web.">
+  <meta name="keywords" content="HTTP 403, Forbidden, permisos web, autorización, diferencias 403 vs 401, htaccess, control acceso, file permissions, security web">
+  <meta name="author" content="EstoNoCarga">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://estonocarga.akidojo.dev/pages/errors/403.html" />
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Código HTTP 403 Forbidden: Guía Completa de Permisos y Autorización | EstoNoCarga">
+  <meta property="og:description" content="Soluciona errores 403 Forbidden: configura permisos correctos, entiende la diferencia con 401 y mejora el control de acceso de tu aplicación web.">
+  <meta property="og:url" content="https://estonocarga.akidojo.dev/pages/errors/403.html">
+  <meta property="og:image" content="https://estonocarga.akidojo.dev/assets/images/403-og-image.png">
+  <meta property="og:site_name" content="EstoNoCarga">
+  <meta property="og:locale" content="es_ES">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HTTP 403 Forbidden: Control de Acceso Web | EstoNoCarga">
+  <meta name="twitter:description" content="Domina los permisos web: soluciona errores 403, configura htaccess y mejora la seguridad de tu sitio con control de acceso correcto.">
+  <meta name="twitter:url" content="https://estonocarga.akidojo.dev/pages/errors/403.html">
+  <meta name="twitter:image" content="https://estonocarga.akidojo.dev/assets/images/403-og-image.png">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+  
+  <!-- Structured Data con Schema.org mejorado -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Código 403 Forbidden - Control de Acceso Web",
+    "description": "Guía técnica completa sobre el código HTTP 403 Forbidden: configuración de permisos, diferencias con 401 Unauthorized, control de acceso con htaccess y mejores prácticas de autorización.",
+    "author": {
+      "@type": "Organization",
+      "name": "EstoNoCarga",
+      "url": "https://estonocarga.akidojo.dev"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "EstoNoCarga",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://estonocarga.akidojo.dev/assets/images/logo.svg"
       }
-    }
-    </script>
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="../../assets/css/styles.css">
-    <link rel="stylesheet" href="../../assets/css/error-page.css">
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://estonocarga.akidojo.dev/pages/errors/403.html"
+    },
+    "inLanguage": "es",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://estonocarga.akidojo.dev/assets/images/403-og-image.png",
+      "width": "1200",
+      "height": "630"
+    },
+    "datePublished": "2023-01-01",
+    "dateModified": "2023-01-01",
+    "keywords": "HTTP 403, Forbidden, permisos web, autorización, control acceso, htaccess"
+  }
+  </script>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+  <link rel="stylesheet" href="../../assets/css/error-page.css" />
 </head>
 
 <body>
     <header>
         <nav>
-            <a href="../../index.html" class="logo">EstoNoCarga</a>
+            <a href="../index.html" class="logo">EstoNoCarga</a>
             <ul class="nav-links">
-                <li><a href="../../index.html#errores">Errores</a></li>
-                <li><a href="../../index.html#guias">Guías</a></li>
-                <li><a href="../../index.html#herramientas">Tools</a></li>
-                <li><a href="../../index.html#about">Nosotros</a></li>
+                <li><a href="../index.html#errores">Errores</a></li>
+                <li><a href="guias.html">Guías</a></li>
+                <li><a href="herramientas.html">Tools</a></li>
+                <li><a href="about.html">Nosotros</a></li>
             </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
+        <div class="mobile-menu" id="mobile-menu">
+            <ul>
+                <li><a href="../index.html#errores">Errores</a></li>
+                <li><a href="guias.html">Guías</a></li>
+                <li><a href="herramientas.html">Tools</a></li>
+                <li><a href="about.html">Nosotros</a></li>
+            </ul>
+        </div>
     </header>
 
     <main>
