@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Básico -->
+    <title>Herramientas para Diagnóstico de Errores HTTPS | EstoNoCarga</title>
+    <meta
+      name="description"
+      content="Listado de herramientas para analizar, depurar y solucionar errores HTTPS: certificados, cadenas de confianza, puertos, CORS, y más."
+    />
+    <meta
+      name="keywords"
+      content="HTTPS error tools, SSL checker, certificado inválido, mixed content, HSTS, TLS, HTTPS debugger"
+    />
+    <meta name="author" content="EstoNoCarga" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Canonical URL -->
+    <link
+      rel="canonical"
+      href="https://estonocarga.akidojo.dev/pages/tools/https-tools.html"
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="Herramientas para Diagnóstico de Errores HTTPS | EstoNoCarga"
+    />
+    <meta
+      property="og:description"
+      content="Explora herramientas para depurar HTTPS: cadenas rotas, certificados vencidos, HSTS, TLS y más."
+    />
+    <meta
+      property="og:url"
+      content="https://estonocarga.akidojo.dev/pages/tools/https-tools.html"
+    />
+    <meta
+      property="og:image"
+      content="https://estonocarga.akidojo.dev/assets/images/https-og-image.png"
+    />
+    <meta property="og:site_name" content="EstoNoCarga" />
+    <meta property="og:locale" content="es_ES" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Herramientas para Diagnóstico de Errores HTTPS | EstoNoCarga"
+    />
+    <meta
+      name="twitter:description"
+      content="Listado práctico de herramientas para identificar y resolver errores HTTPS como certificados inválidos, mixed content, etc."
+    />
+    <meta
+      name="twitter:url"
+      content="https://estonocarga.akidojo.dev/pages/tools/https-tools.html"
+    />
+    <meta
+      name="twitter:image"
+      content="https://estonocarga.akidojo.dev/assets/images/https-og-image.png"
+    />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="../../assets/images/favicon.svg"
+      type="image/svg+xml"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/styles.css" />
+    <link rel="stylesheet" href="../../assets/css/error-page.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <a href="../index.html" class="logo">EstoNoCarga</a>
+        <ul class="nav-links">
+          <li><a href="../index.html#errores">Errores</a></li>
+          <li><a href="../errors/guias.html">Guías</a></li>
+          <li><a href="https-tools.html">Tools</a></li>
+          <li><a href="../errors/about.html">Nosotros</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+      <div class="mobile-menu" id="mobile-menu">
+        <ul>
+          <li><a href="../index.html#errores">Errores</a></li>
+          <li><a href="../errors/guias.html">Guías</a></li>
+          <li><a href="https-tools.html">Tools</a></li>
+          <li><a href="../errors/about.html">Nosotros</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <section class="error-header">
+        <div class="container">
+          <div class="breadcrumb">
+            <a href="../../index.html">Inicio</a>
+            <span>→</span>
+            <a href="../errors/herramientas.html">Herramientas</a>
+            <span>→</span>
+            <span>HTTPS</span>
+          </div>
+          <div class="error-code-display">HTTPS</div>
+          <h1 class="error-name">Herramientas para errores HTTPS</h1>
+          <p class="error-description">
+            ¿Certificados rotos? ¿Contenido mixto? Aquí vienen los bomberos.
+          </p>
+          <div class="status-badge status-server">
+            <span>🔐</span>
+            Seguridad Web
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <div class="container">
+          <div class="content-grid">
+            <div class="main-content">
+              <h2 class="section-title">
+                <span class="section-icon">🧪</span>
+                Herramientas imprescindibles
+              </h2>
+
+              <p>
+                Cuando un error HTTPS aparece, todo se detiene. Nada carga, los
+                navegadores entran en pánico, y tus usuarios se van. Pero no
+                temas: estas herramientas están aquí para salvar el día.
+              </p>
+
+              <ul style="margin-left: 2rem; margin-bottom: 2rem">
+                <li>
+                  <strong
+                    >🔍
+                    <a href="https://www.ssllabs.com/ssltest/" target="_blank"
+                      >SSL Labs</a
+                    >:</strong
+                  >
+                  Escaneo profundo de tu certificado y configuración TLS.
+                </li>
+                <li>
+                  <strong
+                    >🛠️
+                    <a href="https://tools.keycdn.com/curl" target="_blank"
+                      >KeyCDN CURL Tool</a
+                    >:</strong
+                  >
+                  Comprueba cabeceras, redirecciones y certificados.
+                </li>
+                <li>
+                  <strong
+                    >🔗
+                    <a href="https://www.whynopadlock.com/" target="_blank"
+                      >Why No Padlock?</a
+                    >:</strong
+                  >
+                  Detecta contenido mixto que rompe HTTPS.
+                </li>
+                <li>
+                  <strong
+                    >🌐
+                    <a href="https://hstspreload.org/" target="_blank"
+                      >HSTS Preload</a
+                    >:</strong
+                  >
+                  Verifica si puedes usar HSTS de forma segura.
+                </li>
+                <li>
+                  <strong
+                    >📄
+                    <a href="https://crt.sh/" target="_blank">crt.sh</a
+                    >:</strong
+                  >
+                  Busca tus certificados públicos en los logs.
+                </li>
+                <li>
+                  <strong
+                    >🧰
+                    <a
+                      href="https://developers.google.com/web/tools/chrome-devtools/security"
+                      target="_blank"
+                      >DevTools (Chrome)</a
+                    >:</strong
+                  >
+                  Pestaña de seguridad para diagnóstico rápido.
+                </li>
+              </ul>
+
+              <div class="warning-box">
+                <h4><span>⚠️</span> Dato útil</h4>
+                <p>
+                  Los errores HTTPS no siempre son culpa del certificado. A
+                  veces es un CDN mal configurado, una API sin HTTPS, o una
+                  imagen HTTP en un sitio seguro.
+                </p>
+              </div>
+
+              <h2 class="section-title">
+                <span class="section-icon">🧠</span>
+                ¿Qué tipos de errores puedes diagnosticar?
+              </h2>
+
+              <ul>
+                <li>
+                  <strong>Certificados expirados</strong>: Nadie renovó a tiempo
+                  y ¡boom! error de seguridad.
+                </li>
+                <li>
+                  <strong>Certificados autofirmados</strong>: Válidos
+                  localmente, odiados por los navegadores.
+                </li>
+                <li>
+                  <strong>Mixed Content</strong>: Tu HTML es seguro, pero tus
+                  imágenes no.
+                </li>
+                <li>
+                  <strong>HSTS mal configurado</strong>: Tus redirecciones no
+                  respetan el modo seguro.
+                </li>
+                <li>
+                  <strong>Errores CORS con HTTPS</strong>: Más común de lo que
+                  parece.
+                </li>
+              </ul>
+            </div>
+
+            <div class="sidebar">
+              <div class="info-card">
+                <h3>🔍 Qué revisar primero</h3>
+                <ul>
+                  <li>Certificado válido y vigente</li>
+                  <li>Cadena de confianza completa</li>
+                  <li>Configuración SSL/TLS del servidor</li>
+                  <li>Contenido mixto</li>
+                  <li>Redirecciones forzadas</li>
+                </ul>
+              </div>
+
+              <div class="info-card">
+                <h3>⚙️ Para desarrolladores</h3>
+                <ul>
+                  <li>curl -v https://tuweb.com</li>
+                  <li>openssl s_client -connect</li>
+                  <li>Logs del servidor web</li>
+                  <li>DevTools: pestaña “Security”</li>
+                  <li>Inspección con Firefox/Chrome</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="related-errors">
+        <div class="container">
+          <h2
+            style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem"
+          >
+            Errores HTTPS frecuentes
+          </h2>
+          <p
+            style="
+              text-align: center;
+              color: var(--text-secondary);
+              font-size: 1.1rem;
+            "
+          >
+            Algunos códigos que aparecen cuando todo parece estar cifrado… pero
+            igual falla
+          </p>
+
+          <div class="error-grid">
+            <a href="/pages/errors/404.html" class="error-card">
+              <span class="error-number">404</span>
+              <div class="error-title">Not Found</div>
+              <div class="error-desc">
+                No se encontró lo que pediste (y sí existía ayer)
+              </div>
+            </a>
+
+            <a href="/pages/errors/402.html" class="error-card">
+              <span class="error-number">402</span>
+              <div class="error-title">Payment Required</div>
+              <div class="error-desc">
+                Requiere pago para acceder (aunque nadie lo usa aún)
+              </div>
+            </a>
+
+            <a href="/pages/errors/423.html" class="error-card">
+              <span class="error-number">423</span>
+              <div class="error-title">Locked</div>
+              <div class="error-desc">
+                Recurso bloqueado. Intenta más tarde o pide permiso
+              </div>
+            </a>
+
+            <a href="/pages/errors/503.html" class="error-card">
+              <span class="error-number">503</span>
+              <div class="error-title">Service Unavailable</div>
+              <div class="error-desc">
+                El servidor se tomó un descanso sin avisar
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-links">
+            <a href="#privacy">Privacidad</a>
+            <a href="#terms">Términos</a>
+            <a href="#contact">Contacto</a>
+            <a href="#sitemap">Sitemap</a>
+          </div>
+          <p>&copy; 2025 EstoNoCarga. Hecho con frustración y mucho café. ☕</p>
+          <p style="margin-top: 0.5rem; font-size: 0.9rem">
+            Porque los errores HTTPS no perdonan... pero se pueden arreglar.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/error-page.js"></script>
+  </body>
+</html>
