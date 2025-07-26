@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Básico -->
+  <title>Código HTTP 508 Loop Detected: Guía Completa | EstoNoCarga</title>
+  <meta name="description" content="Explicación técnica avanzada del código HTTP 508: detección de bucles infinitos en WebDAV, diagnóstico de referencias circulares, configuración de profundidad máxima y soluciones para loops en operaciones COPY/MOVE.">
+  <meta name="keywords" content="HTTP 508, Loop Detected, código 508, bucle infinito, WebDAV, referencias circulares, COPY MOVE, profundidad máxima, loop detection">
+  <meta name="author" content="EstoNoCarga">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://estonocarga.akidojo.dev/pages/errors/508.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="HTTP 508 Loop Detected: Bucles Infinitos en WebDAV | EstoNoCarga">
+  <meta property="og:description" content="Guía técnica completa sobre el código 508: desde detección de loops en operaciones WebDAV hasta configuración de límites de profundidad y prevención de referencias circulares.">
+  <meta property="og:url" content="https://estonocarga.akidojo.dev/pages/errors/508.html">
+  <meta property="og:image" content="https://estonocarga.akidojo.dev/assets/images/508-og-image.png">
+  <meta property="og:site_name" content="EstoNoCarga">
+  <meta property="og:locale" content="es_ES">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HTTP 508: Cuando WebDAV Se Vuelve Loco en Círculos | EstoNoCarga">
+  <meta name="twitter:description" content="Todo sobre el código Loop Detected: bucles infinitos en operaciones COPY/MOVE, detección de ciclos y cómo evitar que WebDAV se coma los recursos del servidor.">
+  <meta name="twitter:url" content="https://estonocarga.akidojo.dev/pages/errors/508.html">
+  <meta name="twitter:image" content="https://estonocarga.akidojo.dev/assets/images/508-og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+
+  <!-- Structured Data con Schema.org mejorado -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Código HTTP 508 - Loop Detected: Detección de Bucles Infinitos WebDAV",
+    "description": "Análisis técnico exhaustivo del código 508: detección de bucles infinitos en operaciones WebDAV COPY/MOVE, configuración de profundidad máxima, prevención de referencias circulares y optimización de detección de loops para evitar consumo excesivo de recursos.",
+    "author": {
+      "@type": "Organization",
+      "name": "EstoNoCarga",
+      "url": "https://estonocarga.akidojo.dev"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "EstoNoCarga",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://estonocarga.akidojo.dev/assets/images/logo.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://estonocarga.akidojo.dev/pages/errors/508"
+    },
+    "inLanguage": "es",
+    "keywords": "HTTP 508, Loop Detected, bucle infinito, WebDAV, referencias circulares, COPY MOVE, detección loops, profundidad máxima",
+    "datePublished": "2023-11-15",
+    "image": "https://estonocarga.akidojo.dev/assets/images/508-og-image.png",
+    "articleBody": "El código HTTP 508 indica que se ha detectado un bucle infinito durante una operación WebDAV. Este artículo cubre detección de ciclos en operaciones COPY/MOVE, configuración de límites de profundidad, prevención de referencias circulares y optimización para evitar consumo excesivo de recursos del servidor."
+  }
+  </script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+  <link rel="stylesheet" href="../../assets/css/error-page.css" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html" class="logo">EstoNoCarga</a>
+            <ul class="nav-links">
+                <li><a href="../../index.html#errores">Errores</a></li>
+                <li><a href="../../pages/herramientas.html">Tools</a></li>
+                <li><a href="../about.html">Nosotros</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <div class="mobile-menu" id="mobile-menu">
+            <ul>
+                <li><a href="../../index.html#errores">Errores</a></li>
+                <li><a href="../../pages/herramientas.html">Tools</a></li>
+                <li><a href="../about.html">Nosotros</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Error Header -->
+        <section class="error-header">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../../index.html">Inicio</a>
+                    <span>→</span>
+                    <a href="../../index.html#errores">Códigos</a>
+                    <span>→</span>
+                    <span>508</span>
+                </div>
+                <div class="error-code-display">508</div>
+                <h1 class="error-name">Loop Detected</h1>
+                <p class="error-description">El detector de bucles infinitos de WebDAV. Cuando copias una carpeta dentro de sí misma y el servidor dice "alto ahí, cowboy".</p>
+                <div class="status-badge status-error">
+                    <span>🔄</span>
+                    Server Error
+                </div>
+            </div>
+        </section>
+
+        <!-- What is it -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-title">
+                            <span class="section-icon">📋</span>
+                            ¿Qué narices es esto?
+                        </h2>
+                        
+                        <p>El <strong>código 508 Loop Detected</strong> es el <strong>"para el carro, que te vas a liar"</strong> de WebDAV. Es cuando intentas hacer una operación <strong>COPY o MOVE</strong> que crearía un bucle infinito - como copiar una carpeta dentro de sí misma o crear referencias circulares que harían que el servidor se quedara dando vueltas eternamente como un perro persiguiendo su cola.</p>
+                        
+                        <p><strong>Loop Detected significa exactamente eso</strong> - el servidor ha detectado que la operación que quieres hacer <strong>crearía un ciclo infinito</strong>. A diferencia del 506 (que es sobre negociación de contenido), este es específico de <strong>WebDAV y operaciones de archivos</strong>. El servidor es lo suficientemente inteligente para detectar el problema antes de que ocurra y te para en seco.</p>
+                        
+                        <p>El 508 aparece típicamente en:</p>
+                        
+                        <ul style="margin-left: 2rem; margin-bottom: 2rem;">
+                            <li style="margin-bottom: 0.5rem;">WebDAV cuando intentas COPY una carpeta dentro de sí misma</li>
+                            <li style="margin-bottom: 0.5rem;">Operaciones MOVE que crearían referencias circulares</li>
+                            <li style="margin-bottom: 0.5rem;">Sincronización de archivos con estructuras recursivas</li>
+                            <li style="margin-bottom: 0.5rem;">Clientes mal programados que no detectan loops</li>
+                            <li style="margin-bottom: 0.5rem;">Enlaces simbólicos que apuntan a ancestros</li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <h4><span>🎯</span> Dato curioso</h4>
+                            <p>El 508 es como el "guardián de la cordura" de WebDAV: evita que operaciones aparentemente inocentes destruyan servidores con bucles infinitos. Es el equivalente digital de impedir que alguien ponga dos espejos frente a frente y se quede hipnotizado por las infinitas reflexiones.</p>
+                        </div>
+
+                        <p>La situación típica es <strong>traicionera</strong>: tienes una estructura de carpetas perfectamente normal, intentas hacer una operación que parece lógica (como mover "Documentos" a "Documentos/Backup/Old/Documentos"), y el servidor te dice <strong>"ni de coña, eso crearía un agujero negro"</strong>. El 508 te salva de crear estructuras imposibles que romperían el filesystem o consumirían infinitos recursos.</p>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="info-card">
+                            <h3>📊 Info técnica</h3>
+                            <ul>
+                                <li><strong>Código:</strong> 508</li>
+                                <li><strong>Tipo:</strong> Server Error</li>
+                                <li><strong>Categoría:</strong> 5xx</li>
+                                <li><strong>Descripción:</strong> Loop Detected</li>
+                                <li><strong>Cacheable:</strong> No</li>
+                                <li><strong>Estándar:</strong> RFC 5842 (WebDAV Binding)</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>🎯 Frecuencia</h3>
+                            <ul>
+                                <li><strong>Raro pero específico</strong></li>
+                                <li>Solo en servidores WebDAV</li>
+                                <li>Operaciones COPY/MOVE complejas</li>
+                                <li>Clientes mal programados</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to implement -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-title">
+                            <span class="section-icon">🔧</span>
+                            Cómo evitar bucles infinitos
+                        </h2>
+
+                        <div class="solution-steps">
+                            <h4>🖥️ Para administradores WebDAV (configura bien)</h4>
+                            <ol>
+                                <li><strong>Configura profundidad máxima:</strong> Limita depth en operaciones recursivas.</li>
+                                <li><strong>Habilita detección de loops:</strong> Asegúrate de que esté activa en tu servidor.</li>
+                                <li><strong>Documenta estructura permitida:</strong> Reglas claras sobre qué operaciones están prohibidas.</li>
+                                <li><strong>Monitorea operaciones complejas:</strong> Logs de COPY/MOVE que fallan con 508.</li>
+                                <li><strong>Configura timeouts:</strong> Límites de tiempo para operaciones recursivas.</li>
+                            </ol>
+                        </div>
+
+                        <div class="solution-steps">
+                            <h4>📱 Para desarrolladores (programa inteligente)</h4>
+                            <ol>
+                                <li><strong>Valida paths antes de enviar:</strong> Comprueba que destino no es subpath de origen.</li>
+                                <li><strong>Implementa detección local:</strong> Tu cliente debería detectar loops obviamente.</li>
+                                <li><strong>Maneja el 508 gracefully:</strong> Mensaje claro sobre por qué falló la operación.</li>
+                                <li><strong>Usa algoritmos de detección:</strong> DFS/BFS para validar estructuras de árbol.</li>
+                                <li><strong>Limita profundidad recursiva:</strong> No hagas operaciones infinitamente profundas.</li>
+                            </ol>
+                        </div>
+
+                        <!-- Problemas típicos con 508 -->
+                        <div class="warning-box">
+                            <h4><span>❌</span> Problemas típicos con 508</h4>
+                            <ul style="margin-left: 0; list-style: none;">
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>COPY carpeta dentro de sí misma:</strong><br>
+                                    <code style="font-size: 0.9rem;">COPY /documents/projects/ HTTP/1.1<br>Destination: /documents/projects/backup/projects/</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">Esto crearía un bucle infinito: projects/backup/projects/backup/projects/...</span>
+                                </li>
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Enlaces simbólicos circulares:</strong><br>
+                                    <code style="font-size: 0.9rem;">ln -s /var/www/site/images /var/www/site/assets/<br>ln -s /var/www/site/assets /var/www/site/images/</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">Cada directorio apunta al otro, creando un ciclo infinito.</span>
+                                </li>
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>MOVE creando referencia circular:</strong><br>
+                                    <code style="font-size: 0.9rem;">MOVE /folder/subfolder/ HTTP/1.1<br>Destination: /folder/</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">Mover un subdirectorio a su propio padre puede crear loops.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Respuesta rápida para emergencias -->
+                        <div class="warning-box">
+                            <h4><span>🚀</span> Respuesta rápida para emergencias</h4>
+                            <div style="display: grid; gap: 0.8rem; margin-top: 1rem;">
+                                <div style="padding: 0.8rem; background: rgba(255,159,10,0.1); border-radius: 6px; border-left: 3px solid #ff9f0a;">
+                                    <strong>🔥 Si tienes un 508 ahora mismo:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">1. Revisa si el destino es subpath del origen<br>2. Busca enlaces simbólicos circulares<br>3. Cambia la estructura de la operación<br>4. Usa paths absolutos para evitar confusión</span>
+                                </div>
+                                <div style="padding: 0.8rem; background: rgba(175,82,222,0.1); border-radius: 6px; border-left: 3px solid #af52de;">
+                                    <strong>🎯 Validación rápida:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">find /path -type l -exec ls -la {} \; | grep "^l"<br>Para encontrar enlaces simbólicos problemáticos</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="info-card">
+                            <h3>💡 Tips pro</h3>
+                            <ul>
+                                <li>Siempre valida paths antes de operaciones</li>
+                                <li>Documenta estructura de directorios permitida</li>
+                                <li>Usa herramientas que detecten ciclos</li>
+                                <li>Limita profundidad recursiva por defecto</li>
+                                <li>Los enlaces simbólicos son peligrosos</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>⚡ Algoritmos de detección</h3>
+                            <ul>
+                                <li><strong>DFS:</strong> Depth-First Search para ciclos</li>
+                                <li><strong>Path checking:</strong> Validar subpaths</li>
+                                <li><strong>Visited tracking:</strong> Marcar nodos visitados</li>
+                                <li><strong>Timeout limits:</strong> Cortar operaciones largas</li>
+                                <li><strong>Tree validation:</strong> Estructuras de árbol válidas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Codes -->
+        <section class="related-errors">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">Códigos relacionados</h2>
+                <p style="text-align: center; color: var(--text-secondary); font-size: 1.1rem;">Otros errores de WebDAV y operaciones complejas</p>
+                
+                <div class="error-grid">
+                    <a href="424.html" class="error-card">
+                        <span class="error-number">424</span>
+                        <div class="error-title">Failed Dependency</div>
+                        <div class="error-desc">Operación falló por dependencia WebDAV</div>
+                    </a>
+                    
+                    <a href="506.html" class="error-card">
+                        <span class="error-number">506</span>
+                        <div class="error-title">Variant Also Negotiates</div>
+                        <div class="error-desc">Otro tipo de bucle (content negotiation)</div>
+                    </a>
+                    
+                    <a href="423.html" class="error-card">
+                        <span class="error-number">423</span>
+                        <div class="error-title">Locked</div>
+                        <div class="error-desc">Recurso WebDAV bloqueado</div>
+                    </a>
+                    
+                    <a href="507.html" class="error-card">
+                        <span class="error-number">507</span>
+                        <div class="error-title">Insufficient Storage</div>
+                        <div class="error-desc">Sin espacio para completar operación</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#privacy">Privacidad</a>
+                    <a href="#terms">Términos</a>
+                    <a href="#contact">Contacto</a>
+                    <a href="#sitemap">Sitemap</a>
+                </div>
+                <p>&copy; 2025 EstoNoCarga. Hecho con frustración y mucho café. ☕</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;">Porque los errores web también necesitan amor (o al menos explicación).</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/error-page.js"></script>
+</body>
+</html>

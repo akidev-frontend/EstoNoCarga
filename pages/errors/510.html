@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Básisco -->
+  <title>Código HTTP 510 Not Extended: Guía Completa | EstoNoCarga</title>
+  <meta name="description" content="Explicación técnica avanzada del código HTTP 510: falta de extensiones HTTP requeridas, configuración de políticas de extensión, RFC 2774, negociación de capacidades y soluciones para servidores que no soportan extensiones solicitadas.">
+  <meta name="keywords" content="HTTP 510, Not Extended, código 510, extensiones HTTP, RFC 2774, políticas extensión, negociación capacidades, HTTP extension framework">
+  <meta name="author" content="EstoNoCarga">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://estonocarga.akidojo.dev/pages/errors/510.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="HTTP 510 Not Extended: Extensiones No Soportadas | EstoNoCarga">
+  <meta property="og:description" content="Guía técnica completa sobre el código 510: desde negociación de extensiones HTTP hasta configuración de políticas de extensión y diagnóstico de incompatibilidades RFC 2774.">
+  <meta property="og:url" content="https://estonocarga.akidojo.dev/pages/errors/510.html">
+  <meta property="og:image" content="https://estonocarga.akidojo.dev/assets/images/510-og-image.png">
+  <meta property="og:site_name" content="EstoNoCarga">
+  <meta property="og:locale" content="es_ES">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HTTP 510: El RFC Que Nadie Implementó | EstoNoCarga">
+  <meta name="twitter:description" content="Todo sobre el código Not Extended: framework de extensiones HTTP que murió antes de nacer, políticas de extensión y por qué este error es más raro que un unicornio.">
+  <meta name="twitter:url" content="https://estonocarga.akidojo.dev/pages/errors/510.html">
+  <meta name="twitter:image" content="https://estonocarga.akidojo.dev/assets/images/510-og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+
+  <!-- Structured Data con Schema.org mejorado -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Código HTTP 510 - Not Extended: Framework de Extensiones HTTP",
+    "description": "Análisis técnico exhaustivo del código 510: framework de extensiones HTTP según RFC 2774, políticas de extensión no soportadas, negociación de capacidades fallida y por qué este estándar nunca fue adoptado en la práctica.",
+    "author": {
+      "@type": "Organization",
+      "name": "EstoNoCarga",
+      "url": "https://estonocarga.akidojo.dev"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "EstoNoCarga",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://estonocarga.akidojo.dev/assets/images/logo.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://estonocarga.akidojo.dev/pages/errors/510"
+    },
+    "inLanguage": "es",
+    "keywords": "HTTP 510, Not Extended, extensiones HTTP, RFC 2774, políticas extensión, framework extensiones, negociación capacidades",
+    "datePublished": "2023-11-15",
+    "image": "https://estonocarga.akidojo.dev/assets/images/510-og-image.png",
+    "articleBody": "El código HTTP 510 indica que el servidor requiere extensiones adicionales para procesar la petición según RFC 2774. Este artículo cubre el framework de extensiones HTTP que nunca fue adoptado, políticas de extensión, negociación de capacidades y por qué este error es extremadamente raro en la práctica."
+  }
+  </script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+  <link rel="stylesheet" href="../../assets/css/error-page.css" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html" class="logo">EstoNoCarga</a>
+            <ul class="nav-links">
+                <li><a href="../../index.html#errores">Errores</a></li>
+                <li><a href="../../pages/herramientas.html">Tools</a></li>
+                <li><a href="../about.html">Nosotros</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <div class="mobile-menu" id="mobile-menu">
+            <ul>
+                <li><a href="../../index.html#errores">Errores</a></li>
+                <li><a href="../../pages/herramientas.html">Tools</a></li>
+                <li><a href="../about.html">Nosotros</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Error Header -->
+        <section class="error-header">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../../index.html">Inicio</a>
+                    <span>→</span>
+                    <a href="../../index.html#errores">Códigos</a>
+                    <span>→</span>
+                    <span>510</span>
+                </div>
+                <div class="error-code-display">510</div>
+                <h1 class="error-name">Not Extended</h1>
+                <p class="error-description">El unicornio de los errores HTTP. Un estándar que existe desde 2000 pero que prácticamente nadie ha visto jamás en la vida real.</p>
+                <div class="status-badge status-error">
+                    <span>🦄</span>
+                    Server Error
+                </div>
+            </div>
+        </section>
+
+        <!-- What is it -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-title">
+                            <span class="section-icon">📋</span>
+                            ¿Qué narices es esto?
+                        </h2>
+                        
+                        <p>El <strong>código 510 Not Extended</strong> es el <strong>"necesitas más plugins para esta página"</strong> de HTTP. Es cuando el servidor dice que para procesar tu petición necesita <strong>extensiones HTTP adicionales</strong> que no están disponibles. Como cuando intentas abrir un archivo .rar pero no tienes WinRAR instalado, pero en versión servidor web y mucho más raro.</p>
+                        
+                        <p><strong>Not Extended significa que faltan extensiones</strong> - el servidor implementa el <strong>HTTP Extension Framework (RFC 2774)</strong> y ha determinado que tu petición requiere capacidades adicionales que no tiene activadas o instaladas. Es un mecanismo de negociación de capacidades que sonaba genial en papel pero que <strong>nadie implementó en serio</strong>.</p>
+                        
+                        <p>El 510 debería aparecer en:</p>
+                        
+                        <ul style="margin-left: 2rem; margin-bottom: 2rem;">
+                            <li style="margin-bottom: 0.5rem;">Servidores que implementan RFC 2774 (casi ninguno)</li>
+                            <li style="margin-bottom: 0.5rem;">Sistemas con políticas de extensión estrictas</li>
+                            <li style="margin-bottom: 0.5rem;">Proxies que requieren extensiones específicas</li>
+                            <li style="margin-bottom: 0.5rem;">Aplicaciones que necesitan capacidades HTTP extendidas</li>
+                            <li style="margin-bottom: 0.5rem;">Casos donde faltan headers de extensión obligatorios</li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <h4><span>🎯</span> Dato curioso</h4>
+                            <p>El 510 es como el Betamax de los códigos HTTP: técnicamente superior, oficialmente estándar, brillantemente diseñado... pero completamente ignorado por la industria. Lleva 25 años esperando su momento de gloria que probablemente nunca llegará.</p>
+                        </div>
+
+                        <p>La idea era <strong>revolucionaria</strong>: un framework donde el servidor podría decir <strong>"para hacer esto necesitas la extensión X, Y y Z"</strong>, y el cliente podría decidir si las soporta o no. Perfecto para funcionalidades avanzadas, autenticación compleja, o protocolos especializados. Pero en la práctica, <strong>todo el mundo prefirió usar headers custom</strong> o APIs REST simples.</p>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="info-card">
+                            <h3>📊 Info técnica</h3>
+                            <ul>
+                                <li><strong>Código:</strong> 510</li>
+                                <li><strong>Tipo:</strong> Server Error</li>
+                                <li><strong>Categoría:</strong> 5xx</li>
+                                <li><strong>Descripción:</strong> Not Extended</li>
+                                <li><strong>Cacheable:</strong> No</li>
+                                <li><strong>Estándar:</strong> RFC 2774 (2000)</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>🎯 Frecuencia</h3>
+                            <ul>
+                                <li><strong>Extremadamente raro</strong></li>
+                                <li>Implementaciones experimentales</li>
+                                <li>Sistemas legacy específicos</li>
+                                <li>Más mito que realidad</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to implement -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-title">
+                            <span class="section-icon">🔧</span>
+                            Cómo manejar este unicornio
+                        </h2>
+
+                        <div class="solution-steps">
+                            <h4>🖥️ Para servidores (si implementas RFC 2774)</h4>
+                            <ol>
+                                <li><strong>Define políticas de extensión:</strong> Qué extensiones son obligatorias vs opcionales.</li>
+                                <li><strong>Implementa negociación:</strong> Header Extension para comunicar capacidades.</li>
+                                <li><strong>Configura fallbacks:</strong> Qué hacer cuando faltan extensiones críticas.</li>
+                                <li><strong>Documenta extensiones:</strong> Lista clara de qué soporta tu servidor.</li>
+                                <li><strong>Considera alternativas:</strong> ¿Realmente necesitas RFC 2774?</li>
+                            </ol>
+                        </div>
+
+                        <div class="solution-steps">
+                            <h4>📱 Para desarrolladores (en el mundo real)</h4>
+                            <ol>
+                                <li><strong>Usa headers custom:</strong> X-Custom-Header es más simple que extensiones.</li>
+                                <li><strong>Implementa feature detection:</strong> Prueba capacidades con OPTIONS.</li>
+                                <li><strong>Maneja el 510 si aparece:</strong> Mensaje claro sobre extensiones faltantes.</li>
+                                <li><strong>Considera HTTP/2+ features:</strong> En lugar de extensiones complejas.</li>
+                                <li><strong>Documenta requerimientos:</strong> Qué necesita tu API para funcionar.</li>
+                            </ol>
+                        </div>
+
+                        <!-- Problemas típicos con 510 -->
+                        <div class="warning-box">
+                            <h4><span>❌</span> Problemas típicos con 510</h4>
+                            <ul style="margin-left: 0; list-style: none;">
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>RFC 2774 no implementado:</strong><br>
+                                    <code style="font-size: 0.9rem;">Extension: Compliance="RFC-2774"<br>HTTP/1.1 510 Not Extended</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">El servidor dice que soporta extensiones pero luego no las implementa.</span>
+                                </li>
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Extensión obligatoria faltante:</strong><br>
+                                    <code style="font-size: 0.9rem;">GET /secure-data HTTP/1.1<br>Man: "http://example.com/auth-ext"; ns=99</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">Cliente no envía la extensión de autenticación requerida.</span>
+                                </li>
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Proxy con políticas estrictas:</strong><br>
+                                    <code style="font-size: 0.9rem;">Proxy-Extension-Policy: mandatory<br>Required-Extensions: compression, auth</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">Proxy requiere extensiones que el cliente no soporta.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Respuesta rápida para emergencias -->
+                        <div class="warning-box">
+                            <h4><span>🚀</span> Respuesta rápida para emergencias</h4>
+                            <div style="display: grid; gap: 0.8rem; margin-top: 1rem;">
+                                <div style="padding: 0.8rem; background: rgba(255,159,10,0.1); border-radius: 6px; border-left: 3px solid #ff9f0a;">
+                                    <strong>🔥 Si ves un 510 (¡felicidades, eres especial!):</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">1. Revisa headers Extension y Man en la respuesta<br>2. Contacta al admin - probablemente no sabe qué pasa<br>3. Usa curl -v para ver toda la negociación<br>4. Documenta el caso - es históricamente interesante</span>
+                                </div>
+                                <div style="padding: 0.8rem; background: rgba(175,82,222,0.1); border-radius: 6px; border-left: 3px solid #af52de;">
+                                    <strong>🎯 Realidad check:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">Si ves un 510 real, probablemente es un bug o alguien implementando RFC 2774 como experimento académico.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="info-card">
+                            <h3>💡 Tips pro</h3>
+                            <ul>
+                                <li>RFC 2774 es más académico que práctico</li>
+                                <li>Headers custom son más simples</li>
+                                <li>Feature detection con OPTIONS</li>
+                                <li>HTTP/2+ ya tiene extensibilidad</li>
+                                <li>Documenta bien si usas extensiones</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>⚡ Alternativas modernas</h3>
+                            <ul>
+                                <li><strong>Headers custom:</strong> X-Feature-Support</li>
+                                <li><strong>OPTIONS method:</strong> Feature discovery</li>
+                                <li><strong>API versioning:</strong> /v1/, /v2/</li>
+                                <li><strong>Content negotiation:</strong> Accept headers</li>
+                                <li><strong>HTTP/2 frames:</strong> Extensibilidad nativa</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Codes -->
+        <section class="related-errors">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">Códigos relacionados</h2>
+                <p style="text-align: center; color: var(--text-secondary); font-size: 1.1rem;">Otros errores raros y estándares ignorados</p>
+                
+                <div class="error-grid">
+                    <a href="226.html" class="error-card">
+                        <span class="error-number">226</span>
+                        <div class="error-title">IM Used</div>
+                        <div class="error-desc">Otro estándar técnicamente genial pero ignorado</div>
+                    </a>
+                    
+                    <a href="501.html" class="error-card">
+                        <span class="error-number">501</span>
+                        <div class="error-title">Not Implemented</div>
+                        <div class="error-desc">Cuando el servidor no sabe hacer algo</div>
+                    </a>
+                    
+                    <a href="505.html" class="error-card">
+                        <span class="error-number">505</span>
+                        <div class="error-title">HTTP Version Not Supported</div>
+                        <div class="error-desc">Incompatibilidad de versiones HTTP</div>
+                    </a>
+                    
+                    <a href="511.html" class="error-card">
+                        <span class="error-number">511</span>
+                        <div class="error-title">Network Authentication Required</div>
+                        <div class="error-desc">Autenticación de red requerida</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#privacy">Privacidad</a>
+                    <a href="#terms">Términos</a>
+                    <a href="#contact">Contacto</a>
+                    <a href="#sitemap">Sitemap</a>
+                </div>
+                <p>&copy; 2025 EstoNoCarga. Hecho con frustración y mucho café. ☕</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;">Porque los errores web también necesitan amor (o al menos explicación).</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/error-page.js"></script>
+</body>
+</html>

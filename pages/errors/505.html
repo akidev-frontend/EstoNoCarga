@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Básico -->
+  <title>Código HTTP 505 HTTP Version Not Supported: Guía Completa | EstoNoCarga</title>
+  <meta name="description" content="Explicación técnica avanzada del código HTTP 505: incompatibilidad de versiones HTTP, diagnóstico de problemas de protocolo, configuración de servidores y soluciones para compatibilidad HTTP/1.1, HTTP/2 y HTTP/3.">
+  <meta name="keywords" content="HTTP 505, HTTP Version Not Supported, código 505, versión HTTP, HTTP/1.1, HTTP/2, HTTP/3, protocolo no soportado, configuración servidor">
+  <meta name="author" content="EstoNoCarga">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://estonocarga.akidojo.dev/pages/errors/505.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="HTTP 505 Version Not Supported: Problemas de Protocolo | EstoNoCarga">
+  <meta property="og:description" content="Guía técnica completa sobre el código 505: desde diagnóstico de incompatibilidades HTTP hasta configuración avanzada de servidores para múltiples versiones de protocolo.">
+  <meta property="og:url" content="https://estonocarga.akidojo.dev/pages/errors/505.html">
+  <meta property="og:image" content="https://estonocarga.akidojo.dev/assets/images/505-og-image.png">
+  <meta property="og:site_name" content="EstoNoCarga">
+  <meta property="og:locale" content="es_ES">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HTTP 505: Cuando el Servidor No Habla Tu Idioma | EstoNoCarga">
+  <meta name="twitter:description" content="Todo sobre el código Version Not Supported: incompatibilidades HTTP, configuración de servidores legacy y modernos, y migración entre versiones de protocolo.">
+  <meta name="twitter:url" content="https://estonocarga.akidojo.dev/pages/errors/505.html">
+  <meta name="twitter:image" content="https://estonocarga.akidojo.dev/assets/images/505-og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+
+  <!-- Structured Data con Schema.org mejorado -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Código HTTP 505 - HTTP Version Not Supported: Incompatibilidad de Protocolos",
+    "description": "Análisis técnico exhaustivo del código 505: diagnóstico de incompatibilidades entre versiones HTTP, configuración de servidores para HTTP/1.1, HTTP/2 y HTTP/3, migración de protocolos legacy y soluciones para clientes modernos en servidores antiguos.",
+    "author": {
+      "@type": "Organization",
+      "name": "EstoNoCarga",
+      "url": "https://estonocarga.akidojo.dev"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "EstoNoCarga",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://estonocarga.akidojo.dev/assets/images/logo.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://estonocarga.akidojo.dev/pages/errors/505"
+    },
+    "inLanguage": "es",
+    "keywords": "HTTP 505, Version Not Supported, incompatibilidad HTTP, HTTP/1.1, HTTP/2, HTTP/3, configuración servidor, protocolo no soportado, migración HTTP",
+    "datePublished": "2023-11-15",
+    "image": "https://estonocarga.akidojo.dev/assets/images/505-og-image.png",
+    "articleBody": "El código HTTP 505 indica que el servidor no soporta la versión del protocolo HTTP utilizada en la petición. Este artículo cubre diagnóstico de incompatibilidades, configuración de servidores para múltiples versiones HTTP, migración entre protocolos y casos prácticos donde servidores legacy no pueden manejar clientes modernos."
+  }
+  </script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+  <link rel="stylesheet" href="../../assets/css/error-page.css" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html" class="logo">EstoNoCarga</a>
+            <ul class="nav-links">
+                <li><a href="../../index.html#errores">Errores</a></li>
+                <li><a href="../../pages/herramientas.html">Tools</a></li>
+                <li><a href="../about.html">Nosotros</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <div class="mobile-menu" id="mobile-menu">
+            <ul>
+                <li><a href="../../index.html#errores">Errores</a></li>
+                <li><a href="../../pages/herramientas.html">Tools</a></li>
+                <li><a href="../about.html">Nosotros</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Error Header -->
+        <section class="error-header">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../../index.html">Inicio</a>
+                    <span>→</span>
+                    <a href="../../index.html#errores">Códigos</a>
+                    <span>→</span>
+                    <span>505</span>
+                </div>
+                <div class="error-code-display">505</div>
+                <h1 class="error-name">HTTP Version Not Supported</h1>
+                <p class="error-description">Cuando tu cliente habla HTTP/2 pero el servidor sigue en HTTP/0.9. El drama de las versiones incompatibles que rompe todo.</p>
+                <div class="status-badge status-error">
+                    <span>💥</span>
+                    Server Error
+                </div>
+            </div>
+        </section>
+
+        <!-- What is it -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-title">
+                            <span class="section-icon">📋</span>
+                            ¿Qué narices es esto?
+                        </h2>
+                        
+                        <p>El <strong>código 505 HTTP Version Not Supported</strong> es el <strong>"no hablo tu idioma"</strong> de HTTP. Es cuando tu cliente moderno intenta hablar <strong>HTTP/2 o HTTP/3</strong> con un servidor que aún piensa que el HTTP/1.0 es lo más avanzado que existe. Como cuando intentas usar emojis con tu tío que aún tiene un Nokia 3310.</p>
+                        
+                        <p><strong>Version Not Supported significa exactamente eso</strong> - el servidor dice: <strong>"esa versión de HTTP que me estás enviando no la entiendo ni la soporto"</strong>. Generalmente pasa cuando hay un desfase tecnológico brutal entre cliente y servidor, o cuando alguien configuró mal el reverse proxy y se lió con las versiones.</p>
+                        
+                        <p>El 505 aparece típicamente en:</p>
+                        
+                        <ul style="margin-left: 2rem; margin-bottom: 2rem;">
+                            <li style="margin-bottom: 0.5rem;">Servidores legacy que solo soportan HTTP/1.0 o HTTP/1.1</li>
+                            <li style="margin-bottom: 0.5rem;">Clientes que fuerzan HTTP/2 en servidores no compatibles</li>
+                            <li style="margin-bottom: 0.5rem;">Proxies mal configurados que no entienden las versiones</li>
+                            <li style="margin-bottom: 0.5rem;">APIs antiguas que no han migrado a protocolos modernos</li>
+                            <li style="margin-bottom: 0.5rem;">Cuando alguien envía una versión HTTP inventada o malformada</li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <h4><span>🎯</span> Dato curioso</h4>
+                            <p>El 505 es como el "Windows Vista" de los códigos HTTP: técnicamente válido, pero nadie quiere encontrárselo. Significa que alguien (cliente o servidor) se quedó atrás en la evolución del protocolo, y ahora no pueden comunicarse.</p>
+                        </div>
+
+                        <p>La situación típica es <strong>brutal</strong>: tu cliente moderno envía una petición HTTP/2 con todas las optimizaciones modernas, y el servidor responde básicamente con <strong>"¿qué carajo es eso?"</strong>. No hay degradación elegante, no hay fallback automático - simplemente <strong>comunicación imposible</strong>. Es el equivalente tecnológico de intentar enchufar un USB-C en un puerto serial.</p>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="info-card">
+                            <h3>📊 Info técnica</h3>
+                            <ul>
+                                <li><strong>Código:</strong> 505</li>
+                                <li><strong>Tipo:</strong> Server Error</li>
+                                <li><strong>Categoría:</strong> 5xx</li>
+                                <li><strong>Descripción:</strong> HTTP Version Not Supported</li>
+                                <li><strong>Cacheable:</strong> No</li>
+                                <li><strong>Estándar:</strong> RFC 7231</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>🎯 Frecuencia</h3>
+                            <ul>
+                                <li><strong>Relativamente raro</strong></li>
+                                <li>Servidores muy antiguos</li>
+                                <li>Configuraciones incorrectas</li>
+                                <li>Migración de protocolos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to implement -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-title">
+                            <span class="section-icon">🔧</span>
+                            Cómo arreglar este desastre
+                        </h2>
+
+                        <div class="solution-steps">
+                            <h4>🖥️ Para servidores (actualízate ya)</h4>
+                            <ol>
+                                <li><strong>Verifica versiones soportadas:</strong> Chequea qué HTTP maneja tu servidor.</li>
+                                <li><strong>Actualiza el software:</strong> Apache, Nginx, IIS modernos soportan HTTP/2.</li>
+                                <li><strong>Configura degradación:</strong> Permite fallback a HTTP/1.1 si hay problemas.</li>
+                                <li><strong>Revisa proxies:</strong> Load balancers que entiendan múltiples versiones.</li>
+                                <li><strong>Testa compatibilidad:</strong> Prueba con clientes modernos y legacy.</li>
+                            </ol>
+                        </div>
+
+                        <div class="solution-steps">
+                            <h4>📱 Para desarrolladores (arregla el código)</h4>
+                            <ol>
+                                <li><strong>Detecta la versión:</strong> Verifica qué HTTP está usando tu cliente.</li>
+                                <li><strong>Implementa fallback:</strong> Degrada a HTTP/1.1 si el servidor no soporta HTTP/2.</li>
+                                <li><strong>Maneja el 505:</strong> Reintenta con versión más antigua del protocolo.</li>
+                                <li><strong>Documenta versiones:</strong> Especifica qué HTTP requiere tu API.</li>
+                                <li><strong>Usa librerías modernas:</strong> Que manejen automáticamente las versiones.</li>
+                            </ol>
+                        </div>
+
+                        <!-- Problemas típicos con 505 -->
+                        <div class="warning-box">
+                            <h4><span>❌</span> Problemas típicos con 505</h4>
+                            <ul style="margin-left: 0; list-style: none;">
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Servidor legacy sin actualizar:</strong><br>
+                                    <code style="font-size: 0.9rem;">HTTP/1.0 200 OK - Server: Apache/1.3.x</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">Servidores antiguos que no entienden HTTP/2 o HTTP/3.</span>
+                                </li>
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Cliente forzando versión no soportada:</strong><br>
+                                    <code style="font-size: 0.9rem;">curl --http2-prior-knowledge http://servidor-antiguo.com</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">Forcejar HTTP/2 en servidores que no lo soportan genera 505.</span>
+                                </li>
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Proxy mal configurado:</strong><br>
+                                    <code style="font-size: 0.9rem;">Cliente HTTP/2 → Proxy HTTP/1.0 → Servidor HTTP/1.1</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">El proxy no sabe traducir entre versiones de protocolo.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Respuesta rápida para emergencias -->
+                        <div class="warning-box">
+                            <h4><span>🚀</span> Respuesta rápida para emergencias</h4>
+                            <div style="display: grid; gap: 0.8rem; margin-top: 1rem;">
+                                <div style="padding: 0.8rem; background: rgba(255,159,10,0.1); border-radius: 6px; border-left: 3px solid #ff9f0a;">
+                                    <strong>🔥 Si tienes un 505 ahora mismo:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">1. Fuerza HTTP/1.1 en tu cliente temporalmente<br>2. Verifica la configuración del servidor/proxy<br>3. Actualiza el software del servidor si es posible</span>
+                                </div>
+                                <div style="padding: 0.8rem; background: rgba(175,82,222,0.1); border-radius: 6px; border-left: 3px solid #af52de;">
+                                    <strong>🎯 Truco ninja:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">Usa curl -v para ver exactamente qué versión HTTP está negociando tu cliente con el servidor.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="info-card">
+                            <h3>💡 Tips pro</h3>
+                            <ul>
+                                <li>Siempre implementa fallback a HTTP/1.1</li>
+                                <li>Los browsers manejan esto automáticamente</li>
+                                <li>HTTP/2 requiere TLS en producción</li>
+                                <li>Actualiza servidores legacy urgentemente</li>
+                                <li>Testa con múltiples versiones HTTP</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>⚡ Versiones HTTP</h3>
+                            <ul>
+                                <li><strong>HTTP/0.9:</strong> Prehistórico (1991)</li>
+                                <li><strong>HTTP/1.0:</strong> Básico (1996)</li>
+                                <li><strong>HTTP/1.1:</strong> Estándar (1997)</li>
+                                <li><strong>HTTP/2:</strong> Moderno (2015)</li>
+                                <li><strong>HTTP/3:</strong> Futuro (2022)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Codes -->
+        <section class="related-errors">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">Códigos relacionados</h2>
+                <p style="text-align: center; color: var(--text-secondary); font-size: 1.1rem;">Otros errores de servidor que también duelen</p>
+                
+                <div class="error-grid">
+                    <a href="500.html" class="error-card">
+                        <span class="error-number">500</span>
+                        <div class="error-title">Internal Server Error</div>
+                        <div class="error-desc">El error genérico de servidor</div>
+                    </a>
+                    
+                    <a href="501.html" class="error-card">
+                        <span class="error-number">501</span>
+                        <div class="error-title">Not Implemented</div>
+                        <div class="error-desc">Cuando el servidor no sabe hacer algo</div>
+                    </a>
+                    
+                    <a href="502.html" class="error-card">
+                        <span class="error-number">502</span>
+                        <div class="error-title">Bad Gateway</div>
+                        <div class="error-desc">Problemas entre servidores</div>
+                    </a>
+                    
+                    <a href="503.html" class="error-card">
+                        <span class="error-number">503</span>
+                        <div class="error-title">Service Unavailable</div>
+                        <div class="error-desc">Servidor temporalmente fuera de servicio</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#privacy">Privacidad</a>
+                    <a href="#terms">Términos</a>
+                    <a href="#contact">Contacto</a>
+                    <a href="#sitemap">Sitemap</a>
+                </div>
+                <p>&copy; 2025 EstoNoCarga. Hecho con frustración y mucho café. ☕</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;">Porque los errores web también necesitan amor (o al menos explicación).</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/error-page.js"></script>
+</body>
+</html>

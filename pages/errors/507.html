@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Básico -->
+  <title>Código HTTP 507 Insufficient Storage: Guía Completa | EstoNoCarga</title>
+  <meta name="description" content="Explicación técnica avanzada del código HTTP 507: problemas de espacio en disco, gestión de almacenamiento WebDAV, diagnóstico de cuotas llenas y soluciones para servidores sin espacio suficiente.">
+  <meta name="keywords" content="HTTP 507, Insufficient Storage, código 507, espacio disco, WebDAV, almacenamiento insuficiente, cuota llena, gestión espacio servidor">
+  <meta name="author" content="EstoNoCarga">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://estonocarga.akidojo.dev/pages/errors/507.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="HTTP 507 Insufficient Storage: Sin Espacio en el Servidor | EstoNoCarga">
+  <meta property="og:description" content="Guía técnica completa sobre el código 507: desde diagnóstico de problemas de almacenamiento hasta gestión de cuotas, limpieza de disco y configuración de WebDAV.">
+  <meta property="og:url" content="https://estonocarga.akidojo.dev/pages/errors/507.html">
+  <meta property="og:image" content="https://estonocarga.akidojo.dev/assets/images/507-og-image.png">
+  <meta property="og:site_name" content="EstoNoCarga">
+  <meta property="og:locale" content="es_ES">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HTTP 507: Cuando el Servidor Se Queda Sin Espacio | EstoNoCarga">
+  <meta name="twitter:description" content="Todo sobre el código Insufficient Storage: problemas de disco lleno, gestión de cuotas WebDAV y cómo liberar espacio en servidores saturados.">
+  <meta name="twitter:url" content="https://estonocarga.akidojo.dev/pages/errors/507.html">
+  <meta name="twitter:image" content="https://estonocarga.akidoja.dev/assets/images/507-og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+
+  <!-- Structured Data con Schema.org mejorado -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Código HTTP 507 - Insufficient Storage: Gestión de Almacenamiento Servidor",
+    "description": "Análisis técnico exhaustivo del código 507: diagnóstico de problemas de espacio en disco, gestión de cuotas WebDAV, limpieza de archivos temporales, configuración de límites de almacenamiento y monitoreo proactivo de espacio en servidores.",
+    "author": {
+      "@type": "Organization",
+      "name": "EstoNoCarga",
+      "url": "https://estonocarga.akidojo.dev"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "EstoNoCarga",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://estonocarga.akidojo.dev/assets/images/logo.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://estonocarga.akidojo.dev/pages/errors/507"
+    },
+    "inLanguage": "es",
+    "keywords": "HTTP 507, Insufficient Storage, espacio disco, WebDAV, almacenamiento insuficiente, cuota servidor, gestión almacenamiento, disco lleno",
+    "datePublished": "2023-11-15",
+    "image": "https://estonocarga.akidojo.dev/assets/images/507-og-image.png",
+    "articleBody": "El código HTTP 507 indica que el servidor no puede completar la operación porque no tiene suficiente espacio de almacenamiento. Este artículo cubre diagnóstico de problemas de disco, gestión de cuotas WebDAV, limpieza de archivos temporales y configuración de monitoreo proactivo."
+  }
+  </script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
+  <link rel="stylesheet" href="../../assets/css/error-page.css" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html" class="logo">EstoNoCarga</a>
+            <ul class="nav-links">
+                <li><a href="../../index.html#errores">Errores</a></li>
+                <li><a href="../../pages/herramientas.html">Tools</a></li>
+                <li><a href="../about.html">Nosotros</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <div class="mobile-menu" id="mobile-menu">
+            <ul>
+                <li><a href="../../index.html#errores">Errores</a></li>
+                <li><a href="../../pages/herramientas.html">Tools</a></li>
+                <li><a href="../about.html">Nosotros</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Error Header -->
+        <section class="error-header">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../../index.html">Inicio</a>
+                    <span>→</span>
+                    <a href="../../index.html#errores">Códigos</a>
+                    <span>→</span>
+                    <span>507</span>
+                </div>
+                <div class="error-code-display">507</div>
+                <h1 class="error-name">Insufficient Storage</h1>
+                <p class="error-description">El disco está más lleno que el Metro en hora punta. El servidor no puede guardar ni un byte más porque no le queda espacio.</p>
+                <div class="status-badge status-error">
+                    <span>💾</span>
+                    Server Error
+                </div>
+            </div>
+        </section>
+
+        <!-- What is it -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-title">
+                            <span class="section-icon">📋</span>
+                            ¿Qué narices es esto?
+                        </h2>
+                        
+                        <p>El <strong>código 507 Insufficient Storage</strong> es el <strong>"no me cabe ni un alfiler más"</strong> de HTTP. Es cuando el servidor intenta guardar algo (subir archivo, crear directorio, escribir logs...) pero <strong>el disco está completamente lleno</strong> o se ha alcanzado la cuota máxima. Como intentar meter más ropa en una maleta que ya no cierra.</p>
+                        
+                        <p><strong>Insufficient Storage significa exactamente eso</strong> - <strong>almacenamiento insuficiente</strong>. A diferencia de otros errores 5xx que son por bugs o configuración, este es físico: <strong>literalmente no hay más espacio</strong>. Apareció con WebDAV (RFC 4918) porque los servidores web tradicionales no necesitaban decir "no hay espacio" - solo servían archivos estáticos.</p>
+                        
+                        <p>El 507 aparece típicamente en:</p>
+                        
+                        <ul style="margin-left: 2rem; margin-bottom: 2rem;">
+                            <li style="margin-bottom: 0.5rem;">Servidores WebDAV cuando intentas subir archivos</li>
+                            <li style="margin-bottom: 0.5rem;">APIs de upload que no pueden guardar el archivo</li>
+                            <li style="margin-bottom: 0.5rem;">Servicios cloud con cuota de almacenamiento agotada</li>
+                            <li style="margin-bottom: 0.5rem;">Servidores con particiones de disco llenas</li>
+                            <li style="margin-bottom: 0.5rem;">Aplicaciones que generan logs masivos sin rotación</li>
+                        </ul>
+
+                        <div class="warning-box">
+                            <h4><span>🎯</span> Dato curioso</h4>
+                            <p>El 507 es el error más "físico" de HTTP: mientras otros errores son por software, este es por hardware literal. Es el equivalente digital de intentar aparcar en un garaje que ya está lleno - no es problema de permisos o configuración, simplemente no hay sitio.</p>
+                        </div>
+
+                        <p>La situación típica es <strong>desesperante</strong>: tienes una aplicación perfectamente funcional, todo configurado correctamente, pero cuando intentas subir ese archivo importante o el servidor trata de escribir logs críticos... <strong>¡PAM! 507</strong>. No es tu código, no es la configuración - es que alguien se olvidó de monitorear el espacio en disco y ahora está al 100%.</p>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="info-card">
+                            <h3>📊 Info técnica</h3>
+                            <ul>
+                                <li><strong>Código:</strong> 507</li>
+                                <li><strong>Tipo:</strong> Server Error</li>
+                                <li><strong>Categoría:</strong> 5xx</li>
+                                <li><strong>Descripción:</strong> Insufficient Storage</li>
+                                <li><strong>Cacheable:</strong> No</li>
+                                <li><strong>Estándar:</strong> RFC 4918 (WebDAV)</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>🎯 Frecuencia</h3>
+                            <ul>
+                                <li><strong>Común en WebDAV</strong></li>
+                                <li>APIs de upload sin límites</li>
+                                <li>Servidores mal monitoreados</li>
+                                <li>Servicios cloud saturados</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to implement -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="main-content">
+                        <h2 class="section-title">
+                            <span class="section-icon">🔧</span>
+                            Cómo liberar espacio (urgente)
+                        </h2>
+
+                        <div class="solution-steps">
+                            <h4>🖥️ Para administradores (limpia YA)</h4>
+                            <ol>
+                                <li><strong>Verifica espacio disponible:</strong> df -h para ver qué partición está llena.</li>
+                                <li><strong>Encuentra archivos grandes:</strong> du -sh * | sort -hr para localizar culpables.</li>
+                                <li><strong>Limpia logs antiguos:</strong> Archivos de log sin rotación son típicos devoradores.</li>
+                                <li><strong>Borra temporales:</strong> /tmp, cache, archivos de compilación olvidados.</li>
+                                <li><strong>Configura monitoreo:</strong> Alertas cuando el disco supere 80%.</li>
+                            </ol>
+                        </div>
+
+                        <div class="solution-steps">
+                            <h4>📱 Para desarrolladores (prevé el desastre)</h4>
+                            <ol>
+                                <li><strong>Valida tamaño antes de subir:</strong> Comprueba espacio disponible primero.</li>
+                                <li><strong>Implementa límites de upload:</strong> No permitas archivos gigantescos.</li>
+                                <li><strong>Maneja el 507 gracefully:</strong> Mensaje claro al usuario sobre espacio.</li>
+                                <li><strong>Rotación de logs automática:</strong> logrotate es tu amigo.</li>
+                                <li><strong>Limpieza programada:</strong> Scripts que borren archivos temporales regularmente.</li>
+                            </ol>
+                        </div>
+
+                        <!-- Problemas típicos con 507 -->
+                        <div class="warning-box">
+                            <h4><span>❌</span> Problemas típicos con 507</h4>
+                            <ul style="margin-left: 0; list-style: none;">
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Logs sin rotación:</strong><br>
+                                    <code style="font-size: 0.9rem;">-rw-r--r-- 1 www-data www-data 15G access.log</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">Un solo archivo de log que se comió todo el disco.</span>
+                                </li>
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Uploads sin límite:</strong><br>
+                                    <code style="font-size: 0.9rem;">POST /upload HTTP/1.1<br>Content-Length: 5368709120</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">Usuario subiendo archivo de 5GB que no cabe en el servidor.</span>
+                                </li>
+                                <li style="margin-bottom: 1rem; padding: 0.8rem; background: rgba(255,69,58,0.1); border-radius: 8px;">
+                                    <strong>Cache descontrolado:</strong><br>
+                                    <code style="font-size: 0.9rem;">drwxr-xr-x 2 www-data www-data 20G cache/</code><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.9rem;">Directorio de cache que creció sin límites ni limpieza.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Respuesta rápida para emergencias -->
+                        <div class="warning-box">
+                            <h4><span>🚀</span> Respuesta rápida para emergencias</h4>
+                            <div style="display: grid; gap: 0.8rem; margin-top: 1rem;">
+                                <div style="padding: 0.8rem; background: rgba(255,159,10,0.1); border-radius: 6px; border-left: 3px solid #ff9f0a;">
+                                    <strong>🔥 Si tienes un 507 ahora mismo:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">1. df -h para ver qué está lleno<br>2. Borra logs antiguos inmediatamente<br>3. Limpia /tmp y directorios de cache<br>4. Reinicia servicios si es necesario</span>
+                                </div>
+                                <div style="padding: 0.8rem; background: rgba(175,82,222,0.1); border-radius: 6px; border-left: 3px solid #af52de;">
+                                    <strong>🎯 Comandos ninja:</strong><br>
+                                    <span style="color: var(--text-secondary); font-size: 0.95rem;">find /var/log -name "*.log" -size +100M -delete<br>du -sh /* | sort -hr | head -10</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar">
+                        <div class="info-card">
+                            <h3>💡 Tips pro</h3>
+                            <ul>
+                                <li>Monitorea espacio en disco constantemente</li>
+                                <li>Configura logrotate desde el día 1</li>
+                                <li>Limita tamaños de upload por defecto</li>
+                                <li>Usa particiones separadas para logs</li>
+                                <li>Automatiza limpieza de archivos temporales</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>⚡ Prevención</h3>
+                            <ul>
+                                <li><strong>Alertas:</strong> Nagios, Zabbix, Prometheus</li>
+                                <li><strong>Límites:</strong> Cuotas por usuario/aplicación</li>
+                                <li><strong>Rotación:</strong> logrotate, newsyslog</li>
+                                <li><strong>Cleanup:</strong> Scripts cron de limpieza</li>
+                                <li><strong>Particiones:</strong> Separar datos críticos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Codes -->
+        <section class="related-errors">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">Códigos relacionados</h2>
+                <p style="text-align: center; color: var(--text-secondary); font-size: 1.1rem;">Otros errores de recursos que también molestan</p>
+                
+                <div class="error-grid">
+                    <a href="413.html" class="error-card">
+                        <span class="error-number">413</span>
+                        <div class="error-title">Payload Too Large</div>
+                        <div class="error-desc">Archivo demasiado grande para procesar</div>
+                    </a>
+                    
+                    <a href="503.html" class="error-card">
+                        <span class="error-number">503</span>
+                        <div class="error-title">Service Unavailable</div>
+                        <div class="error-desc">Servidor temporalmente saturado</div>
+                    </a>
+                    
+                    <a href="508.html" class="error-card">
+                        <span class="error-number">508</span>
+                        <div class="error-title">Loop Detected</div>
+                        <div class="error-desc">Bucles infinitos que consumen recursos</div>
+                    </a>
+                    
+                    <a href="509.html" class="error-card">
+                        <span class="error-number">509</span>
+                        <div class="error-title">Bandwidth Limit Exceeded</div>
+                        <div class="error-desc">Límite de ancho de banda superado</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#privacy">Privacidad</a>
+                    <a href="#terms">Términos</a>
+                    <a href="#contact">Contacto</a>
+                    <a href="#sitemap">Sitemap</a>
+                </div>
+                <p>&copy; 2025 EstoNoCarga. Hecho con frustración y mucho café. ☕</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;">Porque los errores web también necesitan amor (o al menos explicación).</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/error-page.js"></script>
+</body>
+</html>
